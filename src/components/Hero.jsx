@@ -113,15 +113,6 @@ export default function Hero() {
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                   We deliver high-converting AI video ads, high-framerate mobile gaming experiences, custom cloud applications, and battle-tested DevOps infrastructure.
                 </p>
-                <div className="pt-2">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all shadow-sm hover:scale-[1.02]"
-                  >
-                    <span>Work With Us</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
               </div>
             </div>
 
