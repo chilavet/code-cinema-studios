@@ -103,16 +103,25 @@ export default function Hero() {
               Code Cinema Studios engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.
             </p>
 
-            {/* Catchy Hook Banner: Book AI Advert Video & Core Services */}
-            <div className="p-3.5 sm:p-4 rounded-2xl bg-amber-50/90 border border-amber-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3">
+            {/* Catchy Hook Banner */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/90 border border-amber-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3.5">
               <span className="text-xl sm:text-2xl shrink-0">🎬</span>
-              <div>
-                <span className="text-[11px] font-bold font-mono tracking-wider uppercase text-amber-800 block mb-0.5">
-                  High Demand • Booking Open
-                </span>
-                <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
-                  Stop the scroll & convert fast — <span className="text-amber-800 underline decoration-amber-400">Book us for viral AI Advert Videos</span>, 120 FPS mobile games, bespoke cloud software & rock-solid DevOps server management.
+              <div className="space-y-1.5">
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                  Drive engagement, performance, and scale
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  We deliver high-converting AI video ads, high-framerate mobile gaming experiences, custom cloud applications, and battle-tested DevOps infrastructure.
                 </p>
+                <div className="pt-2">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all shadow-sm hover:scale-[1.02]"
+                  >
+                    <span>Work With Us</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
             </div>
 
