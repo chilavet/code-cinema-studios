@@ -8,6 +8,7 @@ const TECH_ITEMS = [
   'Docker & Microservices',
   '24/7 SLA Site Monitoring',
   'PostgreSQL & Redis Cache',
+  'Viral AI Advert Videos & Commercials',
   'Linux Server Administration & Hardening',
   'Houdini & Maya 3D VFX',
   'Admin & Technical Support Desk',

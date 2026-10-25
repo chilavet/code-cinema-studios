@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import TechTicker from './components/TechTicker';
 import Services from './components/Services';
 import Showcase from './components/Showcase';
+import BookingBanner from './components/BookingBanner';
 import ScopeEstimator from './components/ScopeEstimator';
 import Philosophy from './components/Philosophy';
 import Contact from './components/Contact';
@@ -24,7 +25,7 @@ export default function App() {
     else if (trackName.includes('DevOps') || trackName.includes('Server')) serviceMapping = 'DevOps & Server Management';
     else if (trackName.includes('Maintenance')) serviceMapping = 'Website Maintenance & Care';
     else if (trackName.includes('Admin')) serviceMapping = 'Admin & Operations Desk';
-    else if (trackName.includes('Cinematic') || trackName.includes('VFX')) serviceMapping = 'Cinematic Production & 3D VFX';
+    else if (trackName.includes('Cinematic') || trackName.includes('VFX') || trackName.includes('Advert') || trackName.includes('Video')) serviceMapping = 'AI Advert Videos & Cinematic Production';
     else if (trackName.includes('Consulting')) serviceMapping = 'Technology Consulting';
 
     setContactInitial({
@@ -56,7 +57,7 @@ export default function App() {
     else if (project.category === 'devops') serviceMapping = 'DevOps & Server Management';
     else if (project.category === 'maintenance') serviceMapping = 'Website Maintenance & Care';
     else if (project.category === 'admin') serviceMapping = 'Admin & Operations Desk';
-    else if (project.category === 'cinematics') serviceMapping = 'Cinematic Production & 3D VFX';
+    else if (project.category === 'cinematics') serviceMapping = 'AI Advert Videos & Cinematic Production';
 
     setContactInitial({
       service: serviceMapping,
@@ -91,6 +92,18 @@ export default function App() {
 
         {/* Interactive Showcase & Portfolio */}
         <Showcase onSelectProject={(project) => setSelectedProject(project)} />
+
+        {/* Catchy High-Conversion Booking Banner */}
+        <BookingBanner
+          onBookService={(service, brief) => {
+            setContactInitial({
+              service: service || 'AI Advert Videos & Cinematic Production',
+              brief: brief || 'Requesting booking for AI Advert Video production and technical discovery.'
+            });
+            const contactSection = document.getElementById('contact');
+            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+          }}
+        />
 
         {/* Interactive Scope & Roadmap Estimator */}
         <ScopeEstimator onApplyEstimate={handleApplyEstimate} />

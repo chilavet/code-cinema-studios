@@ -91,18 +91,18 @@ export const SERVICES = [
   },
   {
     id: 'cinematics',
-    title: 'Cinematic Production & 3D VFX',
-    badge: 'Studio Grade',
+    title: 'AI Advert Videos & Cinematic Production',
+    badge: 'High-Converting & Viral',
     badgeColor: 'text-[#D97706] bg-amber-500/10 border-amber-500/30',
-    description: 'Photorealistic 3D visual effects, game teaser trailers, motion branding, and narrative CGI engineered with studio-grade lighting, camera choreography, and high-impact sound design.',
+    description: 'Ultra-engaging AI-generated advert videos, product commercials, and photorealistic 3D visual effects engineered to capture attention and convert audiences. Hook-driven storytelling, viral video pacing, and studio-grade sound design.',
     accent: 'amber',
     icon: 'clapperboard',
     highlights: [
-      'Houdini & Maya photorealistic volumetric FX',
-      'Unreal virtual camera & real-time rendering',
-      'Dolby Atmos spatial sound mixing'
+      'Viral hook scripting & AI video generation',
+      'Photorealistic 3D CGI & Unreal virtual cameras',
+      'High-conversion formatting for TikTok, Reels & Web'
     ],
-    tags: ['3D Photoreal CGI', 'Virtual Production', 'Teaser Trailers', 'Color Grading'],
+    tags: ['AI Advert Videos', 'Viral Commercials', 'Product Promos', '3D Photoreal CGI', 'Sound Design'],
     glowClass: 'bg-[#FFB800]/15 group-hover:bg-[#FFB800]/25',
     iconBg: 'bg-amber-950/60 border-amber-500/40 text-[#FFB800] shadow-neon-amber',
     tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'

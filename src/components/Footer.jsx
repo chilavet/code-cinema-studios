@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Cinematic Production & VFX
+                  AI Advert Videos & Cinematics
                 </a>
               </li>
               <li>

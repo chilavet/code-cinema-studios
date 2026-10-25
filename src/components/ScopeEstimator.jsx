@@ -42,7 +42,7 @@ export default function ScopeEstimator({ onApplyEstimate }) {
     { id: 'DevOps', name: 'DevOps & Servers', multiplier: 0.95 },
     { id: 'Maintenance', name: 'Website Maintenance', multiplier: 0.7 },
     { id: 'Admin', name: 'Admin Services', multiplier: 0.65 },
-    { id: 'Cinematics', name: 'Cinematic & VFX', multiplier: 1.15 },
+    { id: 'Cinematics', name: 'AI Adverts & Videos', multiplier: 1.15 },
     { id: 'Consulting', name: 'Tech Consulting', multiplier: 0.8 }
   ];
 
@@ -82,9 +82,9 @@ export default function ScopeEstimator({ onApplyEstimate }) {
         ];
       case 'Cinematics':
         return [
-          'Phase 1: Storyboard, Virtual Camera Concept & Previz',
-          'Phase 2: 3D Asset Sculpting, Lighting & Simulation',
-          'Phase 3: Ray-Traced Final Renders & Sound Engineering'
+          'Phase 1: Viral Hook Concept, AI Storyboard & Video Prompt Architecture',
+          'Phase 2: High-Resolution AI Video Generation, 3D CGI & Motion Graphics',
+          'Phase 3: Color Grading, Dynamic Sound Mixing & Multi-Platform Mastering'
         ];
       case 'Consulting':
         return [

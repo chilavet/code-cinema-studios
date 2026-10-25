@@ -99,7 +99,7 @@ export default function Contact({ initialBrief = '', initialService = 'Custom So
                 </button>
               </div>
               <p className="text-emerald-800 text-xs mt-0.5">
-                Fast-track mobile game pitches, urgent site maintenance, and technical queries.
+                Fast-track AI advert video bookings, mobile game production, DevOps setups, and technical queries.
               </p>
             </div>
           </div>
@@ -185,12 +185,12 @@ export default function Contact({ initialBrief = '', initialService = 'Custom So
                     onChange={handleChange}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-slate-900 focus:bg-white transition-colors"
                   >
+                    <option value="AI Advert Videos & Cinematic Production">AI Advert Videos & Cinematic Commercials (Viral / High-Conversion)</option>
                     <option value="Mobile Game Development">Mobile Game Development (iOS & Android)</option>
                     <option value="Custom Software Engineering">Custom Software Engineering</option>
                     <option value="DevOps & Server Management">DevOps & Server Management</option>
                     <option value="Website Maintenance & Care">Website Maintenance & Care (24/7 SLA)</option>
                     <option value="Admin & Operations Desk">Admin & Operations Desk</option>
-                    <option value="Cinematic Production & 3D VFX">Cinematic Production & 3D VFX</option>
                     <option value="Technology Consulting">Technology Consulting & Architecture</option>
                   </select>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeroCanvas from './HeroCanvas';
-import { ArrowRight, Smartphone, Code2, Wrench, ShieldCheck, ArrowUpRight, Server } from 'lucide-react';
+import { ArrowRight, Smartphone, Code2, Wrench, ShieldCheck, ArrowUpRight, Server, Video } from 'lucide-react';
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState('mobile');
@@ -103,11 +103,36 @@ export default function Hero() {
               Code Cinema Studios engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.
             </p>
 
+            {/* Catchy Hook Banner: Book AI Advert Video & Core Services */}
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-amber-50/90 border border-amber-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3">
+              <span className="text-xl sm:text-2xl shrink-0">🎬</span>
+              <div>
+                <span className="text-[11px] font-bold font-mono tracking-wider uppercase text-amber-800 block mb-0.5">
+                  High Demand • Booking Open
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+                  Stop the scroll & convert fast — <span className="text-amber-800 underline decoration-amber-400">Book us for viral AI Advert Videos</span>, 120 FPS mobile games, bespoke cloud software & rock-solid DevOps server management.
+                </p>
+              </div>
+            </div>
+
             {/* CTAs Cluster */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2 animate-fade-in-up animation-delay-300">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 animate-fade-in-up animation-delay-300">
+              {/* Primary Book AI Advert CTA */}
+              <a
+                href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20want%20to%20book%20an%20AI%20Advert%20Video%20and%20discuss%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:scale-[1.02]"
+              >
+                <Video className="w-4 h-4 text-slate-950" />
+                <span>Book AI Advert Video</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+
               <a
                 href="#showcase"
-                className="group relative overflow-hidden px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
+                className="group relative overflow-hidden px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
                 <span>View Selected Work</span>
@@ -116,9 +141,9 @@ export default function Hero() {
 
               <a
                 href="#estimator"
-                className="px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all"
+                className="px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all"
               >
-                Project Scope Estimator
+                Scope Estimator
               </a>
 
               {/* Direct WhatsApp Quick Pill */}
@@ -126,7 +151,7 @@ export default function Hero() {
                 href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-all shadow-sm hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-3.5 py-3 rounded-xl text-xs font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-all shadow-sm hover:scale-[1.02]"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="font-mono font-semibold">+234 816 049 8340</span>
