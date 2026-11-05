@@ -1,4 +1,4 @@
-# Code Cinema Studios - Web Application
+# Codes Cinema - Web Application
 
 Modern digital agency and studio web platform combining high-performance software engineering, real-time interactive game design, photorealistic cinematics, and strategic engineering consulting.
 

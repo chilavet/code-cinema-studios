@@ -4,7 +4,7 @@ export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
   const phoneNumber = '2348160498340';
   const displayPhone = '+234 816 049 8340';
-  const defaultMessage = encodeURIComponent('Hello Code Cinema Studios, I would like to discuss a project.');
+  const defaultMessage = encodeURIComponent('Hello Codes Cinema, I would like to discuss a project.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
 
   return (
@@ -33,7 +33,7 @@ export default function WhatsAppButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Chat with Code Cinema Studios on WhatsApp at ${displayPhone}`}
+        aria-label={`Chat with Codes Cinema on WhatsApp at ${displayPhone}`}
         className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* Soft Ambient Radar Ping Ring */}

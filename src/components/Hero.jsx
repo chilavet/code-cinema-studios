@@ -100,7 +100,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
-              Code Cinema Studios engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.
+              Codes Cinema engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.
             </p>
 
             {/* Catchy Hook Banner */}
@@ -120,7 +120,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 animate-fade-in-up animation-delay-300">
               {/* Primary Book AI Advert CTA */}
               <a
-                href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20want%20to%20book%20an%20AI%20Advert%20Video%20and%20discuss%20your%20services."
+                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20want%20to%20book%20an%20AI%20Advert%20Video%20and%20discuss%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:scale-[1.02]"
@@ -148,7 +148,7 @@ export default function Hero() {
 
               {/* Direct WhatsApp Quick Pill */}
               <a
-                href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3.5 py-3 rounded-xl text-xs font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-all shadow-sm hover:scale-[1.02]"
@@ -197,13 +197,13 @@ export default function Hero() {
                   <div className="w-8 h-8 rounded-full p-0.5 bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
                     <img
                       src="/logo.jpg"
-                      alt="Code Cinema Studios"
+                      alt="Codes Cinema"
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
                   <div>
                     <span className="text-xs font-bold text-slate-900 block">Studio Capabilities</span>
-                    <span className="text-[10px] font-mono text-slate-500">Code Cinema Core</span>
+                    <span className="text-[10px] font-mono text-slate-500">Codes Cinema Core</span>
                   </div>
                 </div>
 

@@ -3,7 +3,7 @@ import { Sparkles, ArrowRight, MessageSquare, Video, Smartphone, Server, Code2, 
 
 export default function BookingBanner({ onBookService }) {
   const whatsappAiAdvertsUrl = `https://wa.me/2348160498340?text=${encodeURIComponent(
-    'Hello Code Cinema Studios, I would like to book you for an AI Advert Video and discuss your production packages.'
+    'Hello Codes Cinema, I would like to book you for an AI Advert Video and discuss your production packages.'
   )}`;
 
   const handleGeneralInquiry = () => {
@@ -77,7 +77,7 @@ export default function BookingBanner({ onBookService }) {
                 </button>
 
                 <a
-                  href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                  href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-3.5 rounded-xl font-mono text-xs text-emerald-400 hover:text-emerald-300 bg-emerald-950/60 border border-emerald-800/80 transition-all flex items-center gap-2"

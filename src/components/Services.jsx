@@ -111,7 +111,7 @@ export default function Services({ onSelectService }) {
 
                 <a
                   href={`https://wa.me/2348160498340?text=${encodeURIComponent(
-                    `Hello Code Cinema Studios, I am interested in your ${s.title} services.`
+                    `Hello Codes Cinema, I am interested in your ${s.title} services.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

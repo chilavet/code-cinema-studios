@@ -83,12 +83,12 @@ export default function Philosophy() {
                 <div className="relative inline-block p-1 rounded-full bg-slate-950 border-2 border-slate-800 shadow-xl group animate-float-subtle">
                   <img
                     src="/logo.jpg"
-                    alt="Code Cinema Studios Emblem"
+                    alt="Codes Cinema Emblem"
                     className="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-base font-bold font-['Orbitron',sans-serif] text-slate-900 tracking-wide mt-4">
-                  CODE CINEMA STUDIOS
+                  CODES CINEMA
                 </h3>
                 <p className="text-xs font-mono text-slate-500 mt-1">
                   Precision In Every Frame

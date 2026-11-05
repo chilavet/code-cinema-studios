@@ -105,7 +105,7 @@ export default function Contact({ initialBrief = '', initialService = 'Custom So
           </div>
 
           <a
-            href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+            href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto px-5 py-3 rounded-xl text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 whitespace-nowrap shrink-0 shadow-sm"

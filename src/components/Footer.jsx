@@ -15,12 +15,12 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm">
                 <img
                   src="/logo.jpg"
-                  alt="Code Cinema Studios"
+                  alt="Codes Cinema"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
               <span className="font-['Orbitron',sans-serif] font-bold text-lg text-slate-900 tracking-tight">
-                CODE <span className="text-amber-600">CINEMA</span> STUDIOS
+                CODES <span className="text-amber-600">CINEMA</span>
               </span>
             </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
             {/* Direct WhatsApp Callout */}
             <div className="pt-1">
               <a
-                href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-800 hover:text-emerald-950 transition-colors"
@@ -132,7 +132,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors">
+                <a href="https://www.linkedin.com/company/codes-cinema" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors">
                   LinkedIn ↗
                 </a>
               </li>
@@ -152,7 +152,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 font-medium">
-          <p>© {currentYear} Code Cinema Studios. All rights reserved.</p>
+          <p>© {currentYear} Codes Cinema. All rights reserved.</p>
 
           <div className="flex items-center space-x-2 text-[11px] font-mono text-slate-600">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

@@ -28,16 +28,13 @@ export default function Navbar({ onOpenContact }) {
             <div className="relative w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm transition-transform group-hover:scale-105">
               <img
                 src="/logo.jpg"
-                alt="Code Cinema Studios"
+                alt="Codes Cinema"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
             <div className="flex flex-col">
               <span className="font-['Orbitron',sans-serif] text-sm sm:text-base font-bold tracking-tight text-slate-900">
-                CODE <span className="text-amber-600">CINEMA</span>
-              </span>
-              <span className="text-[9px] tracking-[0.2em] text-slate-500 uppercase font-mono font-semibold">
-                STUDIOS
+                CODES <span className="text-amber-600">CINEMA</span>
               </span>
             </div>
           </a>
@@ -65,7 +62,7 @@ export default function Navbar({ onOpenContact }) {
           <div className="hidden sm:flex items-center space-x-3">
             {/* Minimal WhatsApp Concierge Link */}
             <a
-              href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+              href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-all"
@@ -135,7 +132,7 @@ export default function Navbar({ onOpenContact }) {
             </a>
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="https://wa.me/2348160498340?text=Hello%20Code%20Cinema%20Studios%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200"

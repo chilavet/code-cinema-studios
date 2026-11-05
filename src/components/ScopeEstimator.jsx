@@ -113,7 +113,7 @@ export default function ScopeEstimator({ onApplyEstimate }) {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Code Cinema Studios, I used your Scope Estimator:\n\n• Track: ${selectedTrack.name}\n• Tier: ${scopeTier.toUpperCase()}\n• Estimated Timeline: ${calculatedEstimate.minWeeks} - ${calculatedEstimate.maxWeeks} Weeks\n\nI would like to discuss this project scope.`
+    `Hello Codes Cinema, I used your Scope Estimator:\n\n• Track: ${selectedTrack.name}\n• Tier: ${scopeTier.toUpperCase()}\n• Estimated Timeline: ${calculatedEstimate.minWeeks} - ${calculatedEstimate.maxWeeks} Weeks\n\nI would like to discuss this project scope.`
   );
 
   return (
