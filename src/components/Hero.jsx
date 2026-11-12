@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HeroCanvas from './HeroCanvas';
 import {
   ArrowRight,
-  ArrowUpRight,
   Smartphone,
   Wrench,
   Server,
@@ -453,7 +452,7 @@ export default function Hero() {
               </div>
 
               {/* Active Discipline CLI Console Bar */}
-              <div className="p-3 pt-0">
+              <div className="p-3.5 pt-0">
                 <div className="flex items-center gap-2 font-mono text-[11px] bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-200 py-2.5 px-3 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-800">
                   <span className="text-sky-600 dark:text-emerald-400 font-bold">$</span>
                   <span className="truncate text-slate-700 dark:text-slate-300 font-medium">
@@ -461,25 +460,6 @@ export default function Hero() {
                   </span>
                   <span className="w-1.5 h-3.5 bg-sky-600 dark:bg-emerald-400 animate-pulse shrink-0 ml-auto" />
                 </div>
-              </div>
-
-              {/* Card Footer Quick Links */}
-              <div className="px-5 py-3 bg-slate-50/70 dark:bg-slate-950/60 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between text-[11px]">
-                <a
-                  href="#services"
-                  className="text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white font-medium transition-colors flex items-center gap-1"
-                >
-                  <span>{t.hero.learnMore || 'View all in Capabilities'}</span>
-                  <ArrowRight className="w-3 h-3" />
-                </a>
-
-                <a
-                  href="#contact"
-                  className="font-semibold text-sky-700 dark:text-amber-400 hover:text-sky-800 dark:hover:text-amber-300 hover:underline flex items-center gap-1"
-                >
-                  <span>{t.hero.requestCall || 'Request Discovery Call'}</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
               </div>
             </div>
           </div>
