@@ -235,15 +235,15 @@ export default function Hero() {
 
             {/* Dynamic Main Headline */}
             <div key={`headline-${activeTab}`} className="space-y-3 animate-tab-enter">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                {headline.top} <br />
-                <span className="text-slate-500 dark:text-slate-400 font-normal">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white leading-snug">
+                {headline.top}{' '}
+                <span className="text-slate-500 dark:text-slate-400 font-normal block text-lg sm:text-2xl lg:text-3xl mt-1">
                   {headline.accent}
                 </span>
               </h1>
 
               {/* Detailed Discipline Explanation */}
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {serviceDetail?.description || current.desc}
               </p>
             </div>
@@ -259,7 +259,7 @@ export default function Hero() {
                     <ActiveIcon className={`w-4 h-4 ${activeTabConfig.color}`} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                    <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
                       {serviceDetail?.title || activeTabConfig.fullTitle}
                     </h4>
                     <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
@@ -277,7 +277,7 @@ export default function Hero() {
               {/* Deliverable Highlights Checklist */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {deliverablesList.map((hl, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300 font-normal">
                     <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 dark:text-amber-400 shrink-0 mt-0.5" />
                     <span className="leading-snug">{hl}</span>
                   </div>
@@ -343,7 +343,7 @@ export default function Hero() {
               {/* Window Header */}
               <div className="px-5 py-3.5 bg-slate-50/90 dark:bg-slate-950/80 border-b border-slate-200/90 dark:border-slate-800 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full p-0.5 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 overflow-hidden flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
+                  <div className="w-8 h-8 rounded-full p-0.5 bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
                     <img
                       src="/logo.jpg"
                       alt="Codes Cinema"

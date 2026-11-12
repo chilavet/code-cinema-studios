@@ -63,7 +63,7 @@ export default function Navbar({ onOpenContact }) {
 
           {/* Right Action Cluster */}
           <div className="hidden sm:flex items-center gap-2.5">
-            {/* Theme Sunset/Dawn Switcher */}
+            {/* Theme Sun/Moon Switcher */}
             <ThemeToggle />
             {/* Country Flag & Language Selector */}
             <CountrySelector />
