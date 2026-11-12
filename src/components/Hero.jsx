@@ -40,8 +40,8 @@ export default function Hero() {
       {/* Gentle Vignette Fade */}
       <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#F8FAFC]/40 to-[#F8FAFC] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
           
           {/* Left Column: Editorial Headline & Actions (7 cols) */}
           <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
@@ -63,12 +63,12 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
               {t.hero.subtitle}
             </p>
 
             {/* Catchy Hook Banner */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-sky-50/90 border border-sky-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3.5">
+            <div className="p-5 sm:p-6 rounded-2xl bg-sky-50/90 border border-sky-200/90 max-w-2xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-4">
               <div className="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
                 <Code2 className="w-5 h-5" />
               </div>

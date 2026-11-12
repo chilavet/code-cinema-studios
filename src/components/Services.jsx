@@ -63,10 +63,10 @@ export default function Services({ onSelectService }) {
 
   return (
     <section id="services" className="py-24 relative z-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
               <span>{t.services.badge}</span>

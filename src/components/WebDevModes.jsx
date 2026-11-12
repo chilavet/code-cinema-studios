@@ -95,10 +95,10 @@ export default function WebDevModes({ onInquireMode, onScopeMode }) {
 
   return (
     <section id="web-dev" className="py-24 relative z-10 border-t border-slate-200 bg-slate-50/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-4xl mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-sky-700 uppercase tracking-widest mb-3 bg-sky-50 px-3 py-1 rounded-full border border-sky-200/80">
             <Sparkles className="w-3.5 h-3.5 text-sky-600" />
             <span>{t.webModes?.badge || 'Modular Web Engineering'}</span>
@@ -113,7 +113,7 @@ export default function WebDevModes({ onInquireMode, onScopeMode }) {
         </div>
 
         {/* Interactive Mode Tabs Switcher */}
-        <div className="flex flex-wrap items-center gap-2 mb-8 p-1.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm max-w-xl">
+        <div className="flex flex-wrap items-center gap-2 mb-8 p-1.5 rounded-2xl bg-white border border-slate-200/90 shadow-sm max-w-2xl">
           {modes.map((mode) => {
             const Icon = mode.icon;
             const isSelected = mode.id === activeMode;
