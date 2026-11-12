@@ -472,8 +472,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Direct Engagement',
       heading: "Let's discuss your project.",
-      subtitleBefore: 'Reach out via our inquiry form, email ',
-      subtitleAfter: ', or connect directly with our technical desk via WhatsApp for rapid scoping.',
+      subtitle:
+        'Submit your project brief below to initiate a technical consultation. Our engineering team reviews specifications and responds within 24 business hours.',
       whatsappTitle: 'Direct WhatsApp Technical Desk',
       whatsappDesc: 'Fast-track AI advert video bookings, mobile game production, DevOps setups, and technical queries.',
       whatsappBtn: 'Chat on WhatsApp',
@@ -758,8 +758,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Contact Direct',
       heading: 'Parlons de votre projet.',
-      subtitleBefore: 'Envoyez-nous votre brief via le formulaire, écrivez à ',
-      subtitleAfter: ', ou échangez directement sur WhatsApp pour un cadrage rapide.',
+      subtitle:
+        'Transmettez votre brief de projet ci-dessous pour initier une consultation technique. Notre équipe analyse vos spécifications et vous répond sous 24 heures ouvrées.',
       whatsappTitle: 'Bureau Technique WhatsApp Direct',
       whatsappDesc: 'Réservation rapide de vidéos publicitaires IA, jeux mobiles, configurations DevOps et questions techniques.',
       whatsappBtn: 'Discuter sur WhatsApp',
@@ -1042,8 +1042,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Contacto Directo',
       heading: 'Hablemos de tu proyecto.',
-      subtitleBefore: 'Envía tu consulta mediante el formulario, escribe a ',
-      subtitleAfter: ', o contáctanos por WhatsApp para una evaluación rápida.',
+      subtitle:
+        'Envía los detalles de tu proyecto a continuación para iniciar una consulta técnica. Nuestro equipo analiza tus especificaciones y responde en menos de 24 horas laborables.',
       whatsappTitle: 'Mesa Técnica Directa por WhatsApp',
       whatsappDesc: 'Reservas rápidas de anuncios IA, juegos móviles, DevOps y consultas técnicas.',
       whatsappBtn: 'Chatear en WhatsApp',
@@ -1326,8 +1326,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Direkter Kontakt',
       heading: 'Sprechen wir über Ihr Projekt.',
-      subtitleBefore: 'Nutzen Sie unser Anfrageformular, schreiben Sie an ',
-      subtitleAfter: ', oder kontaktieren Sie uns direkt per WhatsApp.',
+      subtitle:
+        'Senden Sie Ihre Projektanforderungen unten ein, um eine technische Beratung zu starten. Unser Team prüft Ihre Spezifikationen und antwortet innerhalb von 24 Geschäftsstunden.',
       whatsappTitle: 'Direkter WhatsApp-Technikdesk',
       whatsappDesc: 'Schnelle Buchung für KI-Werbevideos, Mobile Games, DevOps und technische Fragen.',
       whatsappBtn: 'Auf WhatsApp chatten',
@@ -1610,8 +1610,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'Contato Direto',
       heading: 'Vamos conversar sobre seu projeto.',
-      subtitleBefore: 'Envie sua solicitação pelo formulário, escreva para ',
-      subtitleAfter: ', ou fale direto no WhatsApp para um escopo rápido.',
+      subtitle:
+        'Envie o briefing do seu projeto abaixo para iniciar uma consultoria técnica. Nossa equipe analisa suas especificações e responde em até 24 horas úteis.',
       whatsappTitle: 'Atendimento Técnico Direto via WhatsApp',
       whatsappDesc: 'Agendamento rápido de vídeos IA, jogos mobile, DevOps e dúvidas técnicas.',
       whatsappBtn: 'Conversar no WhatsApp',
@@ -1894,8 +1894,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: '直接相談',
       heading: 'プロジェクトについてご相談ください。',
-      subtitleBefore: 'お問い合わせフォーム、またはメール ',
-      subtitleAfter: '、WhatsAppから技術デスクへ直接ご連絡いただけます。',
+      subtitle:
+        'プロジェクトの概要を以下のフォームよりご送信ください。エンジニアリングチームが要件を確認し、24営業時間以内にご返信いたします。',
       whatsappTitle: 'WhatsApp 技術直通デスク',
       whatsappDesc: 'AI広告動画の予約、モバイルゲーム開発、DevOps構築のご相談に迅速対応します。',
       whatsappBtn: 'WhatsAppで相談',
@@ -2178,8 +2178,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: 'تواصل مباشر',
       heading: 'لنناقش مشروعك.',
-      subtitleBefore: 'أرسل تفاصيل مشروعك عبر النموذج، أو راسلنا على ',
-      subtitleAfter: '، أو تواصل عبر واتساب لتحديد النطاق بسرعة.',
+      subtitle:
+        'أرسل تفاصيل مشروعك أدناه لبدء استشارة فنية متخصصة. يراجع فريقنا الهندسي المواصفات ويجيب خلال 24 ساعة عمل.',
       whatsappTitle: 'مكتب الدعم الفني المباشر عبر واتساب',
       whatsappDesc: 'حجز سريع لإعلانات الذكاء الاصطناعي، ألعاب الجوال، إعداد DevOps والاستفسارات التقنية.',
       whatsappBtn: 'تحدث عبر واتساب',
@@ -2462,8 +2462,8 @@ export const TRANSLATIONS = {
     contact: {
       badge: '直接沟通',
       heading: '让我们探讨您的项目。',
-      subtitleBefore: '通过下方表单提交需求，发送邮件至 ',
-      subtitleAfter: '，或通过 WhatsApp 直连技术团队快速评估。',
+      subtitle:
+        '请在下方提交您的项目需求与技术指标。我们的工程团队将在 24 小时工作日内评估方案并与您联系。',
       whatsappTitle: 'WhatsApp 技术直连台',
       whatsappDesc: '快速预约 AI 广告制作、移动游戏研发、DevOps 部署及各类技术咨询。',
       whatsappBtn: 'WhatsApp 在线沟通',
@@ -2676,7 +2676,8 @@ TRANSLATIONS.uk = {
   },
   contact: {
     ...TRANSLATIONS.us.contact,
-    subtitleBefore: 'Reach out via our enquiry form, email '
+    subtitle:
+      'Submit your project brief below to initiate a technical consultation. Our engineering team reviews specifications and responds within 24 business hours.'
   },
   footer: {
     ...TRANSLATIONS.us.footer,

@@ -119,14 +119,8 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
             {t.contact.heading}
           </h2>
           <p className="mt-3 text-slate-600 text-sm leading-relaxed">
-            {t.contact.subtitleBefore}
-            <a
-              href={`mailto:${SUPPORT_EMAIL}`}
-              className="font-mono font-semibold text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 transition-colors"
-            >
-              {SUPPORT_EMAIL}
-            </a>
-            {t.contact.subtitleAfter}
+            {t.contact.subtitle ||
+              'Submit your project brief below to initiate a technical consultation. Our engineering team reviews specifications and responds within 24 business hours.'}
           </p>
         </div>
 
