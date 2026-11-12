@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, RefreshCw, MessageSquare, ShieldCheck, Clock, Copy, Check, Mail, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, RefreshCw, ShieldCheck, Clock, Copy, Check, Mail, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
 const SUPPORT_EMAIL = 'contact@codescinema.com';
@@ -17,7 +17,6 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const [prevProps, setPrevProps] = useState({ initialBrief, initialService });
@@ -101,12 +100,6 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
     setSubmitted(false);
   };
 
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText('+2348160498340');
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2000);
-  };
-
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(SUPPORT_EMAIL);
     setCopiedEmail(true);
@@ -135,49 +128,6 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
             </a>
             {t.contact.subtitleAfter}
           </p>
-        </div>
-
-        {/* Minimal WhatsApp Fast-Track Concierge */}
-        <div className="mb-10 p-6 rounded-2xl bg-emerald-50/80 border border-emerald-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0 shadow-sm">
-              <MessageSquare className="w-6 h-6" />
-            </div>
-            <div>
-              <div className="flex items-center justify-center sm:justify-start gap-2">
-                <span className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider">
-                  {t.contact.whatsappTitle}
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              </div>
-              <div className="flex items-center gap-2.5 mt-0.5 justify-center sm:justify-start">
-                <span className="text-slate-900 font-mono text-lg font-bold" dir="ltr">
-                  +234 816 049 8340
-                </span>
-                <button
-                  onClick={handleCopyPhone}
-                  className="p-1 rounded-md text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
-                  title="Copy Phone Number"
-                  type="button"
-                >
-                  {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                </button>
-              </div>
-              <p className="text-emerald-800 text-xs mt-0.5">
-                {t.contact.whatsappDesc}
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full md:w-auto px-5 py-3 rounded-xl text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 whitespace-nowrap shrink-0 shadow-sm"
-          >
-            <span>{t.contact.whatsappBtn}</span>
-            <span className="font-mono text-xs">↗</span>
-          </a>
         </div>
 
         {/* Dual Layout: Form (8 cols) + Credentials (4 cols) */}
