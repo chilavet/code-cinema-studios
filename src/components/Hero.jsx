@@ -99,18 +99,6 @@ export default function Hero() {
               >
                 {t.hero.estimatorCta}
               </a>
-
-              {/* Direct WhatsApp Quick Pill */}
-              <a
-                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-3 rounded-xl text-xs font-medium text-emerald-800 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-all shadow-sm hover:scale-[1.02]"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="font-mono font-semibold">+234 816 049 8340</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-emerald-600" />
-              </a>
             </div>
 
             {/* Minimal KPI Row */}
