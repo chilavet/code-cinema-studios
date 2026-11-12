@@ -1,20 +1,35 @@
 import React, { useState } from 'react';
 import HeroCanvas from './HeroCanvas';
-import { ArrowRight, Smartphone, Code2, Wrench, ShieldCheck, ArrowUpRight, Server } from 'lucide-react';
+import {
+  ArrowRight,
+  Smartphone,
+  Code2,
+  Wrench,
+  ArrowUpRight,
+  Server,
+  Layers,
+  Layout,
+  Database
+} from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState('mobile');
+  const [activeTab, setActiveTab] = useState('fullstack');
 
-  const current = t.hero.previews[activeTab] || t.hero.previews.mobile;
+  const current =
+    t.hero.previews?.[activeTab] ||
+    t.hero.previews?.fullstack ||
+    t.hero.previews?.software ||
+    t.hero.previews?.mobile;
 
   const terminalCommands = {
+    fullstack: 'npx create-next-app@latest --ts --tailwind --app',
+    frontend: 'npm run build -- --react-19 --core-web-vitals=100',
+    backend: 'docker compose up -d postgres redis api-gateway',
     mobile: 'unity-cli --target=mobile --fps=120 --profile=zero-leak',
-    software: 'docker compose up -d --scale api=4 --env=prod',
     devops: 'ansible-playbook server-mesh.yml --check --ssl=active',
-    care: 'systemctl status uptime-shield --live --sla=24-7',
-    admin: 'ops-desk --sync-cms --verify-backups --audit-log'
+    care: 'systemctl status uptime-shield --live --sla=24-7'
   };
 
   return (
@@ -53,8 +68,10 @@ export default function Hero() {
             </p>
 
             {/* Catchy Hook Banner */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/90 border border-amber-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3.5">
-              <span className="text-xl sm:text-2xl shrink-0">🎬</span>
+            <div className="p-4 sm:p-5 rounded-2xl bg-sky-50/90 border border-sky-200/90 max-w-xl text-left animate-fade-in-up animation-delay-250 shadow-sm flex items-start gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                <Code2 className="w-5 h-5" />
+              </div>
               <div className="space-y-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                   {t.hero.hookTitle}
@@ -68,7 +85,7 @@ export default function Hero() {
             {/* CTAs Cluster */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 animate-fade-in-up animation-delay-300">
               <a
-                href="#services"
+                href="#web-dev"
                 className="group relative overflow-hidden px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
@@ -99,7 +116,15 @@ export default function Hero() {
             {/* Minimal KPI Row */}
             <div className="pt-8 border-t border-slate-200 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0 text-left animate-fade-in-up animation-delay-400">
               <div className="group cursor-default">
-                <span className="text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-amber-600 transition-colors">
+                <span className="text-xl sm:text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-sky-600 transition-colors">
+                  Full-Stack
+                </span>
+                <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
+                  {t.hero.kpiModular || 'Or FE / BE Modular'}
+                </span>
+              </div>
+              <div className="group cursor-default">
+                <span className="text-xl sm:text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-amber-600 transition-colors">
                   120 FPS
                 </span>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
@@ -107,19 +132,11 @@ export default function Hero() {
                 </span>
               </div>
               <div className="group cursor-default">
-                <span className="text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-sky-600 transition-colors">
+                <span className="text-xl sm:text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-emerald-600 transition-colors">
                   99.98%
                 </span>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
                   {t.hero.kpiUptime}
-                </span>
-              </div>
-              <div className="group cursor-default">
-                <span className="text-2xl font-bold font-['Orbitron',sans-serif] text-slate-900 block group-hover:text-emerald-600 transition-colors">
-                  &lt; 24h
-                </span>
-                <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
-                  {t.hero.kpiTriage}
                 </span>
               </div>
             </div>
@@ -153,77 +170,90 @@ export default function Hero() {
               </div>
 
               {/* Segmented Discipline Tabs */}
-              <div className="p-1.5 bg-slate-100/70 border-b border-slate-200 grid grid-cols-5 gap-1 text-[11px] font-medium text-slate-600">
+              <div className="p-1.5 bg-slate-100/70 border-b border-slate-200 grid grid-cols-3 sm:grid-cols-6 gap-1 text-[10px] font-medium text-slate-600">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('fullstack')}
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                    activeTab === 'fullstack'
+                      ? 'bg-white text-slate-900 font-bold shadow-sm'
+                      : 'hover:text-slate-900 hover:bg-white/50'
+                  }`}
+                >
+                  <Layers className="w-3 h-3 text-sky-600 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.fullstack || 'Fullstack'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('frontend')}
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                    activeTab === 'frontend'
+                      ? 'bg-white text-slate-900 font-bold shadow-sm'
+                      : 'hover:text-slate-900 hover:bg-white/50'
+                  }`}
+                >
+                  <Layout className="w-3 h-3 text-emerald-600 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.frontend || 'Frontend'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('backend')}
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                    activeTab === 'backend'
+                      ? 'bg-white text-slate-900 font-bold shadow-sm'
+                      : 'hover:text-slate-900 hover:bg-white/50'
+                  }`}
+                >
+                  <Database className="w-3 h-3 text-indigo-600 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.backend || 'Backend'}</span>
+                </button>
+
                 <button
                   type="button"
                   onClick={() => setActiveTab('mobile')}
-                  className={`py-1.5 px-1.5 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
                     activeTab === 'mobile'
                       ? 'bg-white text-slate-900 font-bold shadow-sm'
                       : 'hover:text-slate-900 hover:bg-white/50'
                   }`}
                 >
-                  <Smartphone className="w-3.5 h-3.5 text-amber-600" />
-                  <span className="hidden sm:inline">{t.hero.tabs.mobile}</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('software')}
-                  className={`py-1.5 px-1.5 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
-                    activeTab === 'software'
-                      ? 'bg-white text-slate-900 font-bold shadow-sm'
-                      : 'hover:text-slate-900 hover:bg-white/50'
-                  }`}
-                >
-                  <Code2 className="w-3.5 h-3.5 text-sky-600" />
-                  <span className="hidden sm:inline">{t.hero.tabs.software}</span>
+                  <Smartphone className="w-3 h-3 text-amber-600 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.mobile || 'Mobile'}</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setActiveTab('devops')}
-                  className={`py-1.5 px-1.5 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
                     activeTab === 'devops'
                       ? 'bg-white text-slate-900 font-bold shadow-sm'
                       : 'hover:text-slate-900 hover:bg-white/50'
                   }`}
                 >
-                  <Server className="w-3.5 h-3.5 text-sky-600" />
-                  <span className="hidden sm:inline">{t.hero.tabs.devops}</span>
+                  <Server className="w-3 h-3 text-sky-600 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.devops || 'DevOps'}</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setActiveTab('care')}
-                  className={`py-1.5 px-1.5 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
+                  className={`py-1.5 px-1 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
                     activeTab === 'care'
                       ? 'bg-white text-slate-900 font-bold shadow-sm'
                       : 'hover:text-slate-900 hover:bg-white/50'
                   }`}
                 >
-                  <Wrench className="w-3.5 h-3.5 text-slate-700" />
-                  <span className="hidden sm:inline">{t.hero.tabs.care}</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setActiveTab('admin')}
-                  className={`py-1.5 px-1.5 rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer ${
-                    activeTab === 'admin'
-                      ? 'bg-white text-slate-900 font-bold shadow-sm'
-                      : 'hover:text-slate-900 hover:bg-white/50'
-                  }`}
-                >
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="hidden sm:inline">{t.hero.tabs.admin}</span>
+                  <Wrench className="w-3 h-3 text-slate-700 shrink-0" />
+                  <span className="truncate">{t.hero.tabs?.care || 'Care'}</span>
                 </button>
               </div>
 
               {/* Animated Tab Content Display */}
               <div key={activeTab} className="p-6 space-y-4 animate-tab-enter">
                 <div>
-                  <span className="text-[10px] font-mono tracking-wider uppercase text-amber-700 font-bold block mb-1">
+                  <span className="text-[10px] font-mono tracking-wider uppercase text-sky-700 font-bold block mb-1">
                     {current.tag}
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 leading-snug">

@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SERVICES } from '../data/services';
-import { Code2, Smartphone, Film, ShieldCheck, Wrench, Headphones, ArrowRight, Check, Server } from 'lucide-react';
+import {
+  Code2,
+  Smartphone,
+  Film,
+  ShieldCheck,
+  Wrench,
+  Headphones,
+  ArrowRight,
+  Check,
+  Server,
+  Layers,
+  Layout,
+  Database
+} from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
 export default function Services({ onSelectService }) {
   const { t } = useLanguage();
+  const [filter, setFilter] = useState('all');
+
   const getIcon = (iconName) => {
     switch (iconName) {
+      case 'layers':
+        return <Layers className="w-5 h-5 text-sky-600" />;
+      case 'layout':
+        return <Layout className="w-5 h-5 text-emerald-600" />;
+      case 'database':
+        return <Database className="w-5 h-5 text-indigo-600" />;
       case 'gamepad':
         return <Smartphone className="w-5 h-5 text-amber-600" />;
       case 'code':
@@ -32,26 +53,85 @@ export default function Services({ onSelectService }) {
     }
   };
 
+  const filteredServices = SERVICES.filter((s) => {
+    if (filter === 'web') return ['fullstack', 'frontend', 'backend'].includes(s.id);
+    if (filter === 'mobile') return s.id === 'mobile-games';
+    if (filter === 'ops') return ['devops', 'maintenance', 'admin'].includes(s.id);
+    if (filter === 'creative') return ['cinematics', 'consulting'].includes(s.id);
+    return true;
+  });
+
   return (
     <section id="services" className="py-24 relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-            <span>{t.services.badge}</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+              <span>{t.services.badge}</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              {t.services.heading}
+            </h2>
+            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+              {t.services.subtitle}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-            {t.services.heading}
-          </h2>
-          <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
-            {t.services.subtitle}
-          </p>
+
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100/90 border border-slate-200 text-xs self-start md:self-end">
+            <button
+              type="button"
+              onClick={() => setFilter('all')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
+                filter === 'all' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {t.services.filters?.all || 'All Tracks'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('web')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
+                filter === 'web' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {t.services.filters?.web || 'Web Dev'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('mobile')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
+                filter === 'mobile' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {t.services.filters?.mobile || 'Mobile Games'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('ops')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
+                filter === 'ops' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {t.services.filters?.ops || 'DevOps & SLA'}
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('creative')}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
+                filter === 'creative' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {t.services.filters?.creative || 'Cinematics & Tech'}
+            </button>
+          </div>
         </div>
 
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((s, index) => {
+          {filteredServices.map((s, index) => {
             const loc = t.services.items?.[s.id] || s;
             return (
               <div

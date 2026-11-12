@@ -5,7 +5,7 @@ import { useLanguage } from '../context/useLanguage';
 const SUPPORT_EMAIL = 'contact@codescinema.com';
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${SUPPORT_EMAIL}`;
 
-export default function Contact({ initialBrief = '', initialService = 'Custom Software Engineering' }) {
+export default function Contact({ initialBrief = '', initialService = 'Full-Stack Web Development' }) {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
@@ -260,12 +260,20 @@ export default function Contact({ initialBrief = '', initialService = 'Custom So
                     onChange={handleChange}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-slate-900 focus:bg-white transition-colors"
                   >
-                    <option value="AI Advert Videos & Cinematic Production">{t.contact.options.ai}</option>
+                    <option value="Full-Stack Web Development">
+                      {t.contact.options?.fullstack || 'Full-Stack Web Development (End-to-End Platform)'}
+                    </option>
+                    <option value="Front-End Web Development">
+                      {t.contact.options?.frontend || 'Front-End Web Development (UI/UX & React Only)'}
+                    </option>
+                    <option value="Back-End & API Engineering">
+                      {t.contact.options?.backend || 'Back-End & API Engineering (Server & DB Only)'}
+                    </option>
                     <option value="Mobile Game Development">{t.contact.options.mobile}</option>
-                    <option value="Custom Software Engineering">{t.contact.options.software}</option>
                     <option value="DevOps & Server Management">{t.contact.options.devops}</option>
                     <option value="Website Maintenance & Care">{t.contact.options.maintenance}</option>
                     <option value="Admin & Operations Desk">{t.contact.options.admin}</option>
+                    <option value="AI Advert Videos & Cinematic Production">{t.contact.options.ai}</option>
                     <option value="Technology Consulting">{t.contact.options.consulting}</option>
                   </select>
                 </div>

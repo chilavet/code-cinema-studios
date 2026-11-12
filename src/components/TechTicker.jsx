@@ -1,18 +1,18 @@
 import React from 'react';
 
 const TECH_ITEMS = [
+  'Full-Stack Web Engineering (End-to-End)',
+  'Modular Front-End & Back-End Tracks',
+  'Next.js 15 • React 19 • TypeScript',
+  'Node.js • Python • PostgreSQL • Redis',
   'Unity Mobile Engine (iOS & Android)',
   'Native Metal & Vulkan Shaders',
-  'Next.js 15 & React 19',
   'Cloudflare Edge & Workers',
-  'Docker & Microservices',
+  'Docker & Microservices Architecture',
   '24/7 SLA Site Monitoring',
-  'PostgreSQL & Redis Cache',
   'Viral AI Advert Videos & Commercials',
   'Linux Server Administration & Hardening',
-  'Houdini & Maya 3D VFX',
-  'Admin & Technical Support Desk',
-  'Automated DevOps & CI/CD'
+  'Admin & Technical Support Desk'
 ];
 
 export default function TechTicker() {

@@ -1,5 +1,62 @@
 export const SERVICES = [
   {
+    id: 'fullstack',
+    title: 'Full-Stack Web Development',
+    badge: 'Turnkey & Modular',
+    badgeColor: 'text-[#0284C7] bg-cyan-500/10 border-cyan-500/30',
+    description: 'End-to-end fullstack web applications engineered for speed, reliability, and scale. We build complete turnkey platforms from database to user interface, or handle front-end and back-end separately based on your team’s exact preferences.',
+    accent: 'cyan',
+    icon: 'layers',
+    highlights: [
+      'Complete end-to-end architecture (Database, API & UI)',
+      'Option to engage as full-stack or modular frontend/backend',
+      'Modern tech stack: Next.js 15, React 19, TypeScript & Tailwind',
+      'Automated CI/CD pipelines & production deployment'
+    ],
+    tags: ['Full-Stack Web', 'Frontend & Backend', 'React 19 & Next.js', 'PostgreSQL & APIs'],
+    glowClass: 'bg-[#00F0FF]/15 group-hover:bg-[#00F0FF]/25',
+    iconBg: 'bg-cyan-950/60 border-cyan-500/40 text-[#00F0FF] shadow-neon-cyan',
+    tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'
+  },
+  {
+    id: 'frontend',
+    title: 'Front-End Web Development',
+    badge: 'UI/UX Specialist',
+    badgeColor: 'text-[#0284C7] bg-sky-500/10 border-sky-500/30',
+    description: 'Pixel-perfect, reactive user interfaces engineered to integrate seamlessly into your existing backend, REST/GraphQL APIs, or headless CMS. Fluid micro-interactions, responsive layouts, and zero-layout-shift performance.',
+    accent: 'cyan',
+    icon: 'layout',
+    highlights: [
+      'React 19, Next.js, Vue & Tailwind CSS architecture',
+      'Fluid state management, API hydration & caching',
+      'Responsive design across mobile, tablet & desktop',
+      'Optimized for maximum Core Web Vitals & accessibility'
+    ],
+    tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'Responsive UI/UX', 'Framer Motion'],
+    glowClass: 'bg-[#00F0FF]/15 group-hover:bg-[#00F0FF]/25',
+    iconBg: 'bg-sky-950/60 border-sky-500/40 text-[#00F0FF]',
+    tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'
+  },
+  {
+    id: 'backend',
+    title: 'Back-End & API Engineering',
+    badge: 'Database & Cloud',
+    badgeColor: 'text-[#0284C7] bg-indigo-500/10 border-indigo-500/30',
+    description: 'Resilient server-side architectures, high-throughput microservices, robust relational/NoSQL schemas, and secure API gateways designed to power web, mobile, and enterprise platforms under heavy load.',
+    accent: 'cyan',
+    icon: 'database',
+    highlights: [
+      'High-concurrency REST, GraphQL & gRPC APIs',
+      'PostgreSQL, MySQL, Redis & MongoDB schema design',
+      'JWT/OAuth2 auth, RBAC permissions & data encryption',
+      'Sub-millisecond caching & message queues'
+    ],
+    tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', 'Auth & Security'],
+    glowClass: 'bg-[#00F0FF]/15 group-hover:bg-[#00F0FF]/25',
+    iconBg: 'bg-indigo-950/60 border-indigo-500/40 text-[#00F0FF]',
+    tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'
+  },
+  {
     id: 'mobile-games',
     title: 'Mobile Game Development',
     badge: 'Specialized Track',
@@ -15,24 +72,6 @@ export const SERVICES = [
     tags: ['iOS & Android', 'Unity Mobile', 'Touch Controls & Haptics', 'Performance Profiling'],
     glowClass: 'bg-[#FFB800]/15 group-hover:bg-[#FFB800]/25',
     iconBg: 'bg-amber-950/60 border-amber-500/40 text-[#FFB800] shadow-neon-amber',
-    tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'
-  },
-  {
-    id: 'software',
-    title: 'Custom Software Engineering',
-    badge: 'Enterprise Core',
-    badgeColor: 'text-[#0284C7] bg-cyan-500/10 border-cyan-500/30',
-    description: 'Mission-critical distributed systems, high-concurrency microservices, customized API integrations, and scalable cloud applications architected for 99.98% uptime.',
-    accent: 'cyan',
-    icon: 'code',
-    highlights: [
-      'Distributed cloud & microservice architecture',
-      'Real-time WebSockets & GraphQL data sync',
-      'Scalable database design & caching layers'
-    ],
-    tags: ['Distributed Cloud', 'Full-Stack Web/App', 'Real-time APIs', 'Microservices'],
-    glowClass: 'bg-[#00F0FF]/15 group-hover:bg-[#00F0FF]/25',
-    iconBg: 'bg-cyan-950/60 border-cyan-500/40 text-[#00F0FF] shadow-neon-cyan',
     tagStyle: 'bg-slate-100 text-slate-700 border-slate-200'
   },
   {

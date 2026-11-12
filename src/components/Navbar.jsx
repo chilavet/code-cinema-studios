@@ -46,6 +46,9 @@ export default function Navbar({ onOpenContact }) {
             <a href="#services" className="hover:text-slate-900 transition-colors">
               {t.nav.capabilities}
             </a>
+            <a href="#web-dev" className="hover:text-slate-900 transition-colors">
+              {t.nav.webDev || 'Web Dev'}
+            </a>
             <a href="#estimator" className="hover:text-slate-900 transition-colors">
               {t.nav.scoping}
             </a>
@@ -90,6 +93,13 @@ export default function Navbar({ onOpenContact }) {
               className="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-slate-900"
             >
               {t.nav.capabilities}
+            </a>
+            <a
+              href="#web-dev"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 rounded-lg hover:bg-slate-100 hover:text-slate-900"
+            >
+              {t.nav.webDev || 'Web Dev'}
             </a>
             <a
               href="#estimator"

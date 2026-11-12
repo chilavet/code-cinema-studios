@@ -11,32 +11,56 @@ const tierMultipliers = {
 const TIER_IDS = ['mvp', 'production', 'enterprise'];
 
 const TRACK_CONFIGS = [
+  { id: 'Fullstack', multiplier: 1.15 },
+  { id: 'Frontend', multiplier: 0.85 },
+  { id: 'Backend', multiplier: 0.9 },
   { id: 'Games', multiplier: 1.3 },
-  { id: 'Software', multiplier: 1.0 },
   { id: 'DevOps', multiplier: 0.95 },
   { id: 'Maintenance', multiplier: 0.7 },
-  { id: 'Admin', multiplier: 0.65 },
   { id: 'Cinematics', multiplier: 1.15 },
+  { id: 'Admin', multiplier: 0.65 },
   { id: 'Consulting', multiplier: 0.8 }
 ];
 
-export default function ScopeEstimator({ onApplyEstimate }) {
+export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
   const { t } = useLanguage();
-  const [selectedTrack, setSelectedTrack] = useState(TRACK_CONFIGS[0]);
+  const [selectedTrack, setSelectedTrack] = useState(() => {
+    if (preselectedTrack) {
+      const found = TRACK_CONFIGS.find((tc) => tc.id.toLowerCase() === preselectedTrack.toLowerCase());
+      if (found) return found;
+    }
+    return TRACK_CONFIGS[0];
+  });
   const [scopeTier, setScopeTier] = useState('production');
   const [weeks, setWeeks] = useState(8);
 
-  const selectedTrackName = t.estimator.tracks[selectedTrack.id] || selectedTrack.id;
+  const [prevPreselected, setPrevPreselected] = useState(preselectedTrack);
+  if (preselectedTrack && preselectedTrack !== prevPreselected) {
+    setPrevPreselected(preselectedTrack);
+    const found = TRACK_CONFIGS.find((tc) => tc.id.toLowerCase() === preselectedTrack.toLowerCase());
+    if (found) {
+      setSelectedTrack(found);
+    }
+  }
+
+  const selectedTrackName = t.estimator.tracks?.[selectedTrack.id] || selectedTrack.id;
 
   const calculatedEstimate = useMemo(() => {
     const tierMult = tierMultipliers[scopeTier] || 1.0;
     const effectiveWeeks = weeks * selectedTrack.multiplier * tierMult;
-    const minWeeks = Math.max(7, Math.round(effectiveWeeks * 0.85));
+    const minWeeks = Math.max(4, Math.round(effectiveWeeks * 0.85));
     const maxWeeks = Math.max(minWeeks + 2, Math.round(effectiveWeeks * 1.25));
     return { minWeeks, maxWeeks };
   }, [weeks, selectedTrack, scopeTier]);
 
-  const phases = t.estimator.phases[selectedTrack.id] || t.estimator.phases.Software;
+  const phases =
+    t.estimator.phases?.[selectedTrack.id] ||
+    t.estimator.phases?.Fullstack ||
+    t.estimator.phases?.Software || [
+      'Phase 1: Architecture Blueprint, Schema & UI Specifications',
+      'Phase 2: Core Engineering, Integration & Responsive Iterations',
+      'Phase 3: QA Profiling, Production CI/CD & Launch Validation'
+    ];
 
   const handleApply = () => {
     if (onApplyEstimate) {
@@ -94,7 +118,7 @@ export default function ScopeEstimator({ onApplyEstimate }) {
                             : 'bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-100'
                         }`}
                       >
-                        {t.estimator.tracks[track.id]}
+                        {t.estimator.tracks?.[track.id] || track.id}
                       </button>
                     );
                   })}
@@ -148,7 +172,7 @@ export default function ScopeEstimator({ onApplyEstimate }) {
                 </div>
                 <input
                   type="range"
-                  min="7"
+                  min="4"
                   max="24"
                   step="1"
                   value={weeks}

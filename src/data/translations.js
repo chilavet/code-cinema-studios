@@ -12,9 +12,10 @@ export const COUNTRIES = [
 
 export const TRANSLATIONS = {
   us: {
-    metaTitle: 'Codes Cinema | Software • Mobile Games • Cinematics • Admin & Maintenance',
+    metaTitle: 'Codes Cinema | Full-Stack Web • Front-End & Back-End • Mobile Games • DevOps',
     nav: {
       capabilities: 'Capabilities',
+      webDev: 'Web Dev',
       scoping: 'Scoping',
       scopingMobile: 'Scoping Tool',
       studio: 'Studio',
@@ -31,27 +32,59 @@ export const TRANSLATIONS = {
       headlineTop: 'Digital precision.',
       headlineAccent: 'Cinematic depth.',
       subtitle:
-        'Codes Cinema engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.',
-      hookTitle: 'Drive engagement, performance, and scale',
+        'Codes Cinema builds turnkey full-stack web applications, bespoke cloud software, high-performance mobile games, and 24/7 technical operations. Available as a full-stack partner or as a dedicated front-end / back-end specialist.',
+      hookTitle: 'Full-Stack Web & Modular Architecture',
       hookBody:
-        'We deliver high-converting AI video ads, high-framerate mobile gaming experiences, custom cloud applications, and battle-tested DevOps infrastructure.',
+        'Whether you need an end-to-end platform from database to UI, or a specialist to craft a pixel-perfect front-end or high-throughput back-end separately, we deliver production-grade code on guaranteed milestones.',
       exploreCta: 'Explore Capabilities',
       estimatorCta: 'Scope Estimator',
       kpiUptime: 'SLA Uptime',
       kpiTriage: 'Direct Triage',
+      kpiModular: 'Or FE / BE Modular',
       cardTitle: 'Studio Capabilities',
       cardCore: 'Codes Cinema Core',
       cardStatus: 'Production',
       learnMore: 'Learn about this track',
       requestCall: 'Request Discovery Call',
       tabs: {
+        fullstack: 'Fullstack',
+        frontend: 'Frontend',
+        backend: 'Backend',
         mobile: 'Mobile',
-        software: 'Software',
         devops: 'DevOps',
-        care: 'Care',
-        admin: 'Admin'
+        care: 'Care'
       },
       previews: {
+        fullstack: {
+          tag: 'FULL-STACK WEB DEVELOPMENT',
+          title: 'Turnkey Web Apps & Reactive Platforms',
+          desc: 'Complete end-to-end web engineering. Next.js 15, React 19, TypeScript, PostgreSQL, and Docker containerization from schema to live deployment.',
+          metrics: [
+            { label: 'Architecture', value: 'Turnkey Full-Stack' },
+            { label: 'Performance', value: '100% Core Vitals' },
+            { label: 'Scalability', value: 'Cloud Native' }
+          ]
+        },
+        frontend: {
+          tag: 'FRONT-END WEB ENGINEERING',
+          title: 'Pixel-Perfect Reactive UI & State Architecture',
+          desc: 'Dedicated front-end engineering for teams with existing APIs. React 19, Next.js, fluid micro-interactions, responsive mobile-first UI, and sub-second rendering.',
+          metrics: [
+            { label: 'Framework', value: 'React 19 / Next.js' },
+            { label: 'Layout Shift', value: 'Zero CLS' },
+            { label: 'Mobile Score', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'BACK-END & API ENGINEERING',
+          title: 'Resilient Schemas, Microservices & Cloud Endpoints',
+          desc: 'High-concurrency REST, GraphQL & gRPC APIs, normalized PostgreSQL/Redis schemas, OAuth2 authentication, and message queues architected for 99.98% uptime.',
+          metrics: [
+            { label: 'Throughput', value: 'Sub-millisecond' },
+            { label: 'Uptime SLA', value: '99.98%' },
+            { label: 'Database', value: 'PostgreSQL & Redis' }
+          ]
+        },
         mobile: {
           tag: 'MOBILE GAME DEVELOPMENT',
           title: 'Unity Engine & Native Mobile Architecture',
@@ -60,16 +93,6 @@ export const TRANSLATIONS = {
             { label: 'Framerate Target', value: '120 FPS Locked' },
             { label: 'Platforms', value: 'iOS & Android' },
             { label: 'Profiling', value: 'Zero Memory Leaks' }
-          ]
-        },
-        software: {
-          tag: 'CUSTOM SOFTWARE ENGINEERING',
-          title: 'Scalable Cloud Microservices & APIs',
-          desc: 'Distributed systems, real-time WebSockets, robust PostgreSQL/Redis caching, and automated CI/CD deployment pipelines.',
-          metrics: [
-            { label: 'Availability', value: '99.98% SLA' },
-            { label: 'Architecture', value: 'Microservices' },
-            { label: 'Data Sync', value: 'Sub-millisecond' }
           ]
         },
         devops: {
@@ -91,16 +114,71 @@ export const TRANSLATIONS = {
             { label: 'Backups', value: 'Daily Encrypted' },
             { label: 'Incident Response', value: '< 15 Min SLA' }
           ]
+        }
+      }
+    },
+    webModes: {
+      badge: 'Modular Web Engineering',
+      heading: 'Full-Stack Web Development, Built Your Way.',
+      subtitle:
+        'Codes Cinema provides complete turnkey full-stack web applications, with the flexibility to contract dedicated front-end or back-end engineering separately depending on your project needs.',
+      availableLabel: 'Available for Commission',
+      deliverablesLabel: 'Production Deliverables',
+      idealForLabel: 'IDEAL FOR',
+      techStackLabel: 'CORE TECH STACK',
+      inquireBtn: 'Inquire This Track',
+      estimateBtn: 'Estimate Timeline',
+      modes: {
+        fullstack: {
+          badge: 'Turnkey Delivery',
+          tabLabel: 'Full-Stack Web',
+          title: 'Turnkey Full-Stack Web Applications',
+          tagline: 'Complete architecture from database schema to responsive reactive UI',
+          desc:
+            'End-to-end engineering of modern web platforms. We take your concept from raw requirements into production, architecting clean database models, robust APIs, and a pixel-perfect, reactive user interface.',
+          deliverables: [
+            'End-to-end architecture (Client UI + API + Cloud Database)',
+            'Authentication (JWT / OAuth2 / Sessions) & Role-Based Access Control',
+            'Real-time data synchronization & state hydration',
+            'Stripe / LemonSqueezy / PayPal payment integration',
+            'Automated CI/CD deployment pipelines & zero-downtime hosting'
+          ],
+          bestFor:
+            'Startups, new product launches, MVPs, and businesses needing a complete, production-ready web application built from scratch.'
         },
-        admin: {
-          tag: 'ADMIN & OPERATIONS DESK',
-          title: 'Dedicated Back-Office Technical Support',
-          desc: 'Routine content publishing, CMS moderation, database integrity checks, user role permissions, and ongoing technical assistance.',
-          metrics: [
-            { label: 'Helpdesk SLA', value: 'Same-Day Turnaround' },
-            { label: 'Operations', value: 'CMS & Database' },
-            { label: 'Access Control', value: 'RBAC Audited' }
-          ]
+        frontend: {
+          badge: 'Modular UI/UX',
+          tabLabel: 'Front-End Only',
+          title: 'Dedicated Front-End Web Engineering',
+          tagline: 'Pixel-perfect, high-performance UI tailored to your existing backend',
+          desc:
+            'Specialized front-end engineering for teams with existing APIs or backend systems. We transform designs into blisteringly fast, responsive, accessible web interfaces with fluid animations.',
+          deliverables: [
+            'Modern React 19 / Next.js / Vue component hierarchy',
+            'Fluid micro-interactions, responsive mobile-first layouts',
+            'Robust state management (Zustand / TanStack Query) & cache hydration',
+            'API contract integration with your existing REST/GraphQL backend',
+            'Core Web Vitals tuning: zero layout shift (CLS) & sub-second LCP'
+          ],
+          bestFor:
+            'Teams with backend engineers in place who need an expert front-end specialist to deliver an arresting, high-converting client application.'
+        },
+        backend: {
+          badge: 'Modular API & DB',
+          tabLabel: 'Back-End Only',
+          title: 'Back-End & API System Engineering',
+          tagline: 'Resilient schemas, microservices, and high-concurrency cloud endpoints',
+          desc:
+            'Rock-solid backend engineering for web and mobile clients. We architect normalized relational schemas, resilient caching layers, secure authentication, and scalable microservices designed for 99.98% uptime.',
+          deliverables: [
+            'High-concurrency REST, GraphQL & gRPC API design with OpenAPI docs',
+            'PostgreSQL / MySQL / Redis database architecture & migration strategies',
+            'Enterprise auth: OAuth2, JWT, multi-tenant RBAC & webhook endpoints',
+            'Asynchronous queue processing (BullMQ / Celery) & background workers',
+            'Docker containerization, Nginx reverse proxies & cloud scaling'
+          ],
+          bestFor:
+            'Projects scaling user traffic, modernizing legacy infrastructure, or building specialized server-side capabilities for front-end teams.'
         }
       }
     },
@@ -108,9 +186,52 @@ export const TRANSLATIONS = {
       badge: 'Studio Capabilities',
       heading: 'Engineered for performance and endurance.',
       subtitle:
-        'From mobile game production and distributed cloud software to round-the-clock website care and technical operations desks, our work is defined by precision.',
+        'From turnkey full-stack web applications, modular front-end or back-end engineering, and high-framerate mobile games to round-the-clock website care and technical operations desks.',
       inquireTrack: 'Inquire Track',
+      filters: {
+        all: 'All Tracks',
+        web: 'Web Dev',
+        mobile: 'Mobile Games',
+        ops: 'DevOps & SLA',
+        creative: 'Cinematics & Tech'
+      },
       items: {
+        fullstack: {
+          title: 'Full-Stack Web Development',
+          description:
+            'End-to-end full-stack web applications engineered for speed, reliability, and scale. We build complete turnkey platforms from database to user interface, or handle front-end and back-end separately based on your team’s preferences.',
+          highlights: [
+            'Complete end-to-end architecture (Database, API & UI)',
+            'Option to engage full-stack or modular front-end / back-end separately',
+            'Modern stack: Next.js 15, React 19, TypeScript & PostgreSQL',
+            'Automated CI/CD pipelines & zero-downtime hosting'
+          ],
+          tags: ['Full-Stack Web', 'Frontend & Backend', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: 'Front-End Web Development',
+          description:
+            'Pixel-perfect, reactive user interfaces built to integrate seamlessly into your existing backend, REST/GraphQL APIs, or headless CMS. Fluid animations, responsive layouts, and sub-second Core Web Vitals.',
+          highlights: [
+            'React 19, Next.js, Vue & Tailwind CSS architecture',
+            'Fluid state management, API hydration & caching',
+            'Responsive design across mobile, tablet & desktop',
+            'Optimized for Core Web Vitals & accessibility'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'Responsive UI/UX', 'Framer Motion']
+        },
+        backend: {
+          title: 'Back-End & API Engineering',
+          description:
+            'Resilient server-side architectures, high-throughput microservices, normalized relational/NoSQL schemas, and secure API gateways engineered for 99.98% uptime under load.',
+          highlights: [
+            'High-concurrency REST, GraphQL & gRPC APIs',
+            'PostgreSQL, MySQL, Redis & MongoDB schema design',
+            'JWT/OAuth2 auth, RBAC permissions & data encryption',
+            'Sub-millisecond caching & asynchronous worker queues'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', 'Auth & Security']
+        },
         'mobile-games': {
           title: 'Mobile Game Development',
           description:
@@ -200,7 +321,7 @@ export const TRANSLATIONS = {
       step3: '3. Target Delivery Window',
       baseWeeksPrefix: 'Base:',
       weeksUnit: 'Weeks',
-      rangeMin: '7 Weeks (Target Sprint)',
+      rangeMin: '4 Weeks (Focused)',
       rangeMid: '14 Weeks (Quarterly)',
       rangeMax: '24 Weeks (Deep)',
       calculatedWindow: 'Calculated Window',
@@ -209,12 +330,14 @@ export const TRANSLATIONS = {
       applyCta: 'Apply Scope To Inquiry Form',
       whatsappCta: 'Send Scope to WhatsApp (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'Full-Stack Web',
+        Frontend: 'Front-End (UI)',
+        Backend: 'Back-End (API)',
         Games: 'Mobile Games',
-        Software: 'Software Engineering',
         DevOps: 'DevOps & Servers',
         Maintenance: 'Website Maintenance',
-        Admin: 'Admin Services',
         Cinematics: 'AI Adverts & Videos',
+        Admin: 'Admin Services',
         Consulting: 'Tech Consulting'
       },
       tiers: {
@@ -223,6 +346,21 @@ export const TRANSLATIONS = {
         enterprise: { name: 'Enterprise Scale', desc: 'Multi-platform ecosystem, 24/7 SLA & dedicated desk.' }
       },
       phases: {
+        Fullstack: [
+          'Phase 1: Database Schema, System Architecture & Wireframe Prototypes',
+          'Phase 2: Full-Stack Integration, Core APIs & Reactive Client UI',
+          'Phase 3: End-to-End QA, Load Testing, Automated CI/CD & Production Launch'
+        ],
+        Frontend: [
+          'Phase 1: Design System Tokens, Component Architecture & Wireframe Mockups',
+          'Phase 2: Pixel-Perfect UI Build, State Hydration & Responsive Layouts',
+          'Phase 3: API Integration, Animations, Core Web Vitals Tuning & Cross-Browser QA'
+        ],
+        Backend: [
+          'Phase 1: Data Model Design, Schema Migrations & API Contract Specifications',
+          'Phase 2: High-Concurrency Endpoints, Authentication, Caching & Business Logic',
+          'Phase 3: Security Hardening, Automated Test Suites, Stress Testing & Deployment'
+        ],
         Games: [
           'Phase 1: Touch Control Physics & Graybox Mechanics',
           'Phase 2: Mobile Asset Optimization, Shaders & Level Architecture',
@@ -369,6 +507,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'GLOBAL CLIENTELE',
       globalClienteleValue: 'Remote Operations (UTC+1)',
       options: {
+        fullstack: 'Full-Stack Web Development (Turnkey Platform)',
+        frontend: 'Front-End Web Development (Dedicated UI/UX & React Only)',
+        backend: 'Back-End & API Engineering (Database & Server Only)',
         ai: 'AI Advert Videos & Cinematic Commercials (Viral / High-Conversion)',
         mobile: 'Mobile Game Development (iOS & Android)',
         software: 'Custom Software Engineering',
@@ -380,7 +521,7 @@ export const TRANSLATIONS = {
     },
     footer: {
       description:
-        'Boutique digital studio uniting engineering rigor with cinematic depth. Engineering mobile games, distributed software, DevOps & server management, and 24/7 web operations.',
+        'Boutique digital studio uniting engineering rigor with cinematic depth. Full-stack, front-end & back-end web development, mobile games, DevOps & server management, and 24/7 web operations.',
       coreEngineering: 'Core Engineering',
       operations: 'Operations',
       connect: 'Connect',
@@ -401,6 +542,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | Logiciels • Jeux Mobiles • Cinématiques • Maintenance',
     nav: {
       capabilities: 'Expertises',
+      webDev: 'Développement Web',
       scoping: 'Estimation',
       scopingMobile: 'Outil d’estimation',
       studio: 'Studio',
@@ -553,6 +695,9 @@ export const TRANSLATIONS = {
       applyCta: 'Appliquer au formulaire de contact',
       whatsappCta: 'Envoyer sur WhatsApp (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'Web Full-Stack',
+        Frontend: 'Front-End (UI)',
+        Backend: 'Back-End (API)',
         Games: 'Jeux Mobiles',
         Software: 'Ingénierie Logicielle',
         DevOps: 'DevOps & Serveurs',
@@ -648,6 +793,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'CLIENTÈLE MONDIALE',
       globalClienteleValue: 'Opérations à distance (UTC+1)',
       options: {
+        fullstack: 'Développement Web Full-Stack (Plateforme Clé en Main)',
+        frontend: 'Développement Front-End (UI/UX & React Uniquement)',
+        backend: 'Ingénierie Back-End & API (Base de Données & Serveur)',
         ai: 'Vidéos Publicitaires IA & Cinématiques (Viral / Haute Conversion)',
         mobile: 'Développement de Jeux Mobiles (iOS & Android)',
         software: 'Ingénierie Logicielle Sur Mesure',
@@ -679,6 +827,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | Software • Juegos Móviles • Cinemática • Mantenimiento',
     nav: {
       capabilities: 'Capacidades',
+      webDev: 'Desarrollo Web',
       scoping: 'Estimador',
       scopingMobile: 'Herramienta de Alcance',
       studio: 'Estudio',
@@ -830,6 +979,9 @@ export const TRANSLATIONS = {
       applyCta: 'Aplicar al Formulario de Contacto',
       whatsappCta: 'Enviar por WhatsApp (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'Web Full-Stack',
+        Frontend: 'Front-End (UI)',
+        Backend: 'Back-End (API)',
         Games: 'Juegos Móviles',
         Software: 'Ingeniería Software',
         DevOps: 'DevOps y Servidores',
@@ -925,6 +1077,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'CLIENTELA GLOBAL',
       globalClienteleValue: 'Operaciones Remotas (UTC+1)',
       options: {
+        fullstack: 'Desarrollo Web Full-Stack (Plataforma Llave en Mano)',
+        frontend: 'Desarrollo Front-End (UI/UX y React Únicamente)',
+        backend: 'Ingeniería Back-End y API (Base de Datos y Servidor)',
         ai: 'Videos Publicitarios IA y Producción Cinematográfica',
         mobile: 'Desarrollo de Juegos Móviles (iOS y Android)',
         software: 'Ingeniería de Software a Medida',
@@ -956,6 +1111,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | Software • Mobile Games • Cinematics • Wartung',
     nav: {
       capabilities: 'Leistungen',
+      webDev: 'Webentwicklung',
       scoping: 'Kalkulator',
       scopingMobile: 'Projekt-Kalkulator',
       studio: 'Studio',
@@ -1107,6 +1263,9 @@ export const TRANSLATIONS = {
       applyCta: 'In Anfrageformular übernehmen',
       whatsappCta: 'Per WhatsApp senden (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'Full-Stack Web',
+        Frontend: 'Front-End (UI)',
+        Backend: 'Back-End (API)',
         Games: 'Mobile Games',
         Software: 'Software-Engineering',
         DevOps: 'DevOps & Server',
@@ -1202,6 +1361,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'GLOBALE KUNDEN',
       globalClienteleValue: 'Remote-Betrieb (UTC+1)',
       options: {
+        fullstack: 'Full-Stack Webentwicklung (Komplettplattform)',
+        frontend: 'Front-End Entwicklung (Nur UI/UX & React)',
+        backend: 'Back-End & API Engineering (Nur Datenbank & Server)',
         ai: 'KI-Werbevideos & Filmproduktion',
         mobile: 'Mobile-Game-Entwicklung (iOS & Android)',
         software: 'Individuelle Softwareentwicklung',
@@ -1233,6 +1395,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | Software • Jogos Mobile • Cinemática • Manutenção',
     nav: {
       capabilities: 'Serviços',
+      webDev: 'Desenvolvimento Web',
       scoping: 'Estimador',
       scopingMobile: 'Estimador de Escopo',
       studio: 'Estúdio',
@@ -1384,6 +1547,9 @@ export const TRANSLATIONS = {
       applyCta: 'Aplicar ao Formulário de Contato',
       whatsappCta: 'Enviar no WhatsApp (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'Web Full-Stack',
+        Frontend: 'Front-End (UI)',
+        Backend: 'Back-End (API)',
         Games: 'Jogos Mobile',
         Software: 'Engenharia Software',
         DevOps: 'DevOps e Servidores',
@@ -1479,6 +1645,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'ATENDIMENTO GLOBAL',
       globalClienteleValue: 'Operações Remotas (UTC+1)',
       options: {
+        fullstack: 'Desenvolvimento Web Full-Stack (Plataforma Completa)',
+        frontend: 'Desenvolvimento Front-End (Apenas UI/UX e React)',
+        backend: 'Engenharia Back-End e API (Apenas Banco de Dados e Servidor)',
         ai: 'Vídeos Publicitários IA e Produção Cinematográfica',
         mobile: 'Desenvolvimento de Jogos Mobile (iOS e Android)',
         software: 'Engenharia de Software Sob Medida',
@@ -1510,6 +1679,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | ソフトウェア • モバイルゲーム • シネマティクス • 保守運用',
     nav: {
       capabilities: '事業領域',
+      webDev: 'Web開発',
       scoping: '見積り',
       scopingMobile: '見積りツール',
       studio: 'スタジオ',
@@ -1661,6 +1831,9 @@ export const TRANSLATIONS = {
       applyCta: '見積り内容をフォームに反映',
       whatsappCta: 'WhatsAppで送信 (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'フルスタックWeb',
+        Frontend: 'フロントエンド(UI)',
+        Backend: 'バックエンド(API)',
         Games: 'モバイルゲーム',
         Software: 'ソフトウェア開発',
         DevOps: 'DevOps・サーバー',
@@ -1756,6 +1929,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: '対応エリア',
       globalClienteleValue: 'グローバルリモート対応 (UTC+1)',
       options: {
+        fullstack: 'フルスタックWeb開発（ワンストップ構築）',
+        frontend: 'フロントエンド開発（UI/UX・React特化）',
+        backend: 'バックエンド＆API開発（DB・サーバー特化）',
         ai: 'AI広告動画 & シネマティック制作',
         mobile: 'モバイルゲーム開発 (iOS & Android)',
         software: 'カスタムソフトウェア開発',
@@ -1787,6 +1963,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | برمجيات • ألعاب الجوال • سينمائية • صيانة وتشغيل',
     nav: {
       capabilities: 'الخدمات',
+      webDev: 'تطوير الويب',
       scoping: 'حاسبة المشروع',
       scopingMobile: 'أداة تقدير النطاق',
       studio: 'الاستوديو',
@@ -1938,6 +2115,9 @@ export const TRANSLATIONS = {
       applyCta: 'تطبيق النطاق في نموذج التواصل',
       whatsappCta: 'إرسال عبر واتساب (+234 816 049 8340)',
       tracks: {
+        Fullstack: 'تطوير ويب شامل',
+        Frontend: 'واجهة أمامية (UI)',
+        Backend: 'واجهة خلفية (API)',
         Games: 'ألعاب الجوال',
         Software: 'هندسة البرمجيات',
         DevOps: 'DevOps والخوادم',
@@ -2033,6 +2213,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: 'عملاء عالميون',
       globalClienteleValue: 'عمليات عن بُعد (UTC+1)',
       options: {
+        fullstack: 'تطوير الويب الشامل (Full-Stack)',
+        frontend: 'تطوير الواجهة الأمامية (Front-End)',
+        backend: 'هندسة الأنظمة الخلفية والواجهات البرمجية (Back-End)',
         ai: 'فيديوهات إعلانية بالذكاء الاصطناعي وإنتاج سينمائي',
         mobile: 'تطوير ألعاب الجوال (iOS و Android)',
         software: 'هندسة البرمجيات المخصصة',
@@ -2064,6 +2247,7 @@ export const TRANSLATIONS = {
     metaTitle: 'Codes Cinema | 软件工程 • 移动游戏 • 影视特效 • 运维托管',
     nav: {
       capabilities: '核心服务',
+      webDev: '网站与全栈开发',
       scoping: '周期评估',
       scopingMobile: '周期评估工具',
       studio: '关于工作室',
@@ -2215,6 +2399,9 @@ export const TRANSLATIONS = {
       applyCta: '应用到咨询表单',
       whatsappCta: '通过 WhatsApp 发送 (+234 816 049 8340)',
       tracks: {
+        Fullstack: '全栈 Web 应用',
+        Frontend: '前端界面 (UI)',
+        Backend: '后端系统 (API)',
         Games: '移动游戏',
         Software: '软件工程',
         DevOps: 'DevOps 运维',
@@ -2310,6 +2497,9 @@ export const TRANSLATIONS = {
       globalClienteleLabel: '服务范围',
       globalClienteleValue: '全球远程协作 (UTC+1)',
       options: {
+        fullstack: '全栈 Web 开发（端到端交钥匙平台）',
+        frontend: '前端界面开发（专注 UI/UX 与 React/Next.js）',
+        backend: '后端与 API 工程（数据库与微服务专精）',
         ai: 'AI 广告视频与影视制作（高转化）',
         mobile: '移动游戏开发 (iOS & Android)',
         software: '定制软件工程',
@@ -2340,6 +2530,7 @@ export const TRANSLATIONS = {
 
 TRANSLATIONS.uk = {
   ...TRANSLATIONS.us,
+  metaTitle: 'Codes Cinema | Full-Stack Web • Front-End & Back-End • Mobile Games • DevOps',
   nav: {
     ...TRANSLATIONS.us.nav,
     inquire: 'Enquire'
@@ -2348,9 +2539,48 @@ TRANSLATIONS.uk = {
     ...TRANSLATIONS.us.hero,
     previews: {
       ...TRANSLATIONS.us.hero.previews,
+      fullstack: {
+        ...TRANSLATIONS.us.hero.previews.fullstack,
+        desc: 'Complete end-to-end web engineering. Next.js 15, React 19, TypeScript, PostgreSQL, and Docker containerisation from schema to live deployment.'
+      },
+      frontend: {
+        ...TRANSLATIONS.us.hero.previews.frontend,
+        title: 'Pixel-Perfect Reactive UI & State Architecture'
+      },
       devops: {
         ...TRANSLATIONS.us.hero.previews.devops,
         desc: 'Linux server administration, firewall hardening, automated zero-downtime CI/CD pipelines, Docker containerisation, and 24/7 server health telemetry.'
+      }
+    }
+  },
+  webModes: {
+    ...TRANSLATIONS.us.webModes,
+    inquireBtn: 'Enquire This Track',
+    modes: {
+      ...TRANSLATIONS.us.webModes.modes,
+      fullstack: {
+        ...TRANSLATIONS.us.webModes.modes.fullstack,
+        deliverables: [
+          'End-to-end architecture (Client UI + API + Cloud Database)',
+          'Authentication (JWT / OAuth2 / Sessions) & Role-Based Access Control',
+          'Real-time data synchronisation & state hydration',
+          'Stripe / LemonSqueezy / PayPal payment integration',
+          'Automated CI/CD deployment pipelines & zero-downtime hosting'
+        ]
+      },
+      backend: {
+        ...TRANSLATIONS.us.webModes.modes.backend,
+        desc:
+          'Rock-solid back-end engineering for web and mobile clients. We architect normalised relational schemas, resilient caching layers, secure authentication, and scalable microservices designed for 99.98% uptime.',
+        deliverables: [
+          'High-concurrency REST, GraphQL & gRPC API design with OpenAPI docs',
+          'PostgreSQL / MySQL / Redis database architecture & migration strategies',
+          'Enterprise auth: OAuth2, JWT, multi-tenant RBAC & webhook endpoints',
+          'Asynchronous queue processing (BullMQ / Celery) & background workers',
+          'Docker containerisation, Nginx reverse proxies & cloud scaling'
+        ],
+        bestFor:
+          'Projects scaling user traffic, modernising legacy infrastructure, or building specialised server-side capabilities for front-end teams.'
       }
     }
   },
@@ -2359,15 +2589,24 @@ TRANSLATIONS.uk = {
     inquireTrack: 'Enquire Track',
     items: {
       ...TRANSLATIONS.us.services.items,
+      frontend: {
+        ...TRANSLATIONS.us.services.items.frontend,
+        highlights: [
+          'React 19, Next.js, Vue & Tailwind CSS architecture',
+          'Fluid state management, API hydration & caching',
+          'Responsive design across mobile, tablet & desktop',
+          'Optimised for Core Web Vitals & accessibility'
+        ]
+      },
+      backend: {
+        ...TRANSLATIONS.us.services.items.backend,
+        description:
+          'Resilient server-side architectures, high-throughput microservices, normalised relational/NoSQL schemas, and secure API gateways engineered for 99.98% uptime under load.'
+      },
       'mobile-games': {
         ...TRANSLATIONS.us.services.items['mobile-games'],
         description:
           'High-performance mobile game engineering for iOS and Android powered by Unity. Dynamic touch physics, battery-conscious shaders, monetisation systems, and engaging handheld mechanics.'
-      },
-      software: {
-        ...TRANSLATIONS.us.services.items.software,
-        description:
-          'Mission-critical distributed systems, high-concurrency microservices, customised API integrations, and scalable cloud applications architected for 99.98% uptime.'
       },
       maintenance: {
         ...TRANSLATIONS.us.services.items.maintenance,

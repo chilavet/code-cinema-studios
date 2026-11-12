@@ -16,11 +16,28 @@ function getInitialCountryCode() {
   return 'us';
 }
 
+function isPlainObject(val) {
+  return val !== null && typeof val === 'object' && !Array.isArray(val);
+}
+
+function deepMerge(base, override) {
+  if (!isPlainObject(override)) return base;
+  const result = { ...base };
+  for (const key of Object.keys(override)) {
+    if (isPlainObject(override[key]) && isPlainObject(base[key])) {
+      result[key] = deepMerge(base[key], override[key]);
+    } else if (override[key] !== undefined) {
+      result[key] = override[key];
+    }
+  }
+  return result;
+}
+
 export function LanguageProvider({ children }) {
   const [countryCode, setCountryCodeState] = useState(getInitialCountryCode);
 
   const country = COUNTRIES.find((c) => c.code === countryCode) || COUNTRIES[0];
-  const t = TRANSLATIONS[country.code] || TRANSLATIONS.us;
+  const t = country.code === 'us' ? TRANSLATIONS.us : deepMerge(TRANSLATIONS.us, TRANSLATIONS[country.code] || {});
 
   useEffect(() => {
     document.documentElement.lang = country.lang;

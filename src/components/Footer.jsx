@@ -57,28 +57,33 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600">
               <li>
-                <a href="#services" className="hover:text-slate-950 transition-colors">
-                  {t.services.items['mobile-games'].title}
+                <a href="#web-dev" className="hover:text-slate-950 transition-colors">
+                  {t.services.items?.fullstack?.title || 'Full-Stack Web Development'}
+                </a>
+              </li>
+              <li>
+                <a href="#web-dev" className="hover:text-slate-950 transition-colors">
+                  {t.services.items?.frontend?.title || 'Front-End Web Development'}
+                </a>
+              </li>
+              <li>
+                <a href="#web-dev" className="hover:text-slate-950 transition-colors">
+                  {t.services.items?.backend?.title || 'Back-End & API Engineering'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  {t.services.items.software.title}
+                  {t.services.items?.['mobile-games']?.title || 'Mobile Game Development'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  {t.services.items.devops.title}
+                  {t.services.items?.devops?.title || 'DevOps & Server Management'}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  {t.services.items.cinematics.title}
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-slate-950 transition-colors">
-                  {t.services.items.consulting.title}
+                  {t.services.items?.cinematics?.title || 'AI Advert Videos & Cinematics'}
                 </a>
               </li>
             </ul>
