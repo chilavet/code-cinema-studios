@@ -41,8 +41,34 @@ export const TRANSLATIONS = {
       kpiUptime: 'SLA Uptime',
       kpiTriage: 'Direct Triage',
       kpiModular: 'Or FE / BE Modular',
-      cardTitle: 'Studio Capabilities',
-      cardCore: 'Codes Cinema Core',
+      cardTitle: 'Codes Cinema Core',
+      cardCore: 'Live Architecture',
+      coreHeadlines: {
+        fullstack: {
+          top: 'Turnkey Full-Stack Platforms.',
+          accent: 'From Database Schema to Reactive UI.'
+        },
+        frontend: {
+          top: 'Pixel-Perfect Reactive UI.',
+          accent: 'Fluid Motion & Zero Layout Shift.'
+        },
+        backend: {
+          top: 'Resilient Cloud APIs & Schemas.',
+          accent: 'High Concurrency & 99.98% Uptime SLA.'
+        },
+        mobile: {
+          top: 'Mobile Game Development.',
+          accent: 'Unity Engine & 120 FPS Locked Touch.'
+        },
+        devops: {
+          top: 'Cloud & Server Infrastructure.',
+          accent: 'Automated CI/CD & Linux Hardening.'
+        },
+        care: {
+          top: 'Website Maintenance & Care.',
+          accent: 'Proactive Shield & < 15 Min SLA.'
+        }
+      },
       cardStatus: 'Production',
       learnMore: 'Learn about this track',
       requestCall: 'Request Discovery Call',

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-canvas: #F8FAFC;
   --color-surface: #FFFFFF;
@@ -21,12 +23,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: #F8FAFC;
   color: #0F172A;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #070B14;
+  color: #F1F5F9;
 }
 
 /* Custom Minimal Scrollbar */
@@ -44,6 +56,16 @@ body {
   background: #94A3B8;
 }
 
+html.dark ::-webkit-scrollbar-track {
+  background: #070B14;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
 /* Minimalist Clean Glass & Surface Panels */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
@@ -53,11 +75,22 @@ body {
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
+html.dark .glass-panel {
+  background: rgba(11, 17, 32, 0.85);
+  border-color: rgba(51, 65, 85, 0.6);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
 .glass-panel-subtle {
   background: rgba(248, 250, 252, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+html.dark .glass-panel-subtle {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(51, 65, 85, 0.5);
 }
 
 .card-minimal {
@@ -73,9 +106,26 @@ body {
   transform: translateY(-2px);
 }
 
+html.dark .card-minimal {
+  background: #0B1120;
+  border-color: #1E293B;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .card-minimal:hover {
+  border-color: #334155;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
 /* Clean Editorial Text Gradients */
 .text-gradient {
   background: linear-gradient(135deg, #0F172A 0%, #334155 60%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 60%, #94A3B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

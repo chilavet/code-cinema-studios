@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechTicker from './components/TechTicker';
-import WebDevModes from './components/WebDevModes';
 import Services from './components/Services';
 import ScopeEstimator from './components/ScopeEstimator';
 import Philosophy from './components/Philosophy';
@@ -17,7 +17,6 @@ export default function App() {
     brief: '',
     service: 'Full-Stack Web Development'
   });
-  const [estimatorTrack, setEstimatorTrack] = useState(null);
 
   const handleApplyEstimate = ({ trackId, trackName, weeksWindow }) => {
     let serviceMapping = 'Full-Stack Web Development';
@@ -65,79 +64,51 @@ export default function App() {
     }
   };
 
-  const handleInquireWebMode = (modeTitle, customBrief) => {
-    let mappedService = 'Full-Stack Web Development';
-    if (modeTitle.toLowerCase().includes('front-end') || modeTitle.toLowerCase().includes('frontend')) {
-      mappedService = 'Front-End Web Development';
-    } else if (modeTitle.toLowerCase().includes('back-end') || modeTitle.toLowerCase().includes('backend')) {
-      mappedService = 'Back-End & API Engineering';
-    }
-
-    setContactInitial({
-      service: mappedService,
-      brief: customBrief
-    });
-
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleScopeWebMode = (trackId) => {
-    setEstimatorTrack(trackId);
-    const estimatorSection = document.getElementById('estimator');
-    if (estimatorSection) {
-      estimatorSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <LanguageProvider>
-      <div className="bg-[#F8FAFC] text-slate-900 font-sans selection:bg-slate-900 selection:text-white overflow-x-hidden antialiased min-h-screen">
-        {/* Top Navbar */}
-        <Navbar
-          onOpenContact={() => {
-            const contactSection = document.getElementById('contact');
-            if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-          }}
-        />
-
-        <main>
-          {/* Hero Section */}
-          <Hero />
-
-          {/* Brand & Stack Infinite Marquee Ribbon */}
-          <TechTicker />
-
-          {/* Interactive Full-Stack / Front-End / Back-End Architecture Modes */}
-          <WebDevModes onInquireMode={handleInquireWebMode} onScopeMode={handleScopeWebMode} />
-
-          {/* Core Pillars / Services */}
-          <Services onSelectService={handleSelectService} />
-
-          {/* Interactive Scope & Roadmap Estimator */}
-          <ScopeEstimator onApplyEstimate={handleApplyEstimate} preselectedTrack={estimatorTrack} />
-
-          {/* Philosophy & Architecture */}
-          <Philosophy />
-
-          {/* Client Testimonies */}
-          <Testimonials />
-
-          {/* Consultation Inquiry Form */}
-          <Contact
-            initialBrief={contactInitial.brief}
-            initialService={contactInitial.service}
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="bg-[#F8FAFC] dark:bg-[#070B14] text-slate-900 dark:text-slate-100 font-sans selection:bg-slate-900 dark:selection:bg-amber-400 selection:text-white dark:selection:text-slate-950 overflow-x-hidden antialiased min-h-screen transition-colors duration-300">
+          {/* Top Navbar */}
+          <Navbar
+            onOpenContact={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+            }}
           />
-        </main>
 
-        {/* Global Footer */}
-        <Footer />
+          <main>
+            {/* Hero Section */}
+            <Hero />
 
-        {/* Floating Instant WhatsApp Button */}
-        <WhatsAppButton />
-      </div>
-    </LanguageProvider>
+            {/* Brand & Stack Infinite Marquee Ribbon */}
+            <TechTicker />
+
+            {/* Core Pillars / Services */}
+            <Services onSelectService={handleSelectService} />
+
+            {/* Interactive Scope & Roadmap Estimator */}
+            <ScopeEstimator onApplyEstimate={handleApplyEstimate} />
+
+            {/* Philosophy & Architecture */}
+            <Philosophy />
+
+            {/* Client Testimonies */}
+            <Testimonials />
+
+            {/* Consultation Inquiry Form */}
+            <Contact
+              initialBrief={contactInitial.brief}
+              initialService={contactInitial.service}
+            />
+          </main>
+
+          {/* Global Footer */}
+          <Footer />
+
+          {/* Floating Instant WhatsApp Button */}
+          <WhatsAppButton />
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

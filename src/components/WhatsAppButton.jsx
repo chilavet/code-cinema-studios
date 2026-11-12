@@ -19,13 +19,13 @@ export default function WhatsAppButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md border border-slate-200 text-slate-800 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:text-slate-950 hover:border-slate-300 shadow-md ${
+        className={`hidden sm:flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:text-slate-950 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 shadow-md ${
           isHovered ? 'opacity-100 translate-x-0' : 'opacity-85 translate-x-1'
         }`}
       >
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-        <span className="font-semibold text-slate-700">WhatsApp:</span>
-        <span className="font-mono text-slate-600">{displayPhone}</span>
+        <span className="font-semibold text-slate-700 dark:text-slate-300">WhatsApp:</span>
+        <span className="font-mono text-slate-600 dark:text-slate-400">{displayPhone}</span>
       </a>
 
       {/* Floating Action Button */}
@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with Codes Cinema on WhatsApp at ${displayPhone}`}
-        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white border border-slate-700 dark:border-slate-700 shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* Soft Ambient Radar Ping Ring */}
         <span className="absolute -inset-1 rounded-full bg-emerald-500/25 animate-ping -z-10" />

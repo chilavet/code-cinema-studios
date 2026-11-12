@@ -67,25 +67,27 @@ export default function Services({ onSelectService }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
               <span>{t.services.badge}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
               {t.services.heading}
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               {t.services.subtitle}
             </p>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100/90 border border-slate-200 text-xs self-start md:self-end">
+          <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs self-start md:self-end">
             <button
               type="button"
               onClick={() => setFilter('all')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                filter === 'all' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filter === 'all'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t.services.filters?.all || 'All Tracks'}
@@ -94,7 +96,9 @@ export default function Services({ onSelectService }) {
               type="button"
               onClick={() => setFilter('web')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                filter === 'web' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filter === 'web'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t.services.filters?.web || 'Web Dev'}
@@ -103,7 +107,9 @@ export default function Services({ onSelectService }) {
               type="button"
               onClick={() => setFilter('mobile')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                filter === 'mobile' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filter === 'mobile'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t.services.filters?.mobile || 'Mobile Games'}
@@ -112,7 +118,9 @@ export default function Services({ onSelectService }) {
               type="button"
               onClick={() => setFilter('ops')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                filter === 'ops' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filter === 'ops'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t.services.filters?.ops || 'DevOps & SLA'}
@@ -121,7 +129,9 @@ export default function Services({ onSelectService }) {
               type="button"
               onClick={() => setFilter('creative')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                filter === 'creative' ? 'bg-white text-slate-900 font-bold shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                filter === 'creative'
+                  ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold shadow-sm'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t.services.filters?.creative || 'Cinematics & Tech'}
@@ -131,7 +141,7 @@ export default function Services({ onSelectService }) {
 
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((s, index) => {
+          {filteredServices.map((s) => {
             const loc = t.services.items?.[s.id] || s;
             return (
               <div
@@ -139,30 +149,27 @@ export default function Services({ onSelectService }) {
                 className="card-minimal rounded-2xl p-7 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
               >
                 <div>
-                  {/* Header: Icon & Track Index */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200/90 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-100 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-sm">
+                  {/* Header: Icon */}
+                  <div className="mb-6">
+                    <div className="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-sm">
                       {getIcon(s.icon)}
                     </div>
-                    <span className="text-[11px] font-mono font-semibold text-slate-400 group-hover:text-slate-900 transition-colors">
-                      0{index + 1}
-                    </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-lg font-bold text-slate-900 mb-2.5 group-hover:text-sky-900 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
                     {loc.title}
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
                     {loc.description}
                   </p>
 
                   {/* Highlights List */}
                   {loc.highlights && loc.highlights.length > 0 && (
-                    <div className="mb-6 pt-4 border-t border-slate-100 space-y-2">
+                    <div className="mb-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
                       {loc.highlights.map((item, hIdx) => (
-                        <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
-                          <Check className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
+                        <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
                           <span>{item}</span>
                         </div>
                       ))}
@@ -174,7 +181,7 @@ export default function Services({ onSelectService }) {
                     {(loc.tags || s.tags).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
+                        className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
                       >
                         {tag}
                       </span>
@@ -183,11 +190,11 @@ export default function Services({ onSelectService }) {
                 </div>
 
                 {/* Bottom Actions */}
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
                   <a
                     href="#contact"
                     onClick={() => handleInquire(s.title, loc.title)}
-                    className="font-semibold text-slate-900 hover:text-sky-700 transition-colors inline-flex items-center gap-1.5"
+                    className="font-semibold text-slate-900 dark:text-white hover:text-sky-700 dark:hover:text-amber-400 transition-colors inline-flex items-center gap-1.5"
                   >
                     <span>{t.services.inquireTrack}</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -199,7 +206,7 @@ export default function Services({ onSelectService }) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-700 hover:text-emerald-800 font-mono font-semibold text-[11px] transition-colors"
+                    className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-mono font-semibold text-[11px] transition-colors"
                   >
                     WhatsApp ↗
                   </a>

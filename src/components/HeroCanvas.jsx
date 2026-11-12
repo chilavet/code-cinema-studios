@@ -39,6 +39,7 @@ export default function HeroCanvas() {
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
+      const isDark = document.documentElement.classList.contains('dark');
 
       // Render soft ambient colorful light pools
       orbs.forEach((orb) => {
@@ -49,7 +50,10 @@ export default function HeroCanvas() {
         if (orb.y - orb.radius < 0 || orb.y + orb.radius > height) orb.vy *= -1;
 
         const gradient = ctx.createRadialGradient(orb.x, orb.y, 0, orb.x, orb.y, orb.radius);
-        gradient.addColorStop(0, orb.color);
+        const orbColor = isDark
+          ? orb.color.replace('0.09', '0.18').replace('0.08', '0.16').replace('0.07', '0.15')
+          : orb.color;
+        gradient.addColorStop(0, orbColor);
         gradient.addColorStop(1, 'transparent');
 
         ctx.fillStyle = gradient;
@@ -68,7 +72,9 @@ export default function HeroCanvas() {
         if (m.y < 0) m.y = height;
         if (m.y > height) m.y = 0;
 
-        ctx.fillStyle = `rgba(15, 23, 42, ${m.opacity})`;
+        ctx.fillStyle = isDark
+          ? `rgba(251, 191, 36, ${m.opacity * 1.8})`
+          : `rgba(15, 23, 42, ${m.opacity})`;
         ctx.beginPath();
         ctx.arc(m.x, m.y, m.radius, 0, Math.PI * 2);
         ctx.fill();
