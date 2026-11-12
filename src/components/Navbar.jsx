@@ -19,11 +19,10 @@ export default function Navbar({ onOpenContact }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4">
       <div
-        className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 ${
-          scrolled
+        className={`max-w-6xl mx-auto rounded-2xl transition-all duration-300 ${scrolled
             ? 'bg-white/90 backdrop-blur-md border border-slate-200 shadow-md py-2.5 px-4 sm:px-6'
             : 'bg-white/75 backdrop-blur-sm border border-slate-200/80 shadow-sm py-3.5 px-4 sm:px-6'
-        }`}
+          }`}
       >
         <div className="flex items-center justify-between">
           {/* Brand Identity */}
@@ -128,8 +127,7 @@ export default function Navbar({ onOpenContact }) {
                 }}
                 className="w-full py-2.5 rounded-xl text-xs font-semibold text-white bg-slate-900"
               >
-                {t.nav.startProject}
-              </button>
+                {t.nav.startProject}              </button>
             </div>
           </div>
         )}

@@ -41,11 +41,11 @@ export default function Footer() {
                 <span dir="ltr">WhatsApp: +234 816 049 8340 ↗</span>
               </a>
               <a
-                href="mailto:support@codescinema.com"
+                href="mailto:contact@codescinema.com"
                 className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-sky-800 hover:text-sky-950 transition-colors"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
-                <span dir="ltr">Email: support@codescinema.com ↗</span>
+                <span dir="ltr">Email: contact@codescinema.com ↗</span>
               </a>
             </div>
           </div>
@@ -131,10 +131,10 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs font-medium text-slate-600">
               <li>
                 <a
-                  href="mailto:support@codescinema.com"
+                  href="mailto:contact@codescinema.com"
                   className="text-sky-700 hover:text-sky-950 font-semibold transition-colors"
                 >
-                  support@codescinema.com ↗
+                  contact@codescinema.com ↗
                 </a>
               </li>
               <li>

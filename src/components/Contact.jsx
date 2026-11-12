@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2, RefreshCw, MessageSquare, ShieldCheck, Clock, Copy, Check, Mail, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
-const SUPPORT_EMAIL = 'support@codescinema.com';
+const SUPPORT_EMAIL = 'contact@codescinema.com';
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${SUPPORT_EMAIL}`;
 
 export default function Contact({ initialBrief = '', initialService = 'Custom Software Engineering' }) {
