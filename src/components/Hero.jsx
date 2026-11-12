@@ -1,64 +1,13 @@
 import React, { useState } from 'react';
 import HeroCanvas from './HeroCanvas';
-import { ArrowRight, Smartphone, Code2, Wrench, ShieldCheck, ArrowUpRight, Server, Video } from 'lucide-react';
+import { ArrowRight, Smartphone, Code2, Wrench, ShieldCheck, ArrowUpRight, Server } from 'lucide-react';
+import { useLanguage } from '../context/useLanguage';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('mobile');
 
-  const studioPreviews = {
-    mobile: {
-      tag: 'MOBILE GAME DEVELOPMENT',
-      title: 'Unity Engine & Native Mobile Architecture',
-      desc: 'Native iOS & Android compilation targets, fluid 60/120 FPS touch response, battery-optimized render pipelines, and live-ops mediation.',
-      metrics: [
-        { label: 'Framerate Target', value: '120 FPS Locked' },
-        { label: 'Platforms', value: 'iOS & Android' },
-        { label: 'Profiling', value: 'Zero Memory Leaks' }
-      ]
-    },
-    software: {
-      tag: 'CUSTOM SOFTWARE ENGINEERING',
-      title: 'Scalable Cloud Microservices & APIs',
-      desc: 'Distributed systems, real-time WebSockets, robust PostgreSQL/Redis caching, and automated CI/CD deployment pipelines.',
-      metrics: [
-        { label: 'Availability', value: '99.98% SLA' },
-        { label: 'Architecture', value: 'Microservices' },
-        { label: 'Data Sync', value: 'Sub-millisecond' }
-      ]
-    },
-    devops: {
-      tag: 'DEVOPS & SERVER MANAGEMENT',
-      title: 'Cloud Infrastructure, Linux & CI/CD Pipelines',
-      desc: 'Linux server administration, firewall hardening, automated zero-downtime CI/CD pipelines, Docker containerization, and 24/7 server health telemetry.',
-      metrics: [
-        { label: 'Infrastructure', value: 'Bare-Metal & Cloud' },
-        { label: 'Automation', value: 'CI/CD Pipelines' },
-        { label: 'Uptime SLA', value: '99.99% Uptime' }
-      ]
-    },
-    care: {
-      tag: 'WEBSITE MAINTENANCE & CARE',
-      title: '24/7 Proactive Uptime & Security Shield',
-      desc: 'Round-the-clock health checks, instant outage alerts, zero-day security patching, daily encrypted cloud backups, and speed tuning.',
-      metrics: [
-        { label: 'Monitoring', value: '24/7 Continuous' },
-        { label: 'Backups', value: 'Daily Encrypted' },
-        { label: 'Incident Response', value: '< 15 Min SLA' }
-      ]
-    },
-    admin: {
-      tag: 'ADMIN & OPERATIONS DESK',
-      title: 'Dedicated Back-Office Technical Support',
-      desc: 'Routine content publishing, CMS moderation, database integrity checks, user role permissions, and ongoing technical assistance.',
-      metrics: [
-        { label: 'Helpdesk SLA', value: 'Same-Day Turnaround' },
-        { label: 'Operations', value: 'CMS & Database' },
-        { label: 'Access Control', value: 'RBAC Audited' }
-      ]
-    }
-  };
-
-  const current = studioPreviews[activeTab];
+  const current = t.hero.previews[activeTab] || t.hero.previews.mobile;
 
   const terminalCommands = {
     mobile: 'unity-cli --target=mobile --fps=120 --profile=zero-leak',
@@ -88,19 +37,19 @@ export default function Hero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-[11px] font-semibold tracking-wider uppercase text-slate-600">
-                Available for Select Q4 / Q1 Commissions
+                {t.hero.statusPill}
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] animate-fade-in-up animation-delay-100">
-              Digital precision. <br />
-              <span className="text-slate-500 font-normal">Cinematic depth.</span>
+              {t.hero.headlineTop} <br />
+              <span className="text-slate-500 font-normal">{t.hero.headlineAccent}</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-200">
-              Codes Cinema engineers high-performance mobile games, bespoke cloud software, and provides DevOps, server management, and 24/7 technical operations.
+              {t.hero.subtitle}
             </p>
 
             {/* Catchy Hook Banner */}
@@ -108,34 +57,22 @@ export default function Hero() {
               <span className="text-xl sm:text-2xl shrink-0">🎬</span>
               <div className="space-y-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                  Drive engagement, performance, and scale
+                  {t.hero.hookTitle}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                  We deliver high-converting AI video ads, high-framerate mobile gaming experiences, custom cloud applications, and battle-tested DevOps infrastructure.
+                  {t.hero.hookBody}
                 </p>
               </div>
             </div>
 
             {/* CTAs Cluster */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 animate-fade-in-up animation-delay-300">
-              {/* Primary Book AI Advert CTA */}
               <a
-                href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20want%20to%20book%20an%20AI%20Advert%20Video%20and%20discuss%20your%20services."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative overflow-hidden px-5 py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all flex items-center gap-2 shadow-sm hover:shadow-md hover:scale-[1.02]"
-              >
-                <Video className="w-4 h-4 text-slate-950" />
-                <span>Book AI Advert Video</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-
-              <a
-                href="#showcase"
+                href="#services"
                 className="group relative overflow-hidden px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 transition-all flex items-center gap-2 shadow-sm hover:shadow-md"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
-                <span>View Selected Work</span>
+                <span>{t.hero.exploreCta}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
@@ -143,7 +80,7 @@ export default function Hero() {
                 href="#estimator"
                 className="px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all"
               >
-                Scope Estimator
+                {t.hero.estimatorCta}
               </a>
 
               {/* Direct WhatsApp Quick Pill */}
@@ -174,7 +111,7 @@ export default function Hero() {
                   99.98%
                 </span>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
-                  SLA Uptime
+                  {t.hero.kpiUptime}
                 </span>
               </div>
               <div className="group cursor-default">
@@ -182,7 +119,7 @@ export default function Hero() {
                   &lt; 24h
                 </span>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
-                  Direct Triage
+                  {t.hero.kpiTriage}
                 </span>
               </div>
             </div>
@@ -202,15 +139,15 @@ export default function Hero() {
                     />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-slate-900 block">Studio Capabilities</span>
-                    <span className="text-[10px] font-mono text-slate-500">Codes Cinema Core</span>
+                    <span className="text-xs font-bold text-slate-900 block">{t.hero.cardTitle}</span>
+                    <span className="text-[10px] font-mono text-slate-500">{t.hero.cardCore}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
-                    Production
+                    {t.hero.cardStatus}
                   </span>
                 </div>
               </div>
@@ -227,7 +164,7 @@ export default function Hero() {
                   }`}
                 >
                   <Smartphone className="w-3.5 h-3.5 text-amber-600" />
-                  <span className="hidden sm:inline">Mobile</span>
+                  <span className="hidden sm:inline">{t.hero.tabs.mobile}</span>
                 </button>
 
                 <button
@@ -240,7 +177,7 @@ export default function Hero() {
                   }`}
                 >
                   <Code2 className="w-3.5 h-3.5 text-sky-600" />
-                  <span className="hidden sm:inline">Software</span>
+                  <span className="hidden sm:inline">{t.hero.tabs.software}</span>
                 </button>
 
                 <button
@@ -253,7 +190,7 @@ export default function Hero() {
                   }`}
                 >
                   <Server className="w-3.5 h-3.5 text-sky-600" />
-                  <span className="hidden sm:inline">DevOps</span>
+                  <span className="hidden sm:inline">{t.hero.tabs.devops}</span>
                 </button>
 
                 <button
@@ -266,7 +203,7 @@ export default function Hero() {
                   }`}
                 >
                   <Wrench className="w-3.5 h-3.5 text-slate-700" />
-                  <span className="hidden sm:inline">Care</span>
+                  <span className="hidden sm:inline">{t.hero.tabs.care}</span>
                 </button>
 
                 <button
@@ -279,7 +216,7 @@ export default function Hero() {
                   }`}
                 >
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="hidden sm:inline">Admin</span>
+                  <span className="hidden sm:inline">{t.hero.tabs.admin}</span>
                 </button>
               </div>
 
@@ -324,7 +261,7 @@ export default function Hero() {
                     href="#services"
                     className="group text-slate-600 hover:text-slate-900 font-medium transition-colors flex items-center gap-1 text-[11px]"
                   >
-                    <span>Learn about this track</span>
+                    <span>{t.hero.learnMore}</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </a>
 
@@ -332,7 +269,7 @@ export default function Hero() {
                     href="#contact"
                     className="text-xs font-semibold text-slate-900 hover:text-sky-600 hover:underline flex items-center gap-1 group"
                   >
-                    <span>Request Discovery Call</span>
+                    <span>{t.hero.requestCall}</span>
                     <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>

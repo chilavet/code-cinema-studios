@@ -1,15 +1,16 @@
 import React from 'react';
+import { useLanguage } from '../context/useLanguage';
 
-const CURRENT_YEAR = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
 export default function Footer() {
-  const currentYear = CURRENT_YEAR;
+  const { t } = useLanguage();
 
   return (
-    <footer className="border-t border-slate-200 bg-slate-100/70 py-16 relative z-10 text-slate-600">
+    <footer className="relative z-10 border-t border-slate-200 bg-white pt-16 pb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
-          {/* Brand Info (2 cols) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14">
+          {/* Column 1: Brand Summary (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm">
@@ -25,11 +26,11 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-600 text-xs sm:text-sm max-w-sm leading-relaxed">
-              Boutique digital studio uniting engineering rigor with cinematic depth. Engineering mobile games, distributed software, DevOps & server management, and 24/7 web operations.
+              {t.footer.description}
             </p>
 
-            {/* Direct WhatsApp Callout */}
-            <div className="pt-1">
+            {/* Direct WhatsApp & Email Callout */}
+            <div className="pt-1 flex flex-col gap-1.5">
               <a
                 href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
@@ -37,7 +38,14 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-800 hover:text-emerald-950 transition-colors"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span>WhatsApp: +234 816 049 8340 ↗</span>
+                <span dir="ltr">WhatsApp: +234 816 049 8340 ↗</span>
+              </a>
+              <a
+                href="mailto:support@codescinema.com"
+                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-sky-800 hover:text-sky-950 transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                <span dir="ltr">Email: support@codescinema.com ↗</span>
               </a>
             </div>
           </div>
@@ -45,37 +53,32 @@ export default function Footer() {
           {/* Column 2: Engineering */}
           <div>
             <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider mb-4">
-              Core Engineering
+              {t.footer.coreEngineering}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600">
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Mobile Game Development
+                  {t.services.items['mobile-games'].title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Custom Software Engineering
+                  {t.services.items.software.title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  DevOps & Server Management
+                  {t.services.items.devops.title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  AI Advert Videos & Cinematics
+                  {t.services.items.cinematics.title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Technology Consulting
-                </a>
-              </li>
-              <li>
-                <a href="#showcase" className="hover:text-slate-950 transition-colors">
-                  Case Studies
+                  {t.services.items.consulting.title}
                 </a>
               </li>
             </ul>
@@ -84,32 +87,37 @@ export default function Footer() {
           {/* Column 3: Care & Operations */}
           <div>
             <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider mb-4">
-              Operations
+              {t.footer.operations}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600">
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Website Maintenance (24/7 SLA)
+                  {t.services.items.maintenance.title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Admin & Back-Office Desk
+                  {t.services.items.admin.title}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Security Patching
+                  {t.footer.securityPatching}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-slate-950 transition-colors">
-                  Speed Tuning & Backups
+                  {t.footer.speedBackups}
                 </a>
               </li>
               <li>
                 <a href="#estimator" className="hover:text-slate-950 transition-colors">
-                  Timeline Estimator
+                  {t.footer.timelineEstimator}
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="hover:text-slate-950 transition-colors">
+                  {t.footer.clientTestimonies}
                 </a>
               </li>
             </ul>
@@ -118,9 +126,17 @@ export default function Footer() {
           {/* Column 4: Channels */}
           <div>
             <h4 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider mb-4">
-              Connect
+              {t.footer.connect}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600">
+              <li>
+                <a
+                  href="mailto:support@codescinema.com"
+                  className="text-sky-700 hover:text-sky-950 font-semibold transition-colors"
+                >
+                  support@codescinema.com ↗
+                </a>
+              </li>
               <li>
                 <a
                   href="https://wa.me/2348160498340"
@@ -128,11 +144,11 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-emerald-700 hover:text-emerald-900 font-semibold transition-colors"
                 >
-                  WhatsApp Channel ↗
+                  {t.footer.whatsappChannel}
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/codes-cinema" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors">
+                <a href="https://www.linkedin.com/company/codes-cinema/home/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors">
                   LinkedIn ↗
                 </a>
               </li>
@@ -152,22 +168,22 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 font-medium">
-          <p>© {currentYear} Codes Cinema. All rights reserved.</p>
+          <p>© {currentYear} Codes Cinema. {t.footer.rights}</p>
 
           <div className="flex items-center space-x-2 text-[11px] font-mono text-slate-600">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            <span>Systems Operational // 99.98% SLA</span>
+            <span>{t.footer.slaStatus}</span>
           </div>
 
           <div className="flex space-x-5 text-[11px]">
             <a href="#" className="hover:text-slate-800 transition-colors">
-              Privacy
+              {t.footer.privacy}
             </a>
             <a href="#" className="hover:text-slate-800 transition-colors">
-              Terms
+              {t.footer.terms}
             </a>
             <a href="#" className="hover:text-slate-800 transition-colors">
-              Security
+              {t.footer.security}
             </a>
           </div>
         </div>
