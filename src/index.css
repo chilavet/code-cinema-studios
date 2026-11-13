@@ -210,6 +210,7 @@ html.dark .text-gradient {
   display: flex;
   width: max-content;
   animation: marquee 35s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee:hover {
@@ -398,4 +399,14 @@ html.dark .bg-drafting-matrix {
 
 .animate-reverse-spin-slow {
   animation: reverse-spin-slow 100s linear infinite;
+}
+
+/* Section Scroll & Render Performance Optimization */
+#services,
+#estimator,
+#about,
+#testimonials,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 650px;
 }

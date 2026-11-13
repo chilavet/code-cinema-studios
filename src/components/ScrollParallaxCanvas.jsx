@@ -1,34 +1,22 @@
-import React from 'react';
-import useScrollPhysics from '../hooks/useScrollPhysics';
+import React, { memo } from 'react';
 
-export default function ScrollParallaxCanvas() {
-  const { scrollY } = useScrollPhysics();
-
-  // Gentle, high-performance parallax translations
-  const yOffset1 = scrollY * 0.14;
-  const yOffset2 = -scrollY * 0.10;
-  const yOffset3 = scrollY * 0.18;
-  const ringOffset = -scrollY * 0.06;
-
+/**
+ * High-performance, zero-CPU background canvas.
+ * Renders the studio drafting blueprint matrix, margin guidelines,
+ * slow-rotating architectural concentric rings, and soft ambient light pools.
+ * Completely decoupled from React re-renders for buttery 120 FPS scrolling.
+ */
+function ScrollParallaxCanvas() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
+    <div
+      className="fixed inset-0 pointer-events-none overflow-hidden -z-10"
+      aria-hidden="true"
+      style={{ contain: 'strict' }}
+    >
       {/* 1. Architectural Blueprint & Drafting Grid Pattern */}
-      <div className="absolute inset-0 bg-drafting-matrix mask-vignette opacity-75 dark:opacity-55 will-change-transform" />
+      <div className="absolute inset-0 bg-drafting-matrix mask-vignette opacity-70 dark:opacity-50" />
 
-      {/* 2. Tactile Organic Paper / Film Grain Texture Filter */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.032] dark:opacity-[0.048] pointer-events-none mix-blend-overlay"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <filter id="studio-grain-filter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#studio-grain-filter)" />
-      </svg>
-
-      {/* 3. Margin Registration Guide Rails & Cinematic Viewfinder Markers */}
+      {/* 2. Margin Registration Guide Rails & Cinematic Viewfinder Markers */}
       {/* Left Hairline Guide */}
       <div className="hidden lg:block absolute left-8 xl:left-14 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-sky-500/20 dark:via-sky-400/20 to-transparent" />
       {/* Right Hairline Guide */}
@@ -57,13 +45,8 @@ export default function ScrollParallaxCanvas() {
         +
       </div>
 
-      {/* 4. Floating Concentric Architectural Drafting Rings */}
-      <div
-        className="absolute top-[18%] -right-24 sm:right-[4%] w-[520px] h-[520px] md:w-[620px] md:h-[620px] pointer-events-none will-change-transform"
-        style={{
-          transform: `translate3d(0, ${ringOffset}px, 0)`
-        }}
-      >
+      {/* 3. Floating Concentric Architectural Drafting Rings (Pure CSS Compositor Animation) */}
+      <div className="absolute top-[18%] -right-24 sm:right-[4%] w-[520px] h-[520px] md:w-[620px] md:h-[620px] pointer-events-none">
         {/* Outer slow-spinning dashed drafting circle */}
         <div className="absolute inset-0 rounded-full border border-dashed border-sky-500/25 dark:border-sky-400/20 animate-spin-ultra-slow" />
         {/* Inner reverse-spinning dotted circle */}
@@ -72,38 +55,20 @@ export default function ScrollParallaxCanvas() {
         <div className="absolute inset-36 sm:inset-44 rounded-full border border-indigo-500/15 dark:border-indigo-400/15" />
       </div>
 
-      {/* 5. Rich Living Parallax Light Pools */}
+      {/* 4. Ambient Atmospheric Light Pools (Static GPU-Optimized Layers) */}
       {/* Upper-Left Cyan & Electric Blue Warmth Bloom */}
-      <div
-        className="absolute -top-32 -left-32 w-[560px] h-[560px] md:w-[680px] md:h-[680px] rounded-full bg-gradient-to-br from-sky-500/20 via-indigo-500/12 to-transparent blur-[90px] md:blur-[110px] will-change-transform"
-        style={{
-          transform: `translate3d(0, ${yOffset1}px, 0)`
-        }}
-      />
+      <div className="absolute -top-32 -left-32 w-[560px] h-[560px] md:w-[680px] md:h-[680px] rounded-full bg-gradient-to-br from-sky-500/15 via-indigo-500/8 to-transparent blur-[70px] md:blur-[90px]" />
 
       {/* Mid-Right Emerald & Mint Bloom */}
-      <div
-        className="absolute top-[36%] -right-36 w-[620px] h-[620px] md:w-[740px] md:h-[740px] rounded-full bg-gradient-to-bl from-emerald-500/20 via-teal-500/12 to-transparent blur-[95px] md:blur-[120px] will-change-transform"
-        style={{
-          transform: `translate3d(0, ${yOffset2}px, 0)`
-        }}
-      />
+      <div className="absolute top-[36%] -right-36 w-[620px] h-[620px] md:w-[740px] md:h-[740px] rounded-full bg-gradient-to-bl from-emerald-500/15 via-teal-500/8 to-transparent blur-[75px] md:blur-[95px]" />
 
       {/* Lower-Left Amber & Gold Bloom */}
-      <div
-        className="absolute top-[72%] -left-28 w-[580px] h-[580px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-amber-500/18 via-sky-500/10 to-transparent blur-[90px] md:blur-[115px] will-change-transform"
-        style={{
-          transform: `translate3d(0, ${yOffset3}px, 0)`
-        }}
-      />
+      <div className="absolute top-[72%] -left-28 w-[580px] h-[580px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-amber-500/12 via-sky-500/8 to-transparent blur-[70px] md:blur-[90px]" />
 
       {/* Subtle Central Accent Pool for Depth */}
-      <div
-        className="absolute top-[52%] left-[45%] -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-gradient-to-b from-slate-200/30 to-slate-300/20 dark:from-slate-800/20 dark:to-transparent blur-[100px] will-change-transform"
-        style={{
-          transform: `translate3d(0, ${yOffset1 * 0.7}px, 0)`
-        }}
-      />
+      <div className="absolute top-[52%] left-[45%] -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-gradient-to-b from-slate-200/25 to-transparent dark:from-slate-800/15 dark:to-transparent blur-[80px]" />
     </div>
   );
 }
+
+export default memo(ScrollParallaxCanvas);

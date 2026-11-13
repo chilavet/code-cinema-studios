@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 
+/**
+ * Optimized HeroCanvas.
+ * Automatically pauses requestAnimationFrame when off-screen via IntersectionObserver
+ * to preserve 100% CPU/GPU resources when browsing other sections.
+ */
 export default function HeroCanvas() {
   const canvasRef = useRef(null);
 
@@ -10,7 +15,18 @@ export default function HeroCanvas() {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
-    let animationFrameId;
+    let animationFrameId = null;
+    let isVisible = true;
+    let isDark = document.documentElement.classList.contains('dark');
+
+    // Track theme changes without querying DOM on every frame
+    const themeObserver = new MutationObserver(() => {
+      isDark = document.documentElement.classList.contains('dark');
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
 
     const handleResize = () => {
       if (!canvas) return;
@@ -18,7 +34,7 @@ export default function HeroCanvas() {
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
     // Luminous, vibrant ambient color spheres for bright background
     const orbs = [
@@ -38,11 +54,16 @@ export default function HeroCanvas() {
     }));
 
     const render = () => {
+      if (!isVisible) {
+        animationFrameId = null;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
-      const isDark = document.documentElement.classList.contains('dark');
 
       // Render soft ambient colorful light pools
-      orbs.forEach((orb) => {
+      for (let i = 0; i < orbs.length; i++) {
+        const orb = orbs[i];
         orb.x += orb.vx;
         orb.y += orb.vy;
 
@@ -60,10 +81,11 @@ export default function HeroCanvas() {
         ctx.beginPath();
         ctx.arc(orb.x, orb.y, orb.radius, 0, Math.PI * 2);
         ctx.fill();
-      });
+      }
 
       // Render subtle motes
-      motes.forEach((m) => {
+      for (let i = 0; i < motes.length; i++) {
+        const m = motes[i];
         m.x += m.vx;
         m.y += m.vy;
 
@@ -78,16 +100,36 @@ export default function HeroCanvas() {
         ctx.beginPath();
         ctx.arc(m.x, m.y, m.radius, 0, Math.PI * 2);
         ctx.fill();
-      });
+      }
 
       animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    // Pause canvas completely when off-screen using IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) {
+          animationFrameId = requestAnimationFrame(render);
+        } else if (!isVisible && animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(canvas);
+
+    // Initial kick-off
+    animationFrameId = requestAnimationFrame(render);
 
     return () => {
+      observer.disconnect();
+      themeObserver.disconnect();
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 

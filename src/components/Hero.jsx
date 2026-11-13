@@ -12,7 +12,6 @@ import {
   X
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
-import useScrollPhysics from '../hooks/useScrollPhysics';
 
 const SERVICE_TABS = ['fullstack', 'frontend', 'backend', 'mobile', 'devops', 'care'];
 const CYCLE_DURATION_MS = 4500;
@@ -127,7 +126,6 @@ const DEFAULT_STACK_TAGS = {
 
 export default function Hero() {
   const { t } = useLanguage();
-  const { scrollY } = useScrollPhysics();
   const [activeTab, setActiveTab] = useState('fullstack');
   const [isPaused, setIsPaused] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -322,9 +320,9 @@ export default function Hero() {
           className="relative w-full h-[52vh] sm:h-[62vh] md:h-[70vh] lg:h-[76vh] min-h-[380px] max-h-[820px] rounded-3xl overflow-hidden mb-8 border border-slate-200 dark:border-slate-800 shadow-2xl group cursor-pointer transition-all duration-300 hover:border-sky-500/50 dark:hover:border-sky-400/50 bg-slate-950"
           style={{
             transform: isHoveringDisplay
-              ? `perspective(1200px) rotateY(${mouseTilt.x * 4}deg) rotateX(${-mouseTilt.y * 4}deg) translate3d(0, ${Math.min(scrollY * 0.08, 48)}px, 0)`
-              : `perspective(1200px) rotateY(0deg) rotateX(0deg) translate3d(0, ${Math.min(scrollY * 0.08, 48)}px, 0)`,
-            transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease'
+              ? `perspective(1200px) rotateY(${mouseTilt.x * 4}deg) rotateX(${-mouseTilt.y * 4}deg)`
+              : 'perspective(1200px) rotateY(0deg) rotateX(0deg)',
+            transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease'
           }}
         >
           {/* Layered Crossfading Animated Images */}
@@ -347,7 +345,8 @@ export default function Hero() {
                   className={`w-full h-full object-cover object-center ${
                     isSelected ? kenBurnsClass : 'scale-100'
                   } transition-transform duration-700 ease-out`}
-                  loading="eager"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  decoding="async"
                   width="1920"
                   height="1080"
                   style={{

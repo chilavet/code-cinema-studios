@@ -1,17 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 import CountrySelector from './CountrySelector';
 import ThemeToggle from './ThemeToggle';
-import useScrollPhysics from '../hooks/useScrollPhysics';
 
 export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { scrollY, scrollDirection } = useScrollPhysics();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
 
-  const isScrolled = scrollY > 20;
-  const isScrollingDown = isScrolled && scrollDirection === 'down';
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          const scrolled = currentY > 20;
+          const directionDown = currentY > lastY;
+          const scrollingDown = scrolled && directionDown;
+
+          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+          setIsScrollingDown((prev) => (prev !== scrollingDown ? scrollingDown : prev));
+
+          lastY = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header
