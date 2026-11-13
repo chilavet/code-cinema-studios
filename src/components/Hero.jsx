@@ -165,6 +165,10 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
+  const handleSelectTab = (tabId) => {
+    setActiveTab(tabId);
+  };
+
   const handleDisplayMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -258,7 +262,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 max-w-7xl mx-auto">
         {/* Top Header: Dynamic Main Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-8">
           {/* Dynamic Headline */}
           <div key={`headline-${activeTab}`} className="space-y-3 animate-tab-enter">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 dark:text-stone-100 leading-tight">
@@ -272,6 +276,34 @@ export default function Hero() {
               {serviceDetail?.description || current.desc}
             </p>
           </div>
+        </div>
+
+        {/* 6 Disciplines Interactive Switcher Deck (Horizontal Tabs Bar) */}
+        <div className="mb-6 flex flex-wrap justify-center gap-2 max-w-5xl mx-auto">
+          {tabConfigs.map((tab) => {
+            const Icon = tab.icon;
+            const isSelected = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => handleSelectTab(tab.id)}
+                onMouseEnter={() => {
+                  handleSelectTab(tab.id);
+                  setIsPaused(true);
+                }}
+                onMouseLeave={() => setIsPaused(false)}
+                className={`relative px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 border overflow-hidden ${
+                  isSelected
+                    ? 'bg-stone-900 text-stone-50 dark:bg-[#FAF8F5] dark:text-stone-950 border-stone-900 dark:border-stone-100 shadow-sm scale-102'
+                    : 'bg-[#FAF8F5] dark:bg-[#1C1A18] text-stone-700 dark:text-stone-300 border-[#E7E2DB] dark:border-[#2C2825] hover:bg-[#F2EFE9] dark:hover:bg-[#252220]'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <span className="truncate">{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Full-Screen Majestic Living Display Area */}
