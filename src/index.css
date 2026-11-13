@@ -29,16 +29,16 @@ html.dark {
 
 body {
   font-family: var(--font-sans);
-  background-color: #F8FAFC;
-  color: #0F172A;
+  background-color: #FBF9F5;
+  color: #141210;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html.dark body {
-  background-color: #070B14;
-  color: #F1F5F9;
+  background-color: #141210;
+  color: #F2EFE9;
 }
 
 /* Custom Minimal Scrollbar */
@@ -46,7 +46,7 @@ html.dark body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #FBF9F5;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
@@ -57,7 +57,7 @@ html.dark body {
 }
 
 html.dark ::-webkit-scrollbar-track {
-  background: #070B14;
+  background: #141210;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #1E293B;
@@ -349,4 +349,53 @@ html.dark .text-gradient {
 
 .animation-delay-400 {
   animation-delay: 400ms;
+}
+
+/* Architectural Studio Blueprint Matrix Pattern */
+.bg-drafting-matrix {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(194, 97, 58, 0.16) 1.2px, transparent 0),
+    linear-gradient(to right, rgba(194, 97, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 97, 58, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px, 160px 160px, 160px 160px;
+}
+
+html.dark .bg-drafting-matrix {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(224, 122, 95, 0.18) 1.2px, transparent 0),
+    linear-gradient(to right, rgba(224, 122, 95, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(224, 122, 95, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px, 160px 160px, 160px 160px;
+}
+
+/* Vignette Mask for Background Geometry */
+.mask-vignette {
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, black 50%, transparent 98%);
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, black 50%, transparent 98%);
+}
+
+@keyframes spin-ultra-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-ultra-slow {
+  animation: spin-ultra-slow 140s linear infinite;
+}
+
+@keyframes reverse-spin-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-reverse-spin-slow {
+  animation: reverse-spin-slow 100s linear infinite;
 }
