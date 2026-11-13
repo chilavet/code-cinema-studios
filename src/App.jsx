@@ -11,6 +11,8 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import ScrollParallaxCanvas from './components/ScrollParallaxCanvas';
 
 export default function App() {
   const [contactInitial, setContactInitial] = useState({
@@ -67,7 +69,13 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="bg-[#FBF9F5] dark:bg-[#141210] text-[#141210] dark:text-[#F2EFE9] font-sans selection:bg-[#C2613A] selection:text-white overflow-x-hidden antialiased min-h-screen transition-colors duration-300">
+        <div className="bg-[#FBF9F5] dark:bg-[#141210] text-[#141210] dark:text-[#F2EFE9] font-sans selection:bg-[#C2613A] selection:text-white overflow-x-hidden antialiased min-h-screen transition-colors duration-300 relative">
+          {/* Top Live Scroll Progress Reading Bar */}
+          <ScrollProgressBar />
+
+          {/* Living Dynamic Parallax Light Pools that Move as User Scrolls */}
+          <ScrollParallaxCanvas />
+
           {/* Top Navbar */}
           <Navbar
             onOpenContact={() => {

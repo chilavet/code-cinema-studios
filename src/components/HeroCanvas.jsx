@@ -20,11 +20,11 @@ export default function HeroCanvas() {
 
     window.addEventListener('resize', handleResize);
 
-    // Luminous, vibrant ambient warm color spheres
+    // Luminous, vibrant ambient color spheres for bright background
     const orbs = [
-      { x: width * 0.25, y: height * 0.35, radius: 300, vx: 0.12, vy: 0.08, color: 'rgba(194, 97, 58, 0.08)' },
-      { x: width * 0.8, y: height * 0.3, radius: 340, vx: -0.1, vy: 0.07, color: 'rgba(217, 119, 6, 0.07)' },
-      { x: width * 0.55, y: height * 0.75, radius: 320, vx: 0.08, vy: -0.1, color: 'rgba(42, 111, 98, 0.07)' }
+      { x: width * 0.25, y: height * 0.35, radius: 280, vx: 0.12, vy: 0.08, color: 'rgba(14, 165, 233, 0.09)' },
+      { x: width * 0.8, y: height * 0.3, radius: 320, vx: -0.1, vy: 0.07, color: 'rgba(245, 158, 11, 0.08)' },
+      { x: width * 0.55, y: height * 0.75, radius: 300, vx: 0.08, vy: -0.1, color: 'rgba(99, 102, 241, 0.07)' }
     ];
 
     // Minimal floating motes

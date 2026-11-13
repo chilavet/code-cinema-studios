@@ -10,7 +10,7 @@ export default function WhatsAppButton() {
   return (
     <aside 
       aria-label="Instant WhatsApp Contact"
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 group animate-float-subtle"
+      className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -19,13 +19,13 @@ export default function WhatsAppButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`hidden sm:flex items-center gap-2 bg-[#FAF8F5]/95 dark:bg-[#1C1A18]/95 backdrop-blur-md border border-[#E7E2DB] dark:border-[#2C2825] text-stone-800 dark:text-stone-200 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-300 hover:text-stone-950 dark:hover:text-white hover:border-[#2A6F62]/50 shadow-md ${
+        className={`hidden sm:flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 hover:text-slate-950 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 shadow-md ${
           isHovered ? 'opacity-100 translate-x-0' : 'opacity-85 translate-x-1'
         }`}
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#52B788] animate-pulse" />
-        <span className="font-semibold text-stone-700 dark:text-stone-300">WhatsApp:</span>
-        <span className="font-semibold text-stone-600 dark:text-stone-400">{displayPhone}</span>
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+        <span className="font-semibold text-slate-700 dark:text-slate-300">WhatsApp:</span>
+        <span className="font-semibold text-slate-600 dark:text-slate-400">{displayPhone}</span>
       </a>
 
       {/* Floating Action Button */}
@@ -34,17 +34,17 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with Codes Cinema on WhatsApp at ${displayPhone}`}
-        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-stone-900 dark:bg-stone-800 hover:bg-stone-800 dark:hover:bg-stone-700 text-white border border-[#2A6F62]/40 shadow-xl hover:scale-115 active:scale-95 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white border border-slate-700 dark:border-slate-700 shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* Soft Ambient Radar Ping Ring */}
-        <span className="absolute -inset-1.5 rounded-full bg-[#52B788]/30 animate-ping -z-10" />
+        <span className="absolute -inset-1 rounded-full bg-emerald-500/25 animate-ping -z-10" />
 
         {/* Subtle Live Dot */}
-        <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#52B788] border border-stone-900 animate-pulse" />
+        <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-emerald-400 border border-slate-900 animate-pulse" />
 
         {/* Minimal WhatsApp Icon */}
         <svg
-          className="w-5 h-5 fill-white group-hover:fill-[#52B788] transition-colors duration-300"
+          className="w-5 h-5 fill-white group-hover:fill-emerald-400 transition-colors"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           role="img"

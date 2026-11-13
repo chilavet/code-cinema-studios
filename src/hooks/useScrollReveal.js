@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Custom hook to trigger scroll animations using IntersectionObserver.
- * When the element enters the viewport, `isRevealed` becomes true,
- * and any child elements with `.reveal-init`, `.reveal-left`, `.reveal-right`, `.reveal-scale` automatically get `.revealed`.
+ * Custom hook to trigger fluid scroll animations on entry AND exit.
+ * As the user scrolls up or down, elements dynamically animate in when entering
+ * and smoothly transition when exiting and re-entering, keeping the site continuously alive.
  */
 export function useScrollReveal(options = {}) {
   const containerRef = useRef(null);
-  const [isRevealed, setIsRevealed] = useState(() => typeof IntersectionObserver === 'undefined');
+  const [isRevealed, setIsRevealed] = useState(() => typeof window !== 'undefined' && typeof window.IntersectionObserver === 'undefined');
 
   useEffect(() => {
     const el = containerRef.current;
@@ -20,17 +20,25 @@ export function useScrollReveal(options = {}) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsRevealed(true);
+      (entries) => {
+        entries.forEach((entry) => {
           const items = el.querySelectorAll('.reveal-init, .reveal-left, .reveal-right, .reveal-scale');
-          items.forEach((item) => item.classList.add('revealed'));
-          observer.unobserve(entry.target);
-        }
+          if (entry.isIntersecting) {
+            setIsRevealed(true);
+            items.forEach((item) => item.classList.add('revealed'));
+          } else if (options.reversible ?? true) {
+            // Re-animate when scrolling past and returning from above or below
+            const rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight * 0.8 || rect.bottom < window.innerHeight * 0.2) {
+              setIsRevealed(false);
+              items.forEach((item) => item.classList.remove('revealed'));
+            }
+          }
+        });
       },
       {
         threshold: options.threshold ?? 0.1,
-        rootMargin: options.rootMargin ?? '0px 0px -40px 0px'
+        rootMargin: options.rootMargin ?? '0px 0px -30px 0px'
       }
     );
 
@@ -39,7 +47,7 @@ export function useScrollReveal(options = {}) {
     return () => {
       if (el) observer.unobserve(el);
     };
-  }, [options.threshold, options.rootMargin]);
+  }, [options.threshold, options.rootMargin, options.reversible]);
 
   return [containerRef, isRevealed];
 }
