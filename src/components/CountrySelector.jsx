@@ -32,7 +32,7 @@ export default function CountrySelector({ align = 'right' }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={t.nav.selectCountry}
-        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/70 dark:hover:bg-slate-700/70 border border-slate-200 dark:border-slate-700 transition-all cursor-pointer"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-stone-700 dark:text-stone-200 hover:text-stone-950 dark:hover:text-white bg-[#F2EFE9] dark:bg-[#1E1C1A] hover:bg-[#EAE5DC] dark:hover:bg-[#282522] border border-[#E7E2DB] dark:border-[#2C2825] transition-all cursor-pointer"
       >
         <span className="text-base leading-none" aria-hidden="true">
           {country.flag}
@@ -41,7 +41,7 @@ export default function CountrySelector({ align = 'right' }) {
           {country.label}
         </span>
         <ChevronDown
-          className={`w-3 h-3 text-slate-500 dark:text-slate-400 transition-transform duration-200 ${
+          className={`w-3 h-3 text-stone-500 dark:text-stone-400 transition-transform duration-200 ${
             open ? 'rotate-180' : ''
           }`}
         />
@@ -51,7 +51,7 @@ export default function CountrySelector({ align = 'right' }) {
         <div
           role="listbox"
           aria-label={t.nav.selectCountry}
-          className={`absolute mt-2 w-56 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-xl py-1.5 z-50 ${
+          className={`absolute mt-2 w-56 rounded-2xl bg-[#FAF8F5]/95 dark:bg-[#1A1816]/95 backdrop-blur-md border border-[#E7E2DB] dark:border-[#2C2825] shadow-xl py-1.5 z-50 ${
             align === 'left' ? 'left-0' : 'right-0'
           }`}
         >
@@ -70,8 +70,8 @@ export default function CountrySelector({ align = 'right' }) {
                   }}
                   className={`w-full px-3 py-2 text-left text-xs flex items-center justify-between gap-2 transition-colors cursor-pointer ${
                     isSelected
-                      ? 'bg-slate-900 dark:bg-slate-800 text-white font-semibold'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-950 dark:hover:text-white'
+                      ? 'bg-stone-900 dark:bg-[#2A2623] text-stone-100 font-semibold'
+                      : 'text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-[#24211E] hover:text-stone-950 dark:hover:text-white'
                   }`}
                 >
                   <span className="flex items-center gap-2.5 min-w-0">
@@ -82,14 +82,14 @@ export default function CountrySelector({ align = 'right' }) {
                       {c.country}
                       <span
                         className={`ml-1.5 text-[11px] ${
-                          isSelected ? 'text-slate-300' : 'text-slate-400 dark:text-slate-500'
+                          isSelected ? 'text-stone-300' : 'text-stone-400 dark:text-stone-500'
                         }`}
                       >
                         · {c.nativeName}
                       </span>
                     </span>
                   </span>
-                  {isSelected && <Check className="w-3.5 h-3.5 text-amber-400 shrink-0" />}
+                  {isSelected && <Check className="w-3.5 h-3.5 text-[#C2613A] dark:text-[#E07A5F] shrink-0" />}
                 </button>
               );
             })}
