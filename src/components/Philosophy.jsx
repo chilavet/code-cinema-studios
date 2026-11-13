@@ -82,13 +82,16 @@ export default function Philosophy() {
                 <span>{t.philosophy.cardHeaderRight}</span>
               </div>
 
-              {/* Circular Emblem Presentation */}
-              <div className="my-8">
+              {/* Circular Emblem Presentation with Animated Pulse Halo */}
+              <div className="my-8 relative flex flex-col items-center justify-center">
                 <div className="relative inline-block p-1 rounded-full bg-stone-950 border-2 border-stone-800 shadow-xl group animate-float-subtle">
+                  {/* Subtle Living Aura */}
+                  <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-[#C2613A]/20 via-[#D97706]/20 to-[#2A6F62]/20 blur-md animate-pulse-glow -z-10" />
+                  
                   <img
                     src="/logo.jpg"
                     alt="Codes Cinema Studios - Cybernetic Emblem & Philosophy"
-                    className="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
+                    className="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full transition-transform duration-700 group-hover:scale-105"
                     width="144"
                     height="144"
                   />

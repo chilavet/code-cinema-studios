@@ -11,25 +11,25 @@ export default function Showcase({ onSelectProject }) {
       : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="showcase" className="py-24 relative z-10 border-t border-[#E7E2DB] dark:border-[#2C2825]">
+    <section id="showcase" className="py-24 relative z-10 border-t border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header & Minimal Filters */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C2613A]" />
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
               <span>Selected Deployments</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
               Case studies & production work.
             </h2>
-            <p className="mt-3 text-stone-600 dark:text-stone-300 text-sm leading-relaxed">
+            <p className="mt-3 text-slate-600 text-sm leading-relaxed">
               Explore our mobile titles, distributed cloud microservices, and 24/7 client care fleets.
             </p>
           </div>
 
           {/* Minimal Filter Tabs */}
-          <div className="flex flex-wrap gap-1 p-1 rounded-xl bg-[#F2EFE9] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825]">
+          <div className="flex flex-wrap gap-1 p-1 rounded-xl bg-slate-100 border border-slate-200">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -38,8 +38,8 @@ export default function Showcase({ onSelectProject }) {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
                     isActive
-                      ? 'bg-white dark:bg-[#252220] text-stone-900 dark:text-stone-100 font-bold shadow-sm'
-                      : 'text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-stone-100'
+                      ? 'bg-white text-slate-950 font-bold shadow-sm'
+                      : 'text-slate-600 hover:text-slate-950'
                   }`}
                 >
                   {cat.label}
@@ -59,19 +59,19 @@ export default function Showcase({ onSelectProject }) {
             >
               <div>
                 {/* Visual Header Deck */}
-                <div className="relative h-44 bg-[#F2EFE9] dark:bg-[#22201D] border-b border-[#E7E2DB] dark:border-[#2C2825] flex items-center justify-center overflow-hidden">
+                <div className="relative h-44 bg-slate-50 border-b border-slate-200 flex items-center justify-center overflow-hidden">
                   <div className="text-5xl opacity-60 group-hover:opacity-100 group-hover:scale-115 group-hover:-rotate-3 transition-all duration-300">
                     {project.icon}
                   </div>
 
                   {/* Category Chip */}
-                  <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white dark:bg-[#1C1A18] text-stone-700 dark:text-stone-300 border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm">
+                  <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 shadow-sm">
                     {project.categoryLabel}
                   </span>
 
                   {/* Metric Chip */}
                   {project.metrics && (
-                    <span className="absolute bottom-3 left-3 text-[10px] font-semibold px-2 py-0.5 rounded bg-white dark:bg-[#1C1A18] text-stone-900 dark:text-stone-100 border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm">
+                    <span className="absolute bottom-3 left-3 text-[10px] font-semibold px-2 py-0.5 rounded bg-white text-slate-900 border border-slate-200 shadow-sm">
                       {project.metrics}
                     </span>
                   )}
@@ -79,19 +79,19 @@ export default function Showcase({ onSelectProject }) {
 
                 {/* Body Content */}
                 <div className="p-6">
-                  <span className="text-[10px] font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider block mb-1">
                     {project.subtitle}
                   </span>
-                  <h3 className="text-lg font-bold text-stone-900 dark:text-stone-100 group-hover:text-[#C2613A] dark:group-hover:text-[#E07A5F] transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-900 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-stone-600 dark:text-stone-300 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
+                  <p className="text-slate-600 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
                     {project.summary}
                   </p>
 
-                  <div className="mt-4 pt-3 border-t border-[#E7E2DB] dark:border-[#2C2825]">
-                    <span className="text-[10px] font-medium text-stone-500 dark:text-stone-400 block mb-0.5">Stack</span>
-                    <p className="text-xs font-medium text-stone-800 dark:text-stone-200 truncate">
+                  <div className="mt-4 pt-3 border-t border-slate-100">
+                    <span className="text-[10px] font-medium text-slate-500 block mb-0.5">Stack</span>
+                    <p className="text-xs font-medium text-slate-800 truncate">
                       {project.stack}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ export default function Showcase({ onSelectProject }) {
               </div>
 
               {/* Action Bar */}
-              <div className="px-6 py-3.5 bg-[#FAF8F5] dark:bg-[#1C1A18] border-t border-[#E7E2DB] dark:border-[#2C2825] flex items-center justify-between text-xs font-semibold text-stone-700 dark:text-stone-300 group-hover:text-stone-950 dark:group-hover:text-stone-100 transition-colors">
+              <div className="px-6 py-3.5 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700 group-hover:text-slate-950 transition-colors">
                 <span>View Case Study Specs</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>

@@ -9,7 +9,11 @@ import {
   Layout,
   Database,
   CheckCircle2,
-  X
+  X,
+  Play,
+  Pause,
+  Maximize2,
+  Radio
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
@@ -76,6 +80,33 @@ const CORE_IMAGES = {
   }
 };
 
+const DISCIPLINE_HOTSPOTS = {
+  fullstack: [
+    { x: '24%', y: '36%', label: 'PostgreSQL Cluster • Active (12ms)', pingColor: 'bg-[#52B788]' },
+    { x: '72%', y: '64%', label: 'Reactive UI • Zero Layout Shift', pingColor: 'bg-[#C2613A]' }
+  ],
+  frontend: [
+    { x: '28%', y: '32%', label: 'React 19 & Next.js • Hydrated', pingColor: 'bg-[#52B788]' },
+    { x: '68%', y: '60%', label: 'Framer Motion • 60 FPS Fluid', pingColor: 'bg-[#2A6F62]' }
+  ],
+  backend: [
+    { x: '22%', y: '38%', label: 'Microservices Gateway • 99.98% SLA', pingColor: 'bg-[#52B788]' },
+    { x: '74%', y: '56%', label: 'Redis Cache • 0.8ms P99 Latency', pingColor: 'bg-[#D97706]' }
+  ],
+  mobile: [
+    { x: '26%', y: '34%', label: 'Unity 6 Engine • Metal Shaders', pingColor: 'bg-[#D97706]' },
+    { x: '70%', y: '62%', label: 'Locked 120 FPS Touch Loop', pingColor: 'bg-[#52B788]' }
+  ],
+  devops: [
+    { x: '20%', y: '32%', label: 'Multi-Region Mesh • Online', pingColor: 'bg-[#52B788]' },
+    { x: '74%', y: '64%', label: 'Zero-Downtime CI/CD • Deployed', pingColor: 'bg-[#2A6F62]' }
+  ],
+  care: [
+    { x: '28%', y: '36%', label: '24/7 Shield • Proactive Defence', pingColor: 'bg-[#52B788]' },
+    { x: '68%', y: '56%', label: 'Encrypted Backups • Hourly Checksum', pingColor: 'bg-[#9A4321]' }
+  ]
+};
+
 const DEFAULT_DELIVERABLES = {
   fullstack: [
     'Complete end-to-end architecture (Client UI + API + Cloud Database)',
@@ -130,6 +161,8 @@ export default function Hero() {
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [mouseTilt, setMouseTilt] = useState({ x: 0, y: 0 });
+  const [isHoveringDisplay, setIsHoveringDisplay] = useState(false);
 
   // Lock body scroll and listen for Escape when viewing full-screen modal
   useEffect(() => {
@@ -174,6 +207,22 @@ export default function Hero() {
   const handleSelectTab = (tabId) => {
     setActiveTab(tabId);
     setProgress(0);
+  };
+
+  const handleDisplayMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMouseTilt({ x, y });
+  };
+
+  const handleDisplayMouseEnter = () => {
+    setIsHoveringDisplay(true);
+  };
+
+  const handleDisplayMouseLeave = () => {
+    setIsHoveringDisplay(false);
+    setMouseTilt({ x: 0, y: 0 });
   };
 
   const current =
@@ -313,35 +362,159 @@ export default function Hero() {
           })}
         </div>
 
-        {/* Full-Screen Majestic Display Area */}
+        {/* Full-Screen Majestic Living Display Area */}
         <div
           onClick={() => setIsFullscreen(true)}
-          className="relative w-full h-[52vh] sm:h-[62vh] md:h-[70vh] lg:h-[76vh] min-h-[380px] max-h-[820px] rounded-3xl overflow-hidden mb-8 border border-[#E7E2DB] dark:border-[#2C2825] shadow-xl group cursor-pointer transition-all duration-300 hover:border-[#C2613A]/50 dark:hover:border-[#E07A5F]/50 bg-stone-950"
+          onMouseMove={handleDisplayMouseMove}
+          onMouseEnter={handleDisplayMouseEnter}
+          onMouseLeave={handleDisplayMouseLeave}
+          className="relative w-full h-[52vh] sm:h-[62vh] md:h-[70vh] lg:h-[76vh] min-h-[380px] max-h-[820px] rounded-3xl overflow-hidden mb-8 border border-[#E7E2DB] dark:border-[#2C2825] shadow-2xl group cursor-pointer transition-all duration-300 hover:border-[#C2613A]/50 dark:hover:border-[#E07A5F]/50 bg-stone-950"
+          style={{
+            transform: isHoveringDisplay
+              ? `perspective(1200px) rotateY(${mouseTilt.x * 4}deg) rotateX(${-mouseTilt.y * 4}deg)`
+              : 'perspective(1200px) rotateY(0deg) rotateX(0deg)',
+            transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease'
+          }}
         >
-          <img
-            src={CORE_IMAGES[activeTab]?.src}
-            alt={CORE_IMAGES[activeTab]?.alt}
-            className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
-            loading="eager"
-            width="1920"
-            height="1080"
-          />
+          {/* Layered Crossfading Animated Images */}
+          {SERVICE_TABS.map((tabKey, idx) => {
+            const isSelected = activeTab === tabKey;
+            const isEven = idx % 2 === 0;
+            const kenBurnsClass = isEven ? 'animate-ken-burns' : 'animate-ken-burns-alt';
+            const imgInfo = CORE_IMAGES[tabKey];
 
-          {/* Ambient subtle vignette gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
+            return (
+              <div
+                key={tabKey}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  isSelected ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+                }`}
+              >
+                <img
+                  src={imgInfo?.src}
+                  alt={imgInfo?.alt}
+                  className={`w-full h-full object-cover object-center ${
+                    isSelected && !isPaused ? kenBurnsClass : 'scale-100'
+                  } transition-transform duration-700 ease-out`}
+                  loading="eager"
+                  width="1920"
+                  height="1080"
+                  style={{
+                    transform: isHoveringDisplay
+                      ? `translate3d(${-mouseTilt.x * 12}px, ${-mouseTilt.y * 12}px, 0)`
+                      : undefined
+                  }}
+                />
+              </div>
+            );
+          })}
 
-          {/* Bottom Overlay Caption & Discipline Tag */}
-          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white pointer-events-none">
-            <div className="flex items-center gap-2.5 bg-stone-950/75 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg">
+          {/* Living diagonal ambient shimmer sweep */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
+            <div className="w-[50%] h-[200%] -top-[50%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-shimmer-sweep pointer-events-none" />
+          </div>
+
+          {/* Subtle vignette gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/20 to-stone-950/40 pointer-events-none z-15" />
+
+          {/* Top Live Status & Telemetry HUD Controls (z-30) */}
+          <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 flex items-center justify-between z-30 pointer-events-none">
+            {/* Left: Live Feed Signal */}
+            <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-stone-950/80 backdrop-blur-md border border-white/15 text-white shadow-xl pointer-events-auto">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52B788] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#52B788]" />
+              </span>
+              <span className="text-[11px] font-bold tracking-wider uppercase text-stone-100 flex items-center gap-1.5">
+                LIVE FEED
+              </span>
+              <span className="text-white/20 hidden sm:inline">|</span>
+              {/* Live audio/telemetry equalizer bars */}
+              <div className="flex items-center gap-0.5 h-3">
+                <span className="w-0.5 bg-[#52B788] rounded-full animate-bar-1" />
+                <span className="w-0.5 bg-[#52B788] rounded-full animate-bar-2" />
+                <span className="w-0.5 bg-[#52B788] rounded-full animate-bar-3" />
+                <span className="w-0.5 bg-[#52B788] rounded-full animate-bar-4" />
+              </div>
+              <span className="text-[10px] text-stone-400 font-mono hidden md:inline">120 FPS</span>
+            </div>
+
+            {/* Right: Play/Pause Controller & Fullscreen trigger */}
+            <div className="flex items-center gap-2 pointer-events-auto">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsPaused((prev) => !prev);
+                }}
+                className="p-2 rounded-xl bg-stone-950/80 hover:bg-stone-900/95 backdrop-blur-md border border-white/15 text-stone-200 hover:text-white transition-all shadow-xl cursor-pointer"
+                title={isPaused ? 'Resume live motion cycle' : 'Pause live motion cycle'}
+                aria-label={isPaused ? 'Resume live motion cycle' : 'Pause live motion cycle'}
+              >
+                {isPaused ? (
+                  <Play className="w-3.5 h-3.5 fill-current text-[#E07A5F]" />
+                ) : (
+                  <Pause className="w-3.5 h-3.5 text-stone-300" />
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsFullscreen(true);
+                }}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-950/80 hover:bg-stone-900/95 backdrop-blur-md border border-white/15 text-stone-200 hover:text-white transition-all text-xs font-semibold shadow-xl cursor-pointer"
+                title="Expand Fullscreen View"
+                aria-label="Expand Fullscreen View"
+              >
+                <Maximize2 className="w-3.5 h-3.5 text-stone-300" />
+                <span className="hidden sm:inline text-[11px]">Fullscreen</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Live Telemetry Node Hotspots (z-30) */}
+          {DISCIPLINE_HOTSPOTS[activeTab]?.map((spot, idx) => (
+            <div
+              key={`${activeTab}-${idx}`}
+              className="absolute z-25 hidden md:flex items-center gap-2 pointer-events-auto group/node animate-tab-enter"
+              style={{
+                left: spot.x,
+                top: spot.y,
+                transform: 'translate(-50%, -50%)'
+              }}
+            >
+              <span className="relative flex h-3 w-3 items-center justify-center">
+                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${spot.pingColor} opacity-75`} />
+                <span className={`relative inline-flex rounded-full h-2 w-2 ${spot.pingColor} ring-2 ring-stone-950`} />
+              </span>
+              <div className="px-2.5 py-1 rounded-lg bg-stone-950/80 backdrop-blur-md border border-white/15 text-[11px] font-medium text-stone-200 shadow-xl transition-all group-hover/node:scale-105 group-hover/node:bg-stone-900/95 group-hover/node:border-white/30 whitespace-nowrap">
+                {spot.label}
+              </div>
+            </div>
+          ))}
+
+          {/* Bottom Overlay Caption & Discipline Tag (z-30) */}
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white pointer-events-none z-30">
+            <div className="flex items-center gap-2.5 bg-stone-950/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg">
               <span className="w-2 h-2 rounded-full bg-[#52B788] shrink-0 animate-pulse" />
               <span className="text-xs sm:text-sm font-semibold drop-shadow text-white">
                 {CORE_IMAGES[activeTab]?.caption}
               </span>
             </div>
 
-            <div className="hidden sm:flex items-center gap-2 bg-stone-950/75 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 text-xs font-medium text-stone-300">
+            <div className="hidden sm:flex items-center gap-2 bg-stone-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 text-xs font-medium text-stone-300">
+              <Radio className="w-3.5 h-3.5 text-[#52B788] animate-pulse" />
               <span>{serviceDetail?.title || activeTabConfig.fullTitle}</span>
             </div>
+          </div>
+
+          {/* Bottom Live Progress Indicator Line */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-stone-950/70 z-30 overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-[#C2613A] to-[#E07A5F] transition-all duration-75 ease-linear"
+              style={{ width: `${progress}%` }}
+            />
           </div>
         </div>
 
@@ -447,7 +620,7 @@ export default function Hero() {
                   {serviceDetail?.title || activeTabConfig.fullTitle}
                 </h3>
                 <span className="text-xs text-stone-400 font-medium">
-                  {CORE_IMAGES[activeTab]?.caption} • High-Resolution View
+                  {CORE_IMAGES[activeTab]?.caption} • High-Resolution Live Feed
                 </span>
               </div>
             </div>
@@ -466,16 +639,31 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Center High-Res Image View (Uncropped Full Screen) */}
+          {/* Center High-Res Image View with Ken Burns animation & crossfade */}
           <div
             className="flex-1 flex items-center justify-center py-4 relative max-w-7xl mx-auto w-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={CORE_IMAGES[activeTab]?.src}
-              alt={CORE_IMAGES[activeTab]?.alt}
-              className="max-w-full max-h-[72vh] md:max-h-[76vh] object-contain rounded-2xl shadow-2xl border border-stone-800/90"
-            />
+            <div className="relative w-full h-full max-h-[72vh] md:max-h-[76vh] flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl border border-stone-800/90 bg-stone-950">
+              {SERVICE_TABS.map((tabKey) => {
+                const isSel = tabKey === activeTab;
+                const imgInfo = CORE_IMAGES[tabKey];
+                return (
+                  <div
+                    key={`modal-${tabKey}`}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center ${
+                      isSel ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                    }`}
+                  >
+                    <img
+                      src={imgInfo?.src}
+                      alt={imgInfo?.alt}
+                      className="w-full h-full object-cover object-center animate-ken-burns"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Bottom Navigation & Discipline Switcher */}
@@ -484,7 +672,7 @@ export default function Hero() {
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-stone-400 text-xs text-center sm:text-left font-medium">
-              Click a discipline to inspect its high-resolution view:
+              Click a discipline to switch high-resolution live feed:
             </p>
 
             <div className="flex flex-wrap justify-center gap-1.5">

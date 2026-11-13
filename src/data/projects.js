@@ -8,7 +8,7 @@ export const PROJECTS = [
     description: 'Competitive mobile arcade combat game optimized for touch screens on iOS and Android with intuitive virtual controls, zero input lag, and snappy 120Hz responsiveness.',
     summary: 'Tactical mobile arena combat optimized for handheld gameplay with precise virtual thumbsticks and battery-saving shaders.',
     stack: 'Unity Mobile • C# • iOS & Android • Blender',
-    accentColor: '#D97706',
+    accentColor: '#FFB800',
     icon: '📱',
     metrics: 'iOS & Android • 120Hz Touch Refresh'
   },
@@ -21,7 +21,7 @@ export const PROJECTS = [
     description: 'Engineered specifically for iOS and Android featuring optimized touch combat, dynamic volumetric shaders, and fast-paced procedural mission generation.',
     summary: 'Sci-fi mobile roleplay mechanics with touch-optimized controls and battery-conscious rendering pipeline.',
     stack: 'Unity Mobile • C# • Touch Gestures • Metal/Vulkan',
-    accentColor: '#D97706',
+    accentColor: '#FFB800',
     icon: '🎮',
     metrics: '60 FPS Mobile Target • Low Thermal Footprint'
   },
@@ -34,7 +34,7 @@ export const PROJECTS = [
     description: 'Distributed cloud architecture capable of ingesting 1.2M events per second with sub-10ms processing latency and instant analytics dashboards.',
     summary: 'High-concurrency infrastructure handling sub-millisecond pipeline sync across global node clusters.',
     stack: 'Golang • Rust • Apache Kafka • Kubernetes',
-    accentColor: '#2A6F62',
+    accentColor: '#00F0FF',
     icon: '⚡',
     metrics: '1.2M req/sec • Sub-10ms P99 Latency'
   },
@@ -47,7 +47,7 @@ export const PROJECTS = [
     description: 'Automated 24/7 infrastructure care guarding 50+ enterprise client websites. Zero-downtime security patching, automated hourly backups, DDoS scrubbing, and sub-15min SLA incident response.',
     summary: 'Full-spectrum preventive maintenance protecting web uptime and mission-critical business continuity.',
     stack: 'Cloudflare Enterprise • Linux • Automated CI/CD • Datadog',
-    accentColor: '#2A6F62',
+    accentColor: '#00F0FF',
     icon: '🛠️',
     metrics: '99.99% Average Uptime • 12m Incident Resolution'
   },
@@ -60,7 +60,7 @@ export const PROJECTS = [
     description: 'Centralized administrative engine featuring granular RBAC permissions, audit logging, catalog syncing, and high-velocity workflow automation for distributed support teams.',
     summary: 'Custom administrative suite streamlining daily content, customer, and database operations.',
     stack: 'Next.js • PostgreSQL • Prisma • Tailored RBAC',
-    accentColor: '#C2613A',
+    accentColor: '#FFB800',
     icon: '📋',
     metrics: '10x Faster Admin Updates • Zero Data Conflicts'
   },
@@ -73,7 +73,7 @@ export const PROJECTS = [
     description: 'A 90-second studio teaser combining real-time camera tracking, customized pyroclastic VFX, and orchestral audio mixing for an upcoming franchise.',
     summary: 'Award-nominated cinematic teaser featuring photorealistic volumetric atmosphere and dynamic physics destruction.',
     stack: 'Houdini • Maya • Unreal Virtual Cam • DaVinci',
-    accentColor: '#C2613A',
+    accentColor: '#FFB800',
     icon: '🎬',
     metrics: 'Dolby Atmos • Photoreal Volumetric Simulation'
   },
@@ -86,7 +86,7 @@ export const PROJECTS = [
     description: 'Custom matchmaking algorithms with low-latency georouting, automated cheat detection heuristics, and live load distribution.',
     summary: 'Scalable backend microservices handling live player state synchronization and global lobby matchmaking.',
     stack: 'Node.js • WebSockets • Redis • AWS ECS',
-    accentColor: '#2A6F62',
+    accentColor: '#00F0FF',
     icon: '🛡️',
     metrics: 'Zero Downtime • Global Edge Mesh'
   },
@@ -99,7 +99,7 @@ export const PROJECTS = [
     description: 'High-availability Linux server administration featuring automated zero-downtime GitHub Actions CI/CD, Docker container orchestration, Nginx reverse proxies with SSL auto-renewal, and 24/7 server health telemetry.',
     summary: 'Automated multi-node Linux server architecture with zero-downtime CI/CD deployment workflows and continuous server telemetry.',
     stack: 'Docker • Linux Ubuntu • Nginx • GitHub Actions • AWS',
-    accentColor: '#2A6F62',
+    accentColor: '#0284C7',
     icon: '🖥️',
     metrics: '99.99% Uptime • Zero-Downtime Deploys'
   },
@@ -112,7 +112,7 @@ export const PROJECTS = [
     description: 'A futuristic 3D logo reveal and motion graphics package designed for interactive web intros and trade show keynotes.',
     summary: 'High-contrast, dual-spectrum kinetic logo sequence designed for multi-channel video rollouts.',
     stack: 'Blender • After Effects • WebGL Shaders',
-    accentColor: '#C2613A',
+    accentColor: '#FFB800',
     icon: '🦂',
     metrics: 'Kinetic 3D Typography • 8K Master Render'
   }
