@@ -157,9 +157,9 @@ export default function Services({ onSelectService }) {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
                     {loc.title}
-                  </h3>
+                  </h2>
                   <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
                     {loc.description}
                   </p>

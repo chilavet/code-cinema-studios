@@ -87,8 +87,10 @@ export default function Philosophy() {
                 <div className="relative inline-block p-1 rounded-full bg-slate-950 border-2 border-slate-800 shadow-xl group animate-float-subtle">
                   <img
                     src="/logo.jpg"
-                    alt="Codes Cinema Emblem"
+                    alt="Codes Cinema Studios - Cybernetic Emblem & Philosophy"
                     className="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full transition-transform duration-300 group-hover:scale-105"
+                    width="144"
+                    height="144"
                   />
                 </div>
                 <h3 className="text-base font-bold font-['Orbitron',sans-serif] text-slate-900 dark:text-white tracking-wide mt-4">

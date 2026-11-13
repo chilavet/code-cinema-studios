@@ -31,8 +31,10 @@ export default function Navbar({ onOpenContact }) {
             <div className="relative w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm transition-transform group-hover:scale-105">
               <img
                 src="/logo.jpg"
-                alt="Codes Cinema"
+                alt="Codes Cinema Studios - Full-Stack Web & Mobile Game Development"
                 className="w-full h-full object-cover rounded-full"
+                width="36"
+                height="36"
               />
             </div>
             <div className="flex flex-col">

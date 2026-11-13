@@ -345,8 +345,10 @@ export default function Hero() {
                   <div className="w-8 h-8 rounded-full p-0.5 bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
                     <img
                       src="/logo.jpg"
-                      alt="Codes Cinema"
+                      alt="Codes Cinema Core - Live Engineering Architecture Deck"
                       className="w-full h-full object-cover rounded-full"
+                      width="32"
+                      height="32"
                     />
                   </div>
                   <div>

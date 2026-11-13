@@ -16,8 +16,10 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm">
                 <img
                   src="/logo.jpg"
-                  alt="Codes Cinema"
+                  alt="Codes Cinema Studios - Global Software & AI Video Studio"
                   className="w-full h-full object-cover rounded-full"
+                  width="36"
+                  height="36"
                 />
               </div>
               <span className="font-['Orbitron',sans-serif] font-bold text-lg text-slate-900 dark:text-white tracking-tight">

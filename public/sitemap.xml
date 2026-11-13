@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://codescinema.com/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://codescinema.com/og-preview.jpg</image:loc>
+      <image:title>Codes Cinema Studios - Full-Stack Web, Mobile Apps, Games &amp; AI Video</image:title>
+      <image:caption>Codes Cinema digital engineering, custom software, mobile games, and AI video advert production.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://codescinema.com/logo.jpg</image:loc>
+      <image:title>Codes Cinema Cybernetic Studio Emblem</image:title>
+    </image:image>
+  </url>
+</urlset>

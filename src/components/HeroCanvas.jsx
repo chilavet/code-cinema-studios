@@ -94,6 +94,8 @@ export default function HeroCanvas() {
   return (
     <canvas
       ref={canvasRef}
+      role="presentation"
+      aria-hidden="true"
       className="absolute inset-0 pointer-events-none z-0 opacity-100"
     />
   );
