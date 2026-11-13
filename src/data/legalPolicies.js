@@ -6,7 +6,6 @@ export const LEGAL_POLICIES = {
     id: 'privacy',
     title: 'Privacy Policy',
     tagline: 'Client Confidentiality, Data Sovereignty & Zero Commercial Tracking',
-    lastUpdated: 'November 13, 2026',
     summary:
       'Codes Cinema operates as a boutique digital engineering studio. We believe your technical specifications, business plans, and personal communication belong exclusively to you. We do not sell, rent, or monetize client data, nor do we run cross-site tracking or third-party advertising pixels.',
     sections: [
@@ -96,7 +95,6 @@ export const LEGAL_POLICIES = {
     id: 'terms',
     title: 'Terms of Service',
     tagline: 'Transparent Engineering Agreements, 100% IP Assignment & Guaranteed SLA',
-    lastUpdated: 'November 13, 2026',
     summary:
       'These Terms govern all technical consulting, custom full-stack development, mobile game engineering, DevOps administration, and ongoing maintenance retainers provided by Codes Cinema Studios. We operate on transparent milestones and 100% intellectual property ownership assignment upon payment.',
     sections: [
@@ -178,7 +176,6 @@ export const LEGAL_POLICIES = {
     id: 'security',
     title: 'Security Policy',
     tagline: 'Defense-in-Depth Architecture, Zero-Day Vulnerability Patching & Bug Bounty',
-    lastUpdated: 'November 13, 2026',
     summary:
       'Security is not an afterthought at Codes Cinema — it is engineered into our architecture from the first database schema to production deployment. We enforce Linux server hardening, containerized isolation, TLS 1.3 encryption, automated daily off-site backups, and maintain a 24/7 security response desk.',
     sections: [

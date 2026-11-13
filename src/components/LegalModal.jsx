@@ -7,8 +7,7 @@ import {
   CheckCircle2,
   Mail,
   Copy,
-  Check,
-  ArrowRight
+  Check
 } from 'lucide-react';
 import { LEGAL_POLICIES } from '../data/legalPolicies';
 
@@ -16,8 +15,7 @@ export default function LegalModal({
   isOpen,
   activeTab = 'privacy',
   onClose,
-  onSelectTab,
-  onOpenContact
+  onSelectTab
 }) {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
@@ -56,19 +54,6 @@ export default function LegalModal({
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleContactDiscovery = () => {
-    onClose();
-    if (onOpenContact) {
-      const subjectTopic =
-        activeTab === 'privacy'
-          ? 'Data Protection & NDA Request'
-          : activeTab === 'terms'
-          ? 'Commercial Contract & Milestone Discovery'
-          : 'Security Review & Infrastructure Audit';
-      onOpenContact(subjectTopic);
-    }
-  };
-
   return (
     <div
       role="dialog"
@@ -90,17 +75,11 @@ export default function LegalModal({
               {activeTab === 'security' && <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />}
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h2 id="legal-modal-title" className="text-base sm:text-lg font-bold text-slate-950 dark:text-white">
-                  {currentPolicy.title}
-                </h2>
-                <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Live Studio Standard
-                </span>
-              </div>
+              <h2 id="legal-modal-title" className="text-base sm:text-lg font-bold text-slate-950 dark:text-white">
+                {currentPolicy.title}
+              </h2>
               <p className="text-xs text-slate-500 dark:text-slate-400 font-medium truncate max-w-md">
-                Effective: {currentPolicy.lastUpdated} • Codes Cinema Legal & Security Center
+                Codes Cinema Legal & Security Center
               </p>
             </div>
           </div>
@@ -219,15 +198,6 @@ export default function LegalModal({
                 </button>
               </div>
             </div>
-
-            <button
-              type="button"
-              onClick={handleContactDiscovery}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-sky-600 dark:hover:bg-sky-500 transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-            >
-              <span>Request NDA / Technical Discovery</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
           </div>
         </div>
 

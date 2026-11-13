@@ -61,17 +61,6 @@ export default function App() {
     window.history.replaceState(null, '', `#${tabKey}`);
   };
 
-  const handleLegalDiscovery = (subjectTopic) => {
-    setContactInitial({
-      service: 'Website Maintenance & Care',
-      brief: `Inquiry regarding Codes Cinema ${subjectTopic}. Requesting official NDA and technical discovery documentation.`
-    });
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleApplyEstimate = ({ trackId, trackName, weeksWindow }) => {
     let serviceMapping = 'Full-Stack Web Development';
     if (trackId === 'Fullstack' || trackName.includes('Full-Stack') || trackName.includes('Fullstack')) {
@@ -169,7 +158,6 @@ export default function App() {
             activeTab={legalModal.activeTab}
             onClose={handleCloseLegal}
             onSelectTab={handleSelectLegalTab}
-            onOpenContact={handleLegalDiscovery}
           />
         </div>
       </LanguageProvider>
