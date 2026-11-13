@@ -7,7 +7,6 @@ import {
   ShieldCheck,
   Wrench,
   Headphones,
-  ArrowRight,
   Check,
   Server,
   Layers,
@@ -16,7 +15,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
-export default function Services({ onSelectService }) {
+export default function Services() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState('all');
 
@@ -44,12 +43,6 @@ export default function Services({ onSelectService }) {
         return <ShieldCheck className="w-5 h-5 text-indigo-600" />;
       default:
         return <Code2 className="w-5 h-5 text-slate-800" />;
-    }
-  };
-
-  const handleInquire = (serviceTitle, localizedTitle) => {
-    if (onSelectService) {
-      onSelectService(serviceTitle, localizedTitle);
     }
   };
 
@@ -146,70 +139,45 @@ export default function Services({ onSelectService }) {
             return (
               <div
                 key={s.id}
-                className="card-minimal rounded-2xl p-7 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
+                className="card-minimal rounded-2xl p-7 group shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
               >
-                <div>
-                  {/* Header: Icon */}
-                  <div className="mb-6">
-                    <div className="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-sm">
-                      {getIcon(s.icon)}
-                    </div>
-                  </div>
-
-                  {/* Title & Description */}
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
-                    {loc.title}
-                  </h2>
-                  <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                    {loc.description}
-                  </p>
-
-                  {/* Highlights List */}
-                  {loc.highlights && loc.highlights.length > 0 && (
-                    <div className="mb-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
-                      {loc.highlights.map((item, hIdx) => (
-                        <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
-                          <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {(loc.tags || s.tags).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                {/* Header: Icon */}
+                <div className="mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-sm">
+                    {getIcon(s.icon)}
                   </div>
                 </div>
 
-                {/* Bottom Actions */}
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                  <a
-                    href="#contact"
-                    onClick={() => handleInquire(s.title, loc.title)}
-                    className="font-semibold text-slate-900 dark:text-white hover:text-sky-700 dark:hover:text-amber-400 transition-colors inline-flex items-center gap-1.5"
-                  >
-                    <span>{t.services.inquireTrack}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                  </a>
+                {/* Title & Description */}
+                <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
+                  {loc.title}
+                </h2>
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                  {loc.description}
+                </p>
 
-                  <a
-                    href={`https://wa.me/2348160498340?text=${encodeURIComponent(
-                      `Hello Codes Cinema, I am interested in your ${s.title} services.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-semibold text-xs transition-colors"
-                  >
-                    WhatsApp ↗
-                  </a>
+                {/* Highlights List */}
+                {loc.highlights && loc.highlights.length > 0 && (
+                  <div className="mb-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                    {loc.highlights.map((item, hIdx) => (
+                      <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5">
+                  {(loc.tags || s.tags).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             );
