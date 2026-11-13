@@ -3,7 +3,7 @@ import { useLanguage } from '../context/useLanguage';
 
 const currentYear = new Date().getFullYear();
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   const { t } = useLanguage();
 
   return (
@@ -183,13 +183,34 @@ export default function Footer() {
           </div>
 
           <div className="flex space-x-5 text-[11px]">
-            <a href="#" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+            <a
+              href="#privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenLegal) onOpenLegal('privacy');
+              }}
+              className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+            >
               {t.footer.privacy}
             </a>
-            <a href="#" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+            <a
+              href="#terms"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenLegal) onOpenLegal('terms');
+              }}
+              className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+            >
               {t.footer.terms}
             </a>
-            <a href="#" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+            <a
+              href="#security"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onOpenLegal) onOpenLegal('security');
+              }}
+              className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+            >
               {t.footer.security}
             </a>
           </div>

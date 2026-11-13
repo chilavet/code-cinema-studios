@@ -288,9 +288,22 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                 <span>{t.contact.ndaTitle}</span>
               </div>
               <h4 className="text-slate-900 dark:text-white font-bold text-sm mb-1">{t.contact.ndaHeading}</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
                 {t.contact.ndaDesc}
               </p>
+              <div className="flex items-center gap-2.5 text-[11px] font-semibold text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <a href="#privacy" className="hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                  Privacy Policy ↗
+                </a>
+                <span>•</span>
+                <a href="#terms" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Terms ↗
+                </a>
+                <span>•</span>
+                <a href="#security" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                  Security SLA ↗
+                </a>
+              </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">

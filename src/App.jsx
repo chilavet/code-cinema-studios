@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
@@ -13,12 +13,64 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import ScrollParallaxCanvas from './components/ScrollParallaxCanvas';
+import LegalModal from './components/LegalModal';
 
 export default function App() {
   const [contactInitial, setContactInitial] = useState({
     brief: '',
     service: 'Full-Stack Web Development'
   });
+
+  const [legalModal, setLegalModal] = useState({
+    isOpen: false,
+    activeTab: 'privacy'
+  });
+
+  // Deep linking: Sync URL hash (#privacy, #terms, #security) with Legal Modal
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash === '#privacy') {
+        setLegalModal({ isOpen: true, activeTab: 'privacy' });
+      } else if (hash === '#terms') {
+        setLegalModal({ isOpen: true, activeTab: 'terms' });
+      } else if (hash === '#security') {
+        setLegalModal({ isOpen: true, activeTab: 'security' });
+      }
+    };
+
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
+
+  const handleOpenLegal = (tabKey = 'privacy') => {
+    setLegalModal({ isOpen: true, activeTab: tabKey });
+    window.history.pushState(null, '', `#${tabKey}`);
+  };
+
+  const handleCloseLegal = () => {
+    setLegalModal((prev) => ({ ...prev, isOpen: false }));
+    if (['#privacy', '#terms', '#security'].includes(window.location.hash.toLowerCase())) {
+      window.history.pushState(null, '', window.location.pathname + window.location.search);
+    }
+  };
+
+  const handleSelectLegalTab = (tabKey) => {
+    setLegalModal((prev) => ({ ...prev, activeTab: tabKey }));
+    window.history.replaceState(null, '', `#${tabKey}`);
+  };
+
+  const handleLegalDiscovery = (subjectTopic) => {
+    setContactInitial({
+      service: 'Website Maintenance & Care',
+      brief: `Inquiry regarding Codes Cinema ${subjectTopic}. Requesting official NDA and technical discovery documentation.`
+    });
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleApplyEstimate = ({ trackId, trackName, weeksWindow }) => {
     let serviceMapping = 'Full-Stack Web Development';
@@ -105,11 +157,20 @@ export default function App() {
             />
           </main>
 
-          {/* Global Footer */}
-          <Footer />
+          {/* Global Footer with interactive legal policy center */}
+          <Footer onOpenLegal={handleOpenLegal} />
 
           {/* Floating Instant WhatsApp Button */}
           <WhatsAppButton />
+
+          {/* Comprehensive Studio Legal & Security Policy Center */}
+          <LegalModal
+            isOpen={legalModal.isOpen}
+            activeTab={legalModal.activeTab}
+            onClose={handleCloseLegal}
+            onSelectTab={handleSelectLegalTab}
+            onOpenContact={handleLegalDiscovery}
+          />
         </div>
       </LanguageProvider>
     </ThemeProvider>
