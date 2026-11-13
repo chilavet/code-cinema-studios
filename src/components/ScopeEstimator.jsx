@@ -32,7 +32,7 @@ export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
     return TRACK_CONFIGS[0];
   });
   const [scopeTier, setScopeTier] = useState('production');
-  const [weeks, setWeeks] = useState(8);
+  const [weeks, setWeeks] = useState(4);
 
   const [prevPreselected, setPrevPreselected] = useState(preselectedTrack);
   if (preselectedTrack && preselectedTrack !== prevPreselected) {
@@ -48,8 +48,8 @@ export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
   const calculatedEstimate = useMemo(() => {
     const tierMult = tierMultipliers[scopeTier] || 1.0;
     const effectiveWeeks = weeks * selectedTrack.multiplier * tierMult;
-    const minWeeks = Math.max(4, Math.round(effectiveWeeks * 0.85));
-    const maxWeeks = Math.max(minWeeks + 2, Math.round(effectiveWeeks * 1.25));
+    const minWeeks = Math.max(2, Math.round(effectiveWeeks * 0.85));
+    const maxWeeks = Math.max(minWeeks + 1, Math.round(effectiveWeeks * 1.25));
     return { minWeeks, maxWeeks };
   }, [weeks, selectedTrack, scopeTier]);
 
@@ -172,8 +172,8 @@ export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
                 </div>
                 <input
                   type="range"
-                  min="4"
-                  max="24"
+                  min="2"
+                  max="12"
                   step="1"
                   value={weeks}
                   onChange={(e) => setWeeks(parseInt(e.target.value, 10))}
