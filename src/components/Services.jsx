@@ -18,39 +18,39 @@ import { useLanguage } from '../context/useLanguage';
 const SERVICE_IMAGES = {
   fullstack: {
     src: '/images/core/fullstack.jpg',
-    alt: 'Collaborative Engineering Team Building Full-Stack Web Platforms'
+    alt: 'Modern Full-Stack Development Workspace & Web Platform Architecture'
   },
   frontend: {
     src: '/images/core/frontend.jpg',
-    alt: 'Creative Designers & Front-End Developers Crafting Fluid Reactive UI'
+    alt: 'Clean Responsive Web Design System & Multi-Device Workspace'
   },
   backend: {
     src: '/images/core/backend.jpg',
-    alt: 'Software Architects In Active Discussion Designing Resilient Cloud APIs'
+    alt: 'High-Concurrency Development Station & Cloud API Infrastructure'
   },
   'mobile-games': {
     src: '/images/core/mobile.jpg',
-    alt: 'Passionate Gaming Team Creating & Testing Interactive Mobile Games'
+    alt: 'Interactive Mobile Game Engineering & Dynamic Gaming Station'
   },
   devops: {
     src: '/images/core/devops.jpg',
-    alt: 'Cloud Engineers Planning Reliable Continuous Deployment Pipelines'
+    alt: 'Global Cloud Network Topology & Zero-Downtime Infrastructure'
   },
   maintenance: {
     src: '/images/core/care.jpg',
-    alt: 'Dedicated Customer Support & Technical Care Team Providing Peace of Mind'
+    alt: 'Proactive Website Care & Continuous Uptime Monitoring Station'
   },
   admin: {
     src: '/images/core/admin.jpg',
-    alt: 'Dedicated Digital Operations & Content Management Desk'
+    alt: 'Modern Studio Operations & Digital Content Management Workspace'
   },
   cinematics: {
     src: '/images/core/cinematics.jpg',
-    alt: 'Creative Video Production Studio & AI Commercials'
+    alt: 'Cinematic Production Gear & Studio Clapperboard'
   },
   consulting: {
     src: '/images/core/consulting.jpg',
-    alt: 'Strategic Technology Consultants Advising Founders & Teams'
+    alt: 'Modern Architectural Boardroom for Strategic Technology Consulting'
   }
 };
 

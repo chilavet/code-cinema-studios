@@ -46,33 +46,33 @@ const DEFAULT_HEADLINES = {
 const CORE_IMAGES = {
   fullstack: {
     src: '/images/core/fullstack.jpg',
-    alt: 'Collaborative Engineering Team Building Full-Stack Web Platforms',
-    caption: 'Collaborative Studio Team Delivering Turnkey Web Platforms'
+    alt: 'Modern Full-Stack Development Workspace & Web Platform Architecture',
+    caption: 'Production Web Platform Architecture & Turnkey Engineering Workspace'
   },
   frontend: {
     src: '/images/core/frontend.jpg',
-    alt: 'Creative Designers & Front-End Developers Crafting Fluid Reactive UI',
-    caption: 'Creative Designers & Developers Crafting Intuitive User Experiences'
+    alt: 'Clean Responsive Web Design System & Multi-Device Workspace',
+    caption: 'Responsive Web Design System & Fluid Micro-Interactions'
   },
   backend: {
     src: '/images/core/backend.jpg',
-    alt: 'Software Architects In Active Discussion Designing Resilient Cloud APIs',
-    caption: 'Engineers Designing Resilient Cloud APIs & High-Throughput Services'
+    alt: 'High-Concurrency Development Station & Cloud API Infrastructure',
+    caption: 'Resilient Cloud APIs & High-Throughput Microservice Architecture'
   },
   mobile: {
     src: '/images/core/mobile.jpg',
-    alt: 'Passionate Gaming Team Creating & Testing Interactive Mobile Games',
-    caption: 'Immersive Mobile Game Creation & Responsive Touch Play'
+    alt: 'Interactive Mobile Game Engineering & Dynamic Gaming Station',
+    caption: 'Dynamic 3D Mobile Game Engineering & High-Performance Mechanics'
   },
   devops: {
     src: '/images/core/devops.jpg',
-    alt: 'Cloud Engineers Planning Reliable Continuous Deployment Pipelines',
-    caption: 'Human-Led Cloud Architecture & Zero-Downtime Reliability'
+    alt: 'Global Cloud Network Topology & Zero-Downtime Infrastructure',
+    caption: 'Global Cloud Infrastructure & Automated CI/CD Pipelines'
   },
   care: {
     src: '/images/core/care.jpg',
-    alt: 'Dedicated Customer Support & Technical Care Team Providing Peace of Mind',
-    caption: 'Dedicated 24/7 Human Care, Technical Monitoring & Rapid Triage'
+    alt: 'Proactive Website Care & Continuous Uptime Monitoring Station',
+    caption: 'Proactive 24/7 SLA Support, Security Patching & Rapid Triage'
   }
 };
 
