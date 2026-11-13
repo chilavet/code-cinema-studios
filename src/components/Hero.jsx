@@ -278,9 +278,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 6 Disciplines Interactive Switcher Deck (Compact Proportional Dock) */}
-        <div className="w-full max-w-3xl mx-auto mb-5 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1 sm:gap-1.5 w-full">
+        {/* 6 Disciplines Interactive Switcher Deck (Proportional Dock +10%) */}
+        <div className="w-full max-w-[845px] mx-auto mb-6 p-1.5 sm:p-2 rounded-xl sm:rounded-2xl bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2 w-full">
             {tabConfigs.map((tab) => {
               const Icon = tab.icon;
               const isSelected = activeTab === tab.id;
@@ -294,14 +294,14 @@ export default function Hero() {
                     setIsPaused(true);
                   }}
                   onMouseLeave={() => setIsPaused(false)}
-                  className={`relative py-1.5 sm:py-2 px-2 sm:px-2.5 rounded-lg sm:rounded-xl min-h-[36px] sm:min-h-[38px] font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 border overflow-hidden ${
+                  className={`relative py-2 sm:py-2.5 px-2.5 sm:px-3 rounded-lg sm:rounded-xl min-h-[40px] sm:min-h-[42px] font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 sm:gap-2 border overflow-hidden ${
                     isSelected
                       ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 border-slate-900 dark:border-white shadow-xs'
                       : 'bg-white/60 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 border-slate-200/80 dark:border-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 shrink-0 ${tab.color}`} />
-                  <span className="text-[11px] sm:text-xs tracking-tight font-semibold truncate">
+                  <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${tab.color}`} />
+                  <span className="text-xs sm:text-[13px] tracking-tight font-semibold truncate">
                     {tab.label}
                   </span>
                   {isSelected && (
