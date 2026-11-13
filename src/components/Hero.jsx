@@ -388,7 +388,7 @@ export default function Hero() {
           {/* Deliverables (8 cols) */}
           <div className="lg:col-span-8 p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
-              {serviceDetail?.title || activeTabConfig.fullTitle} — Key Deliverables
+              {serviceDetail?.title || activeTabConfig.fullTitle} — {t.hero.keyDeliverables || 'Key Deliverables'}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {deliverablesList.map((hl, i) => (
@@ -404,7 +404,7 @@ export default function Hero() {
           <div className="lg:col-span-4 p-6 sm:p-7 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between gap-5">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-                Core Architecture Stack
+                {t.hero.coreStack || 'Core Architecture Stack'}
               </h4>
               <div className="flex flex-wrap gap-1.5">
                 {stackTagsList.map((tag, idx) => (
@@ -421,9 +421,11 @@ export default function Hero() {
             <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                <span className="font-semibold text-slate-900 dark:text-white">Senior Human Craft</span>
+                <span className="font-semibold text-slate-900 dark:text-white">
+                  {t.hero.seniorCraft || 'Senior Human Craft'}
+                </span>
               </div>
-              <span className="text-[11px] font-medium">100% IP Ownership</span>
+              <span className="text-[11px] font-medium">{t.hero.ipOwnership || '100% IP Ownership'}</span>
             </div>
           </div>
         </div>
@@ -485,7 +487,7 @@ export default function Hero() {
                   {serviceDetail?.title || activeTabConfig.fullTitle}
                 </h3>
                 <span className="text-xs text-slate-400 font-medium">
-                  {CORE_IMAGES[activeTab]?.caption} • High-Resolution View
+                  {CORE_IMAGES[activeTab]?.caption} • {t.hero.highResView || 'High-Resolution View'}
                 </span>
               </div>
             </div>
@@ -498,7 +500,7 @@ export default function Hero() {
                 aria-label="Close Full Screen"
               >
                 <X className="w-4 h-4 text-sky-400" />
-                <span className="hidden sm:inline">Close</span>
+                <span className="hidden sm:inline">{t.hero.closeModal || 'Close'}</span>
                 <span className="text-[10px] text-slate-400 bg-slate-950 px-1.5 py-0.5 rounded">ESC</span>
               </button>
             </div>
@@ -537,7 +539,7 @@ export default function Hero() {
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-slate-400 text-xs text-center sm:text-left font-medium">
-              Select a discipline to view in high resolution:
+              {t.hero.selectDiscipline || 'Select a discipline to view in high resolution:'}
             </p>
 
             <div className="flex flex-wrap justify-center gap-1.5">

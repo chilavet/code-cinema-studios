@@ -72,6 +72,13 @@ export const TRANSLATIONS = {
       cardStatus: 'Production',
       learnMore: 'Learn about this track',
       requestCall: 'Request Discovery Call',
+      keyDeliverables: 'Key Deliverables',
+      coreStack: 'Core Architecture Stack',
+      seniorCraft: 'Senior Human Craft',
+      ipOwnership: '100% IP Ownership',
+      highResView: 'High-Resolution View',
+      closeModal: 'Close',
+      selectDiscipline: 'Select a discipline to view in high resolution:',
       tabs: {
         fullstack: 'Fullstack',
         frontend: 'Frontend',
@@ -595,11 +602,81 @@ export const TRANSLATIONS = {
       kpiTriage: 'Réponse directe',
       cardTitle: 'Expertises du Studio',
       cardCore: 'Disciplines Techniques',
+      coreHeadlines: {
+        fullstack: {
+          top: 'Plateformes Web Clé en Main.',
+          accent: 'Du Schéma de Base de Données à l’UI Réactive.'
+        },
+        frontend: {
+          top: 'Interfaces Réactives Pixel-Perfect.',
+          accent: 'Mouvement Fluide & Zéro Décalage de Mise en Page.'
+        },
+        backend: {
+          top: 'APIs Cloud & Schémas Résilients.',
+          accent: 'Haute Concurrence & SLA de Disponibilité 99,98 %.'
+        },
+        mobile: {
+          top: 'Développement de Jeux Mobiles.',
+          accent: 'Moteur Unity & Contrôles Tactiles 120 FPS Verrouillés.'
+        },
+        devops: {
+          top: 'Infrastructure Cloud & Serveurs.',
+          accent: 'CI/CD Automatisé & Durcissement Linux.'
+        },
+        care: {
+          top: 'Maintenance Web & Support Continu.',
+          accent: 'Bouclier Proactif & SLA d’Intervention < 15 Min.'
+        }
+      },
       cardStatus: 'Production',
       learnMore: 'En savoir plus',
       requestCall: 'Planifier un appel',
-      tabs: { mobile: 'Mobile', software: 'Logiciel', devops: 'DevOps', care: 'Support', admin: 'Admin' },
+      keyDeliverables: 'Livrables Clés',
+      coreStack: 'Stack d’Architecture Centrale',
+      seniorCraft: 'Expertise Humaine Senior',
+      ipOwnership: '100 % Propriété Intellectuelle',
+      highResView: 'Vue Haute Résolution',
+      closeModal: 'Fermer',
+      selectDiscipline: 'Sélectionnez une discipline pour afficher en haute résolution :',
+      tabs: {
+        fullstack: 'Fullstack',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        mobile: 'Mobile',
+        devops: 'DevOps',
+        care: 'Maintenance'
+      },
       previews: {
+        fullstack: {
+          tag: 'DÉVELOPPEMENT WEB FULL-STACK',
+          title: 'Applications Web Clé en Main & Plateformes Réactives',
+          desc: 'Ingénierie web complète de bout en bout. Next.js 15, React 19, TypeScript, PostgreSQL et conteneurisation Docker, du modèle de données au déploiement en production.',
+          metrics: [
+            { label: 'Architecture', value: 'Full-Stack Clé en Main' },
+            { label: 'Performance', value: '100 % Core Vitals' },
+            { label: 'Évolutivité', value: 'Cloud Native' }
+          ]
+        },
+        frontend: {
+          tag: 'INGÉNIERIE FRONT-END',
+          title: 'UI Réactive Pixel-Perfect & Gestion d’État Fluide',
+          desc: 'Ingénierie front-end spécialisée pour équipes disposant d’APIs existantes. React 19, Next.js, micro-interactions soignées, design mobile-first et temps de réponse ultra-rapides.',
+          metrics: [
+            { label: 'Framework', value: 'React 19 / Next.js' },
+            { label: 'Décalage visuel', value: 'Zéro CLS' },
+            { label: 'Score Mobile', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'INGÉNIERIE BACK-END & APIS',
+          title: 'Schémas Résilients, Microservices & Endpoints Cloud',
+          desc: 'APIs REST, GraphQL et gRPC haute concurrence, schémas PostgreSQL et Redis optimisés, authentification OAuth2 et files d’attente conçues pour 99,98 % de disponibilité.',
+          metrics: [
+            { label: 'Latence', value: 'Sous la milliseconde' },
+            { label: 'Disponibilité SLA', value: '99,98 %' },
+            { label: 'Bases de données', value: 'PostgreSQL & Redis' }
+          ]
+        },
         mobile: {
           tag: 'DÉVELOPPEMENT JEUX MOBILES',
           title: 'Moteur Unity & Architecture Mobile Native',
@@ -658,7 +735,50 @@ export const TRANSLATIONS = {
       subtitle:
         'De la production de jeux mobiles aux logiciels cloud distribués, en passant par la maintenance 24/7 et les opérations techniques, la précision guide chaque projet.',
       inquireTrack: 'Demander un devis',
+      filters: {
+        all: 'Toutes les expertises',
+        web: 'Dév Web',
+        mobile: 'Jeux Mobiles',
+        ops: 'DevOps & SLA',
+        creative: 'Cinématiques & Tech'
+      },
       items: {
+        fullstack: {
+          title: 'Développement Web Full-Stack',
+          description:
+            'Applications web complètes de bout en bout conçues pour la vitesse, la fiabilité et l’évolutivité. Nous concevons des plateformes clés en main ou prenons en charge le front-end et le back-end séparément selon vos besoins.',
+          highlights: [
+            'Architecture complète de bout en bout (Base de données, API & UI)',
+            'Option de prestation full-stack ou front-end / back-end modulaire',
+            'Stack moderne : Next.js 15, React 19, TypeScript & PostgreSQL',
+            'Pipelines CI/CD automatisés & hébergement haute disponibilité'
+          ],
+          tags: ['Web Full-Stack', 'Frontend & Backend', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: 'Développement Front-End Web',
+          description:
+            'Interfaces utilisateur réactives et pixel-perfect conçues pour s’intégrer harmonieusement à vos APIs existantes, backends REST/GraphQL ou CMS headless. Animations fluides et scores Core Web Vitals optimaux.',
+          highlights: [
+            'Architecture React 19, Next.js, Vue & Tailwind CSS',
+            'Gestion d’état fluide, hydratation d’API & mise en cache',
+            'Design réactif sur mobile, tablette et ordinateur',
+            'Optimisation maximale Core Web Vitals & accessibilité'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'UI/UX Réactive', 'Framer Motion']
+        },
+        backend: {
+          title: 'Ingénierie Back-End & APIs',
+          description:
+            'Architectures serveur résilientes, microservices haute cadence, schémas relationnels et NoSQL normalisés, et passerelles d’API sécurisées conçues pour supporter une charge intensive.',
+          highlights: [
+            'APIs REST, GraphQL & gRPC haute concurrence',
+            'Conception de schémas PostgreSQL, MySQL, Redis & MongoDB',
+            'Authentification JWT/OAuth2, permissions RBAC & chiffrement',
+            'Mise en cache sub-milliseconde & files de traitement asynchrones'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', 'Auth & Sécurité']
+        },
         'mobile-games': {
           title: 'Développement de Jeux Mobiles',
           description: 'Ingénierie de jeux mobiles haute performance sur iOS et Android avec Unity. Physique tactile, shaders optimisés et systèmes de monétisation.',
@@ -880,11 +1000,81 @@ export const TRANSLATIONS = {
       kpiTriage: 'Respuesta Directa',
       cardTitle: 'Capacidades del Estudio',
       cardCore: 'Disciplinas Técnicas',
+      coreHeadlines: {
+        fullstack: {
+          top: 'Plataformas Web Llave en Mano.',
+          accent: 'Del Esquema de Base de Datos a la UI Reactiva.'
+        },
+        frontend: {
+          top: 'Interfaces Reactivas Pixel-Perfect.',
+          accent: 'Movimiento Fluido y Cero Salto de Diseño.'
+        },
+        backend: {
+          top: 'APIs Cloud y Esquemas Resilientes.',
+          accent: 'Alta Concurrencia y SLA de Uptime 99.98%.'
+        },
+        mobile: {
+          top: 'Desarrollo de Videojuegos Móviles.',
+          accent: 'Motor Unity y Táctil Bloqueado a 120 FPS.'
+        },
+        devops: {
+          top: 'Infraestructura Cloud y Servidores.',
+          accent: 'CI/CD Automatizado y Hardening Linux.'
+        },
+        care: {
+          top: 'Mantenimiento Web y Soporte Continuo.',
+          accent: 'Escudo Proactivo y SLA de Respuesta < 15 Min.'
+        }
+      },
       cardStatus: 'Producción',
       learnMore: 'Ver esta especialidad',
       requestCall: 'Solicitar llamada',
-      tabs: { mobile: 'Móvil', software: 'Software', devops: 'DevOps', care: 'Soporte', admin: 'Admin' },
+      keyDeliverables: 'Entregables Clave',
+      coreStack: 'Stack de Arquitectura Principal',
+      seniorCraft: 'Desarrollo Humano Senior',
+      ipOwnership: '100% Propiedad Intelectual',
+      highResView: 'Vista de Alta Resolución',
+      closeModal: 'Cerrar',
+      selectDiscipline: 'Selecciona una disciplina para verla en alta resolución:',
+      tabs: {
+        fullstack: 'Fullstack',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        mobile: 'Móvil',
+        devops: 'DevOps',
+        care: 'Soporte'
+      },
       previews: {
+        fullstack: {
+          tag: 'DESARROLLO WEB FULL-STACK',
+          title: 'Aplicaciones Web Llave en Mano y Plataformas Reactivas',
+          desc: 'Ingeniería web completa de extremo a extremo. Next.js 15, React 19, TypeScript, PostgreSQL y contenedores Docker desde el esquema hasta producción.',
+          metrics: [
+            { label: 'Arquitectura', value: 'Full-Stack Llave en Mano' },
+            { label: 'Rendimiento', value: '100% Core Vitals' },
+            { label: 'Escalabilidad', value: 'Cloud Native' }
+          ]
+        },
+        frontend: {
+          tag: 'INGENIERÍA FRONT-END',
+          title: 'UI Reactiva Pixel-Perfect y Arquitectura de Estado',
+          desc: 'Ingeniería front-end especializada para equipos con APIs existentes. React 19, Next.js, microinteracciones fluidas y renderizado en menos de un segundo.',
+          metrics: [
+            { label: 'Framework', value: 'React 19 / Next.js' },
+            { label: 'Estabilidad visual', value: 'Cero CLS' },
+            { label: 'Score Móvil', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'INGENIERÍA BACK-END Y APIS',
+          title: 'Esquemas Resilientes, Microservicios y Endpoints Cloud',
+          desc: 'APIs REST, GraphQL y gRPC de alta concurrencia, esquemas PostgreSQL/Redis optimizados, autenticación OAuth2 y colas con disponibilidad del 99.98%.',
+          metrics: [
+            { label: 'Latencia', value: 'Submilisegundo' },
+            { label: 'Uptime SLA', value: '99.98%' },
+            { label: 'Bases de datos', value: 'PostgreSQL y Redis' }
+          ]
+        },
         mobile: {
           tag: 'DESARROLLO DE JUEGOS MÓVILES',
           title: 'Motor Unity y Arquitectura Móvil Nativa',
@@ -942,7 +1132,50 @@ export const TRANSLATIONS = {
       heading: 'Diseñado para el rendimiento y la resistencia.',
       subtitle: 'Desde juegos móviles y software cloud distribuido hasta mantenimiento web 24/7 y operaciones técnicas.',
       inquireTrack: 'Consultar Servicio',
+      filters: {
+        all: 'Todas las Disciplinas',
+        web: 'Desarrollo Web',
+        mobile: 'Juegos Móviles',
+        ops: 'DevOps y SLA',
+        creative: 'Cinemáticas y Tech'
+      },
       items: {
+        fullstack: {
+          title: 'Desarrollo Web Full-Stack',
+          description:
+            'Aplicaciones web completas llave en mano diseñadas para velocidad, fiabilidad y escala. Creamos plataformas completas desde la base de datos hasta la interfaz, o desarrollamos frontend y backend por separado según su preferencia.',
+          highlights: [
+            'Arquitectura integral de extremo a extremo (Base de Datos, API e Interfaz)',
+            'Opción de contratación full-stack o frontend / backend modular',
+            'Stack moderno: Next.js 15, React 19, TypeScript y PostgreSQL',
+            'Pipelines CI/CD automatizados y alojamiento de alta disponibilidad'
+          ],
+          tags: ['Web Full-Stack', 'Frontend y Backend', 'React 19 y Next.js', 'PostgreSQL y APIs']
+        },
+        frontend: {
+          title: 'Desarrollo Front-End Web',
+          description:
+            'Interfaces de usuario reactivas y pixel-perfect diseñadas para integrarse perfectamente en sus APIs existentes, backends REST/GraphQL o CMS headless. Animaciones fluidas y métricas Core Web Vitals óptimas.',
+          highlights: [
+            'Arquitectura React 19, Next.js, Vue y Tailwind CSS',
+            'Gestión de estado fluida, hidratación de API y almacenamiento en caché',
+            'Diseño adaptable en móviles, tablets y ordenadores',
+            'Optimización máxima para Core Web Vitals y accesibilidad'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'UI/UX Reactiva', 'Framer Motion']
+        },
+        backend: {
+          title: 'Ingeniería Back-End y APIs',
+          description:
+            'Arquitecturas de servidor resilientes, microservicios de alto rendimiento, esquemas relacionales y NoSQL normalizados, y pasarelas de API seguras para soportar alta demanda.',
+          highlights: [
+            'APIs REST, GraphQL y gRPC de alta concurrencia',
+            'Diseño de esquemas PostgreSQL, MySQL, Redis y MongoDB',
+            'Autenticación JWT/OAuth2, permisos RBAC y cifrado de datos',
+            'Caché submilisegundo y colas de procesamiento asíncrono'
+          ],
+          tags: ['Node.js y Python', 'PostgreSQL y Redis', 'REST y GraphQL', 'Autenticación y Seguridad']
+        },
         'mobile-games': {
           title: 'Desarrollo de Juegos Móviles',
           description: 'Juegos móviles de alto rendimiento para iOS y Android con Unity, físicas táctiles precisas y shaders optimizados.',
@@ -1163,12 +1396,82 @@ export const TRANSLATIONS = {
       kpiUptime: 'SLA-Verfügbarkeit',
       kpiTriage: 'Direkte Reaktion',
       cardTitle: 'Studio-Kompetenzen',
-      cardCore: 'Disciplines Techniques',
+      cardCore: 'Technische Disziplinen',
+      coreHeadlines: {
+        fullstack: {
+          top: 'Schlüsselfertige Full-Stack Plattformen.',
+          accent: 'Vom Datenbankschema bis zur reaktiven UI.'
+        },
+        frontend: {
+          top: 'Pixelgenaue reaktive Benutzeroberflächen.',
+          accent: 'Flüssige Bewegung & null Layout-Verschiebung.'
+        },
+        backend: {
+          top: 'Resistente Cloud-APIs & Schemata.',
+          accent: 'Hohe Parallelität & 99,98 % Uptime-SLA.'
+        },
+        mobile: {
+          top: 'Entwicklung mobiler Games.',
+          accent: 'Unity Engine & gelockte 120 FPS Touch-Reaktion.'
+        },
+        devops: {
+          top: 'Cloud- & Server-Infrastruktur.',
+          accent: 'Automatisierte CI/CD & Linux-Härtung.'
+        },
+        care: {
+          top: 'Website-Wartung & Support rund um die Uhr.',
+          accent: 'Proaktiver Schutz & < 15 Min Reaktions-SLA.'
+        }
+      },
       cardStatus: 'Produktion',
       learnMore: 'Mehr erfahren',
       requestCall: 'Erstgespräch anfragen',
-      tabs: { mobile: 'Mobile', software: 'Software', devops: 'DevOps', care: 'Wartung', admin: 'Admin' },
+      keyDeliverables: 'Zentrale Meilensteine',
+      coreStack: 'Kern-Architektur-Stack',
+      seniorCraft: 'Senior Entwicklerhandwerk',
+      ipOwnership: '100% IP-Eigentum',
+      highResView: 'Hochauflösende Ansicht',
+      closeModal: 'Schließen',
+      selectDiscipline: 'Wählen Sie einen Bereich zur hochauflösenden Ansicht:',
+      tabs: {
+        fullstack: 'Fullstack',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        mobile: 'Mobile',
+        devops: 'DevOps',
+        care: 'Wartung'
+      },
       previews: {
+        fullstack: {
+          tag: 'FULL-STACK WEBENTWICKLUNG',
+          title: 'Schlüsselfertige Web-Apps & Reaktive Plattformen',
+          desc: 'Komplette End-to-End-Webentwicklung. Next.js 15, React 19, TypeScript, PostgreSQL und Docker-Containerisierung von Datenbankschemata bis Live-Deployments.',
+          metrics: [
+            { label: 'Architektur', value: 'Full-Stack schlüsselfertig' },
+            { label: 'Performance', value: '100% Core Vitals' },
+            { label: 'Skalierung', value: 'Cloud Native' }
+          ]
+        },
+        frontend: {
+          tag: 'FRONTEND-ENTWICKLUNG',
+          title: 'Pixelgenaue reaktive UI & State-Management',
+          desc: 'Spezialisierte Frontend-Entwicklung für Teams mit vorhandenen APIs. React 19, Next.js, flüssige Mikrointeraktionen, responsives Design und Ladezeiten unter einer Sekunde.',
+          metrics: [
+            { label: 'Framework', value: 'React 19 / Next.js' },
+            { label: 'Layout-Shift', value: 'Null CLS' },
+            { label: 'Mobile Score', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'BACKEND- & API-SYSTEMARCHITEKTUR',
+          title: 'Robuste Schemata, Microservices & Cloud-Endpoints',
+          desc: 'REST-, GraphQL- und gRPC-APIs mit hohem Durchsatz, normalisierte PostgreSQL/Redis-Datenbanken, OAuth2-Authentifizierung und Message Queues für 99,98 % Verfügbarkeit.',
+          metrics: [
+            { label: 'Latenz', value: 'Sub-Millisekunde' },
+            { label: 'Uptime SLA', value: '99,98 %' },
+            { label: 'Datenbanken', value: 'PostgreSQL & Redis' }
+          ]
+        },
         mobile: {
           tag: 'MOBILE-GAME-ENTWICKLUNG',
           title: 'Unity Engine & Native Mobile-Architektur',
@@ -1226,7 +1529,50 @@ export const TRANSLATIONS = {
       heading: 'Entwickelt für Performance und Ausdauer.',
       subtitle: 'Von Mobile-Game-Produktion und verteilter Cloud-Software bis hin zu 24/7-Website-Wartung und Betrieb.',
       inquireTrack: 'Bereich anfragen',
+      filters: {
+        all: 'Alle Bereiche',
+        web: 'Webentwicklung',
+        mobile: 'Mobile Games',
+        ops: 'DevOps & SLA',
+        creative: 'Cinematics & Tech'
+      },
       items: {
+        fullstack: {
+          title: 'Full-Stack Webentwicklung',
+          description:
+            'Komplette End-to-End Full-Stack Webanwendungen, entwickelt für maximale Geschwindigkeit, Ausfallsicherheit und Skalierbarkeit. Wir bauen schlüsselfertige Plattformen oder übernehmen Frontend und Backend modular nach Ihren Vorgaben.',
+          highlights: [
+            'Ganzheitliche Architektur von A bis Z (Datenbank, API & Benutzeroberfläche)',
+            'Option zur Vergabe als Komplettplattform oder modular getrenntes Frontend/Backend',
+            'Moderner Tech-Stack: Next.js 15, React 19, TypeScript & PostgreSQL',
+            'Automatisierte CI/CD-Pipelines & ausfallsicheres Cloud-Hosting'
+          ],
+          tags: ['Full-Stack Web', 'Frontend & Backend', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: 'Frontend-Webentwicklung',
+          description:
+            'Pixelgenaue, reaktive Benutzeroberflächen, die sich nahtlos in Ihre bestehenden APIs, REST/GraphQL-Backends oder Headless CMS integrieren. Flüssige Animationen und erstklassige Core Web Vitals.',
+          highlights: [
+            'Architektur auf Basis von React 19, Next.js, Vue & Tailwind CSS',
+            'Flüssiges State-Management, API-Hydration & Caching',
+            'Responsives Design für Mobilgeräte, Tablets und Desktop',
+            'Maximale Optimierung für Core Web Vitals und Barrierefreiheit'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'Reaktive UI/UX', 'Framer Motion']
+        },
+        backend: {
+          title: 'Backend- & API-Systemarchitektur',
+          description:
+            'Resistente Server-Architekturen, durchsatzstarke Microservices, normalisierte relationale & NoSQL-Datenbankmodelle sowie sichere API-Gateways für anspruchsvolle Unternehmenslasten.',
+          highlights: [
+            'Hochgradig parallele REST-, GraphQL- und gRPC-Schnittstellen',
+            'Datenbankarchitektur für PostgreSQL, MySQL, Redis & MongoDB',
+            'JWT/OAuth2-Authentifizierung, RBAC-Rollen & Datenverschlüsselung',
+            'Sub-Millisekunden-Caching & asynchrone Worker-Queues'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', 'Auth & Security']
+        },
         'mobile-games': {
           title: 'Mobile-Game-Entwicklung',
           description: 'Leistungsstarke Mobile Games für iOS und Android mit Unity, dynamischer Touch-Physik und akkuschonenden Shadern.',
@@ -1448,11 +1794,81 @@ export const TRANSLATIONS = {
       kpiTriage: 'Atendimento Direto',
       cardTitle: 'Capacidades do Estúdio',
       cardCore: 'Disciplinas Técnicas',
+      coreHeadlines: {
+        fullstack: {
+          top: 'Plataformas Web Completas e Prontas.',
+          accent: 'Do Esquema de Banco de Dados à UI Reativa.'
+        },
+        frontend: {
+          top: 'Interfaces Reativas Pixel-Perfect.',
+          accent: 'Movimento Fluido e Zero Deslocamento de Layout.'
+        },
+        backend: {
+          top: 'APIs Cloud e Esquemas Resilientes.',
+          accent: 'Alta Concorrência e SLA de 99,98% de Uptime.'
+        },
+        mobile: {
+          top: 'Desenvolvimento de Jogos Mobile.',
+          accent: 'Motor Unity e Resposta ao Toque a 120 FPS Travados.'
+        },
+        devops: {
+          top: 'Infraestrutura Cloud e Servidores.',
+          accent: 'CI/CD Automatizado e Hardening de Linux.'
+        },
+        care: {
+          top: 'Manutenção Web e Suporte Contínuo.',
+          accent: 'Escudo Proativo e SLA de Resposta < 15 Min.'
+        }
+      },
       cardStatus: 'Produção',
       learnMore: 'Saiba mais',
       requestCall: 'Agendar conversa',
-      tabs: { mobile: 'Mobile', software: 'Software', devops: 'DevOps', care: 'Suporte', admin: 'Admin' },
+      keyDeliverables: 'Principais Entregáveis',
+      coreStack: 'Stack de Arquitetura Central',
+      seniorCraft: 'Engenharia Humana Sênior',
+      ipOwnership: '100% Propriedade Intelectual',
+      highResView: 'Visualização em Alta Resolução',
+      closeModal: 'Fechar',
+      selectDiscipline: 'Selecione uma disciplina para visualizar em alta resolução:',
+      tabs: {
+        fullstack: 'Fullstack',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        mobile: 'Mobile',
+        devops: 'DevOps',
+        care: 'Suporte'
+      },
       previews: {
+        fullstack: {
+          tag: 'DESENVOLVIMENTO WEB FULL-STACK',
+          title: 'Aplicações Web Prontas e Plataformas Reativas',
+          desc: 'Engenharia web completa de ponta a ponta. Next.js 15, React 19, TypeScript, PostgreSQL e Docker, do modelo de dados à produção.',
+          metrics: [
+            { label: 'Arquitetura', value: 'Full-Stack Completo' },
+            { label: 'Performance', value: '100% Core Vitals' },
+            { label: 'Escalabilidade', value: 'Cloud Native' }
+          ]
+        },
+        frontend: {
+          tag: 'ENGENHARIA FRONT-END',
+          title: 'UI Reativa Pixel-Perfect e Arquitetura de Estado',
+          desc: 'Engenharia front-end especializada para equipes com APIs prontas. React 19, Next.js, microinterações fluidas e carregamento instantâneo.',
+          metrics: [
+            { label: 'Framework', value: 'React 19 / Next.js' },
+            { label: 'Estabilidade', value: 'Zero CLS' },
+            { label: 'Score Mobile', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'ENGENHARIA BACK-END E APIS',
+          title: 'Esquemas Resilientes, Microsserviços e Endpoints Cloud',
+          desc: 'APIs REST, GraphQL e gRPC de alta concorrência, bancos de dados PostgreSQL e Redis normalizados e autenticação com 99,98% de disponibilidade.',
+          metrics: [
+            { label: 'Latência', value: 'Submilissegundo' },
+            { label: 'Disponibilidade SLA', value: '99,98%' },
+            { label: 'Bancos de dados', value: 'PostgreSQL e Redis' }
+          ]
+        },
         mobile: {
           tag: 'DESENVOLVIMENTO DE JOGOS MOBILE',
           title: 'Unity Engine e Arquitetura Mobile Nativa',
@@ -1510,7 +1926,50 @@ export const TRANSLATIONS = {
       heading: 'Projetado para performance e resistência.',
       subtitle: 'Da produção de jogos mobile e software cloud distribuído à manutenção 24/7 e operações técnicas.',
       inquireTrack: 'Solicitar Serviço',
+      filters: {
+        all: 'Todas as Áreas',
+        web: 'Dev Web',
+        mobile: 'Jogos Mobile',
+        ops: 'DevOps e SLA',
+        creative: 'Cinemáticas e Tech'
+      },
       items: {
+        fullstack: {
+          title: 'Desenvolvimento Web Full-Stack',
+          description:
+            'Aplicações web completas de ponta a ponta projetadas para velocidade, resiliência e escala. Construímos plataformas prontas do banco de dados à interface, ou atendemos frontend e backend separadamente conforme sua preferência.',
+          highlights: [
+            'Arquitetura completa de ponta a ponta (Banco de Dados, API e UI)',
+            'Opção de contratação full-stack ou frontend / backend modular',
+            'Stack moderna: Next.js 15, React 19, TypeScript e PostgreSQL',
+            'Pipelines CI/CD automatizados e hospedagem de alta disponibilidade'
+          ],
+          tags: ['Web Full-Stack', 'Frontend e Backend', 'React 19 e Next.js', 'PostgreSQL e APIs']
+        },
+        frontend: {
+          title: 'Desenvolvimento Front-End Web',
+          description:
+            'Interfaces de usuário reativas e pixel-perfect projetadas para integração perfeita às suas APIs, backends REST/GraphQL ou CMS headless. Animações fluidas e métricas Core Web Vitals excelentes.',
+          highlights: [
+            'Arquitetura React 19, Next.js, Vue e Tailwind CSS',
+            'Gerenciamento de estado fluido, hidratação de API e cache',
+            'Design responsivo para celular, tablet e computador',
+            'Otimização máxima para Core Web Vitals e acessibilidade'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'UI/UX Reativa', 'Framer Motion']
+        },
+        backend: {
+          title: 'Engenharia Back-End e APIs',
+          description:
+            'Arquiteturas de servidor resilientes, microsserviços de alto tráfego, esquemas relacionais e NoSQL normalizados e gateways de API seguros para cargas empresariais pesadas.',
+          highlights: [
+            'APIs REST, GraphQL e gRPC de alta concorrência',
+            'Design de esquemas PostgreSQL, MySQL, Redis e MongoDB',
+            'Autenticação JWT/OAuth2, controle RBAC e criptografia',
+            'Cache submilissegundo e filas de processamento assíncrono'
+          ],
+          tags: ['Node.js e Python', 'PostgreSQL e Redis', 'REST e GraphQL', 'Autenticação e Segurança']
+        },
         'mobile-games': {
           title: 'Desenvolvimento de Jogos Mobile',
           description: 'Engenharia de jogos mobile para iOS e Android com Unity, física tátil dinâmica e shaders otimizados.',
@@ -1731,12 +2190,82 @@ export const TRANSLATIONS = {
       kpiUptime: 'SLA 稼働率',
       kpiTriage: '即時対応',
       cardTitle: 'スタジオ技術領域',
-      cardCore: 'Disciplines Techniques',
+      cardCore: '開発分野一覧',
+      coreHeadlines: {
+        fullstack: {
+          top: 'ワンストップ・フルスタックWeb開発。',
+          accent: 'DB設計から高反応UIまで完全一貫構築。'
+        },
+        frontend: {
+          top: '高精度ピクセルパーフェクトUI。',
+          accent: '滑らかなマイクロインタラクションとゼロCLS。'
+        },
+        backend: {
+          top: '堅牢なクラウドAPIとデータベース設計。',
+          accent: '高並列処理と99.98%稼働保証SLA。'
+        },
+        mobile: {
+          top: 'モバイルゲーム開発。',
+          accent: 'Unityエンジン＆超低遅延120FPSタッチレスポンス。'
+        },
+        devops: {
+          top: 'クラウド＆サーバーインフラ構築。',
+          accent: '自動化CI/CDとLinuxセキュリティ強化。'
+        },
+        care: {
+          top: '24時間365日Web保守・運用管理。',
+          accent: 'プロアクティブ保護＆15分以内初動SLA。'
+        }
+      },
       cardStatus: '本番稼働',
       learnMore: '詳細を見る',
       requestCall: '相談を予約する',
-      tabs: { mobile: 'モバイル', software: 'ソフト', devops: 'DevOps', care: '保守', admin: '運用' },
+      keyDeliverables: '主な成果物・納品物',
+      coreStack: '中核アーキテクチャスタック',
+      seniorCraft: 'シニアエンジニア直接開発',
+      ipOwnership: '知的財産権 100% 譲渡',
+      highResView: '高解像度プレビュー',
+      closeModal: '閉じる',
+      selectDiscipline: '高解像度で表示する分野を選択してください：',
+      tabs: {
+        fullstack: 'フルスタック',
+        frontend: 'フロントエンド',
+        backend: 'バックエンド',
+        mobile: 'モバイル',
+        devops: 'DevOps',
+        care: '保守'
+      },
       previews: {
+        fullstack: {
+          tag: 'フルスタックWEB開発',
+          title: 'ワンストップWebアプリケーション＆リアクティブ基盤',
+          desc: 'エンドツーエンドの包括的Webエンジニアリング。Next.js 15、React 19、TypeScript、PostgreSQL、Dockerを用い、DB設計から本番リリースまで完結。',
+          metrics: [
+            { label: 'アーキテクチャ', value: '完全一貫ワンストップ' },
+            { label: 'パフォーマンス', value: '100% Core Vitals' },
+            { label: '拡張性', value: 'クラウドネイティブ' }
+          ]
+        },
+        frontend: {
+          tag: 'フロントエンド開発',
+          title: 'ピクセルパーフェクトUI＆ステートアーキテクチャ',
+          desc: '既存APIをお持ちのチーム向け専門フロントエンド開発。React 19、Next.js、滑らかなマイクロアニメーション、ミリ秒単位の高速表示を実現。',
+          metrics: [
+            { label: 'フレームワーク', value: 'React 19 / Next.js' },
+            { label: 'レイアウトズレ', value: 'ゼロ CLS' },
+            { label: 'モバイル指標', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'バックエンド＆API設計',
+          title: '高耐久スキーマ・マイクロサービス・クラウド基盤',
+          desc: '高並行REST/GraphQL/gRPC API、PostgreSQL・Redisの最適化設計、OAuth2認証、99.98%稼働率を保証するメッセージキュー。',
+          metrics: [
+            { label: '応答速度', value: '1ミリ秒未満' },
+            { label: '稼働率SLA', value: '99.98%' },
+            { label: 'データベース', value: 'PostgreSQL & Redis' }
+          ]
+        },
         mobile: {
           tag: 'モバイルゲーム開発',
           title: 'Unityエンジン & ネイティブモバイル設計',
@@ -1794,7 +2323,50 @@ export const TRANSLATIONS = {
       heading: '圧倒的な性能と長期安定性のための設計。',
       subtitle: 'モバイルゲーム開発や分散クラウドシステムから、24時間保守・運用デスクまで精密に実行します。',
       inquireTrack: 'この領域を相談',
+      filters: {
+        all: '全分野',
+        web: 'Web開発',
+        mobile: 'モバイルゲーム',
+        ops: 'DevOps・保守',
+        creative: '映像・AI・技術'
+      },
       items: {
+        fullstack: {
+          title: 'フルスタックWeb開発',
+          description:
+            '速度・堅牢性・拡張性を極限まで追求したエンドツーエンドWebアプリケーション。データベースからUIまで一貫したワンストップ開発はもちろん、フロント・バックエンド単体の開発にも柔軟に対応します。',
+          highlights: [
+            '完全一貫アーキテクチャ（データベース・API・UI）',
+            'フルスタック一貫またはフロント／バックエンド単体での柔軟な契約',
+            '最新スタック：Next.js 15, React 19, TypeScript & PostgreSQL',
+            '自動化CI/CDパイプラインとゼロダウンタイム高可用性ホスティング'
+          ],
+          tags: ['フルスタックWeb', 'フロント＆バックエンド', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: 'フロントエンド開発',
+          description:
+            '既存API、REST/GraphQLバックエンド、ヘッドレスCMSにシームレスに接続する高精度ピクセルパーフェクトUI。滑らかなアニメーションとミリ秒級のCore Web Vitalsを実現。',
+          highlights: [
+            'React 19, Next.js, Vue, Tailwind CSSによるモダン設計',
+            '滑らかな状態管理、APIハイドレーション、高効率キャッシュ',
+            'モバイル・タブレット・PC完全対応レスポンシブ設計',
+            'Core Web Vitalsとアクセシビリティの徹底的な最適化'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', '高応答UI/UX', 'Framer Motion']
+        },
+        backend: {
+          title: 'バックエンド＆APIシステム設計',
+          description:
+            '高耐久サーバーアーキテクチャ、高スループットマイクロサービス、正規化されたリレーショナル/NoSQLスキーマ、高負荷に耐えうるセキュアなAPIゲートウェイ。',
+          highlights: [
+            '高並列処理REST、GraphQL、gRPC API開発',
+            'PostgreSQL、MySQL、Redis、MongoDBのスキーマ設計と移行',
+            'JWT/OAuth2認証、ロール別RBAC権限、データ暗号化',
+            'ミリ秒未満のキャッシュ機構と非同期ワーカーキュー'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', '認証＆セキュリティ']
+        },
         'mobile-games': {
           title: 'モバイルゲーム開発',
           description: 'Unityを活用したiOS/Android向け高性能ゲーム開発。直感的なタッチ物理と省電力シェーダーを実装。',
@@ -2016,11 +2588,81 @@ export const TRANSLATIONS = {
       kpiTriage: 'استجابة مباشرة',
       cardTitle: 'قدرات الاستوديو',
       cardCore: 'الخبرات التقنية',
+      coreHeadlines: {
+        fullstack: {
+          top: 'منصات ويب شاملة ومتكاملة.',
+          accent: 'من تصميم قواعد البيانات إلى واجهات المستخدم التفاعلية.'
+        },
+        frontend: {
+          top: 'واجهات أمامية فائقة الدقة والسرعة.',
+          accent: 'حركة انسيابية بدون أي إزاحة في التخطيط.'
+        },
+        backend: {
+          top: 'واجهات برمجة سحابية وأنظمة مرنة.',
+          accent: 'توافقية عالية وضمان تشغيل بنسبة 99.98%.'
+        },
+        mobile: {
+          top: 'تطوير ألعاب الجوال الاحترافية.',
+          accent: 'محرك Unity وسرعة استجابة للمس بمعدل 120 إطاراً.'
+        },
+        devops: {
+          top: 'البنية التحتية السحابية وإدارة الخوادم.',
+          accent: 'نشر تلقائي عبر CI/CD وتأمين نظام Linux.'
+        },
+        care: {
+          top: 'صيانة وتأمين مواقع الويب 24/7.',
+          accent: 'حماية استباقية واستجابة طارئة في أقل من 15 دقيقة.'
+        }
+      },
       cardStatus: 'قيد الإنتاج',
       learnMore: 'اعرف المزيد',
       requestCall: 'اطلب مكالمة استكشافية',
-      tabs: { mobile: 'الجوال', software: 'برمجيات', devops: 'DevOps', care: 'الصيانة', admin: 'الإدارة' },
+      keyDeliverables: 'أهم المخرجات والنتائج',
+      coreStack: 'حزمة البنية التحتية الأساسية',
+      seniorCraft: 'تطوير بشري رفيع المستوى',
+      ipOwnership: 'ملكية فكرية بنسبة 100%',
+      highResView: 'معاينة بدقة فائقة',
+      closeModal: 'إغلاق',
+      selectDiscipline: 'اختر تخصصاً للمعاينة بدقة عالية:',
+      tabs: {
+        fullstack: 'الويب الشامل',
+        frontend: 'الواجهة الأمامية',
+        backend: 'الواجهة الخلفية',
+        mobile: 'ألعاب الجوال',
+        devops: 'DevOps',
+        care: 'الصيانة'
+      },
       previews: {
+        fullstack: {
+          tag: 'تطوير الويب الشامل FULL-STACK',
+          title: 'تطبيقات ويب متكاملة ومنصات تفاعلية',
+          desc: 'هندسة برمجية شاملة للويب من البداية حتى النهاية. أحدث التقنيات Next.js 15 وReact 19 وTypeScript وPostgreSQL وحاويات Docker من بناء الجداول حتى الإطلاق النهائي.',
+          metrics: [
+            { label: 'البنية البرمجية', value: 'حلول جاهزة متكاملة' },
+            { label: 'الأداء الفني', value: '100% Core Vitals' },
+            { label: 'قابلية التوسع', value: 'سحابي أصيل' }
+          ]
+        },
+        frontend: {
+          tag: 'هندسة الواجهات الأمامية FRONT-END',
+          title: 'واجهات تفاعلية دقيقة وهندسة إدارة الحالة',
+          desc: 'تطوير واجهات أمامية متخصصة للفرق التي تمتلك واجهات برمجة مسبقة. أداء مذهل بتجربة مستخدم تركز على الجوال وسرعة استجابة فائقة.',
+          metrics: [
+            { label: 'إطار العمل', value: 'React 19 / Next.js' },
+            { label: 'ثبات التخطيط', value: 'صفر انزياح CLS' },
+            { label: 'تقييم الجوال', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: 'هندسة الواجهات الخلفية وقواعد البيانات',
+          title: 'أنظمة مرنة، خدمات مصغرة ومنافذ سحابية',
+          desc: 'واجهات برمجة REST وGraphQL وgRPC عالية التحمل، وقواعد بيانات PostgreSQL وRedis مهيأة، وضمان تشغيل بنسبة 99.98%.',
+          metrics: [
+            { label: 'زمن الاستجابة', value: 'أقل من ملي ثانية' },
+            { label: 'مستوى الخدمة SLA', value: '99.98%' },
+            { label: 'قواعد البيانات', value: 'PostgreSQL و Redis' }
+          ]
+        },
         mobile: {
           tag: 'تطوير ألعاب الجوال',
           title: 'محرك Unity وهندسة الهواتف الأصلية',
@@ -2078,7 +2720,50 @@ export const TRANSLATIONS = {
       heading: 'مصممة للأداء الفائق والاستمرارية.',
       subtitle: 'من إنتاج ألعاب الجوال والبرمجيات السحابية إلى صيانة المواقع على مدار الساعة ومكاتب العمليات التقنية.',
       inquireTrack: 'استفسر عن الخدمة',
+      filters: {
+        all: 'جميع التخصصات',
+        web: 'تطوير الويب',
+        mobile: 'ألعاب الجوال',
+        ops: 'DevOps والصيانة',
+        creative: 'الإعلانات والتقنية'
+      },
       items: {
+        fullstack: {
+          title: 'تطوير الويب الشامل (Full-Stack)',
+          description:
+            'تطبيقات ويب متكاملة من البداية حتى النهاية، مصممة لتحقيق السرعة والموثوقية العالية والقابلية للتوسع. نبني منصات جاهزة تسليم مفتاح أو نتولى تطوير الواجهة الأمامية والخلفية بشكل منفصل حسب تفضيلات فريقكم.',
+          highlights: [
+            'هندسة متكاملة وشاملة (قواعد بيانات، واجهات API وواجهة مستخدم)',
+            'إمكانية التعاقد على حل متكامل أو واجهة أمامية / خلفية بشكل منفصل',
+            'حزمة تقنية حديثة: Next.js 15 وReact 19 وTypeScript وPostgreSQL',
+            'خطوط نشر CI/CD مؤتمتة واستضافة سحابية عالية الجاهزية'
+          ],
+          tags: ['الويب الشامل', 'واجهات أمامية وخلفية', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: 'تطوير الواجهات الأمامية للويب',
+          description:
+            'واجهات مستخدم تفاعلية وفائقة الدقة مصممة للربط السلس مع واجهات البرمجة الحالية، أو أنظمة REST/GraphQL أو أنظمة إدارة المحتوى Headless CMS. حركة انسيابية وأداء قياسي.',
+          highlights: [
+            'بنية حديثة قائمة على React 19 وNext.js وVue وTailwind CSS',
+            'إدارة حالة سلسة ومزامنة فورية وتخزين مؤقت للبيانات',
+            'تصميم متجاوب بالكامل مع الجوال والأجهزة اللوحية والحواسيب',
+            'أقصى تحسين لمؤشرات الأداء Core Web Vitals وسهولة الوصول'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', 'تجربة تفاعلية', 'Framer Motion']
+        },
+        backend: {
+          title: 'هندسة الواجهات الخلفية وقواعد البيانات',
+          description:
+            'بنى برمجية قوية للخوادم، خدمات مصغرة عالية الإنتاجية، جداول قواعد بيانات علائقية وغير علائقية محكمة، وبوابات API مؤمنة مصممة لأحمال العمل الضخمة.',
+          highlights: [
+            'واجهات برمجة REST وGraphQL وgRPC فائقة التزامن',
+            'تصميم وترحيل قواعد بيانات PostgreSQL وMySQL وRedis وMongoDB',
+            'مصادقة JWT/OAuth2، تصاريح وصول RBAC وتشفير متقدم للبيانات',
+            'تخزين مؤقت أقل من ملي ثانية وطوابير معالجة غير متزامنة'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', 'الأمان والمصادقة']
+        },
         'mobile-games': {
           title: 'تطوير ألعاب الجوال',
           description: 'هندسة ألعاب جوال عالية الأداء لأنظمة iOS وAndroid بمحرك Unity مع فيزياء لمس دقيقة ومؤثرات موفرة للطاقة.',
@@ -2300,11 +2985,81 @@ export const TRANSLATIONS = {
       kpiTriage: '快速响应',
       cardTitle: '工作室技术矩阵',
       cardCore: '专业技术矩阵',
+      coreHeadlines: {
+        fullstack: {
+          top: '全栈端到端交钥匙平台。',
+          accent: '从底层数据库模式到高性能响应式 UI。'
+        },
+        frontend: {
+          top: '像素级响应式前端界面。',
+          accent: '流畅微交互与零布局偏移（Zero CLS）。'
+        },
+        backend: {
+          top: '高可用云端 API 与架构设计。',
+          accent: '高并发支持与 99.98% 正常运行 SLA。'
+        },
+        mobile: {
+          top: '移动游戏与应用研发。',
+          accent: 'Unity 引擎驱动与 120 FPS 锁定触控体验。'
+        },
+        devops: {
+          top: '云端与服务器基础设施运维。',
+          accent: '自动化 CI/CD 流水线与 Linux 强化加固。'
+        },
+        care: {
+          top: '7×24 小时网站运维与安全托管。',
+          accent: '主动式安全防护网与 15 分钟内应急响应 SLA。'
+        }
+      },
       cardStatus: '生产就绪',
       learnMore: '了解此领域',
       requestCall: '预约技术沟通',
-      tabs: { mobile: '手游', software: '软件', devops: '运维', care: '托管', admin: '管理' },
+      keyDeliverables: '核心交付物与成果',
+      coreStack: '核心架构技术栈',
+      seniorCraft: '资深全职工程师亲自交付',
+      ipOwnership: '100% 知识产权独家归属',
+      highResView: '超清分辨率视图',
+      closeModal: '关闭',
+      selectDiscipline: '选择业务领域以查看高清图示：',
+      tabs: {
+        fullstack: '全栈开发',
+        frontend: '前端开发',
+        backend: '后端工程',
+        mobile: '移动游戏',
+        devops: '运维',
+        care: '托管'
+      },
       previews: {
+        fullstack: {
+          tag: '全栈 WEB 开发',
+          title: '交钥匙 Web 应用与高性能响应式平台',
+          desc: '端到端全链路 Web 工程研发。采用 Next.js 15、React 19、TypeScript、PostgreSQL 与 Docker，从底层数据建模到生产环境发布全面交付。',
+          metrics: [
+            { label: '交付架构', value: '端到端交钥匙平台' },
+            { label: '性能标准', value: '100% Core Vitals' },
+            { label: '系统架构', value: '云原生高可用' }
+          ]
+        },
+        frontend: {
+          tag: '前端工程专精',
+          title: '像素级响应式 UI 与状态架构',
+          desc: '专为已有后端或 API 的团队提供资深前端研发。React 19、Next.js、丝滑微交互、移动优先与亚秒级极速渲染。',
+          metrics: [
+            { label: '核心框架', value: 'React 19 / Next.js' },
+            { label: '布局位移', value: '零 CLS 偏移' },
+            { label: '移动端得分', value: '99+ Lighthouse' }
+          ]
+        },
+        backend: {
+          tag: '后端与 API 架构工程',
+          title: '高可用数据库模式、微服务与云端接口',
+          desc: '高并发 REST、GraphQL 与 gRPC 接口设计，规范化 PostgreSQL/Redis 数据库建模，OAuth2 企业鉴权与 99.98% 可用性保障。',
+          metrics: [
+            { label: '响应延迟', value: '亚毫秒级' },
+            { label: 'SLA 可用性', value: '99.98%' },
+            { label: '核心数据库', value: 'PostgreSQL & Redis' }
+          ]
+        },
         mobile: {
           tag: '移动游戏开发',
           title: 'Unity 引擎与原生移动架构',
@@ -2362,7 +3117,50 @@ export const TRANSLATIONS = {
       heading: '为极致性能与长期稳定而生。',
       subtitle: '从移动游戏研发、分布式云端软件到 24/7 网站维护与后台技术运营，每一步都精益求精。',
       inquireTrack: '咨询此服务',
+      filters: {
+        all: '全部业务',
+        web: 'Web 开发',
+        mobile: '移动游戏',
+        ops: '运维与 SLA',
+        creative: '视觉与技术'
+      },
       items: {
+        fullstack: {
+          title: '全栈 Web 应用开发',
+          description:
+            '端到端全栈 Web 应用研发，专为高速度、高可靠性与大规模并发设计。我们提供从数据库到前端界面的完整交钥匙平台开发，亦可根据您的团队需求分别承接前端或后端模块。',
+          highlights: [
+            '端到端完整闭环架构（数据库、API 与用户界面）',
+            '支持整包交钥匙平台或前端/后端独立模块定制',
+            '现代化技术栈：Next.js 15, React 19, TypeScript 与 PostgreSQL',
+            '自动化 CI/CD 交付流水线与零停机高可用云端部署'
+          ],
+          tags: ['全栈 Web', '前端与后端', 'React 19 & Next.js', 'PostgreSQL & APIs']
+        },
+        frontend: {
+          title: '前端 Web 工程专精',
+          description:
+            '像素级高保真响应式用户界面，无缝对接现有后端、REST/GraphQL API 或 Headless CMS。具备流畅动效微交互与极致 Core Web Vitals 得分。',
+          highlights: [
+            '基于 React 19、Next.js、Vue 与 Tailwind CSS 的现代化架构',
+            '流畅状态管理、API 数据注水（Hydration）与高并发缓存',
+            '移动端、平板与桌面端全尺寸响应式适配',
+            '针对 Core Web Vitals 与可访问性（a11y）极致调优'
+          ],
+          tags: ['React 19', 'Next.js UI', 'Tailwind CSS', '响应式 UI/UX', 'Framer Motion']
+        },
+        backend: {
+          title: '后端系统与 API 架构工程',
+          description:
+            '高可用服务端架构、高吞吐微服务、规范化关系型与 NoSQL 数据建模及企业级安全 API 网关，确保高并发下的系统韧性。',
+          highlights: [
+            '高并发 REST、GraphQL 与 gRPC 接口设计开发',
+            'PostgreSQL、MySQL、Redis 与 MongoDB 数据建模及平滑迁移',
+            'JWT/OAuth2 企业身份认证、RBAC 细粒度权限与数据加密',
+            '亚毫秒级分布式缓存体系与异步后台任务队列'
+          ],
+          tags: ['Node.js & Python', 'PostgreSQL & Redis', 'REST & GraphQL', '身份与安全']
+        },
         'mobile-games': {
           title: '移动游戏开发',
           description: '基于 Unity 的 iOS 与 Android 高性能手游工程，具备流畅触控物理、低功耗着色器与商业化系统。',
