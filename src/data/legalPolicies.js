@@ -46,7 +46,7 @@ export const LEGAL_POLICIES = {
           'We work only with strictly vetted, enterprise-tier infrastructure sub-processors essential to our operations:',
           '• Cloud Server Hosting: Hostinger International Ltd. (EU/US enterprise server hosting and DNS resolution).',
           '• Version Control & CI/CD: GitHub Inc. (encrypted private repositories and automated continuous deployment workflows).',
-          '• Transactional Email Relay: FormSubmit / Enterprise SMTP relays (encrypted transmission of inquiry forms directly to support@codescinema.com).'
+          '• Transactional Email Relay: FormSubmit / Enterprise SMTP relays (encrypted transmission of inquiry forms directly to contact@codescinema.com).'
         ]
       },
       {
@@ -84,7 +84,7 @@ export const LEGAL_POLICIES = {
         heading: '8. Data Protection Officer & Privacy Desk',
         content: [
           'For any privacy inquiries, data export requests, or erasure petitions, please contact our dedicated Privacy Desk:',
-          '• Email: privacy@codescinema.com (or contact@codescinema.com)',
+          '• Email: contact@codescinema.com',
           '• Attention: Data Protection & Confidentiality Lead',
           '• Response Time SLA: All verified requests receive written acknowledgment within 24 business hours.'
         ]
@@ -168,7 +168,7 @@ export const LEGAL_POLICIES = {
         content: [
           '• Good-Faith Negotiation: Any dispute arising under these Terms shall first be submitted to informal, good-faith technical mediation between designated executive representatives.',
           '• Binding Arbitration: If a dispute cannot be resolved informally within 30 days, it shall be resolved by confidential binding commercial arbitration.',
-          '• Inquiries: legal@codescinema.com or contact@codescinema.com.'
+          '• Inquiries: contact@codescinema.com.'
         ]
       }
     ]
@@ -242,7 +242,7 @@ export const LEGAL_POLICIES = {
         heading: '7. Responsible Vulnerability Disclosure (Security Desk)',
         content: [
           'Codes Cinema deeply values the contributions of the independent security research community. If you believe you have discovered a security vulnerability in our website or managed infrastructure, we encourage responsible disclosure:',
-          '• How to Report: Send a detailed advisory to security@codescinema.com including reproduction steps and proof-of-concept.',
+          '• How to Report: Send a detailed advisory to contact@codescinema.com including reproduction steps and proof-of-concept.',
           '• Response SLA: Initial triage confirmation within 24 hours; status updates every 48 hours until full remediation.',
           '• Safe Harbor: Codes Cinema pledges not to pursue legal action against security researchers who conduct testing in good faith, avoid service degradation, and refrain from accessing or modifying client data without authorization.'
         ]
@@ -253,9 +253,10 @@ export const LEGAL_POLICIES = {
         content: [
           '• Round-the-Clock Monitoring: Synthetic heartbeat probes ping client endpoints every 60 seconds from 8 global monitoring nodes.',
           '• Incident Response Team: On-call security engineers ready to respond to critical anomalies with a guaranteed < 15-minute SLA.',
-          '• Security Inquiries: security@codescinema.com (or contact@codescinema.com).'
+          '• Security Inquiries: contact@codescinema.com.'
         ]
       }
     ]
   }
 };
+

@@ -43,9 +43,9 @@ export default function LegalModal({
   const currentPolicy = LEGAL_POLICIES[activeTab] || LEGAL_POLICIES.privacy;
 
   const tabOptions = [
-    { id: 'privacy', label: 'Privacy Policy', icon: Lock, deskEmail: 'privacy@codescinema.com' },
-    { id: 'terms', label: 'Terms of Service', icon: Scale, deskEmail: 'legal@codescinema.com' },
-    { id: 'security', label: 'Security Policy', icon: ShieldCheck, deskEmail: 'security@codescinema.com' }
+    { id: 'privacy', label: 'Privacy Policy', icon: Lock, deskEmail: 'contact@codescinema.com' },
+    { id: 'terms', label: 'Terms of Service', icon: Scale, deskEmail: 'contact@codescinema.com' },
+    { id: 'security', label: 'Security Policy', icon: ShieldCheck, deskEmail: 'contact@codescinema.com' }
   ];
 
   const currentTabOption = tabOptions.find((t) => t.id === activeTab) || tabOptions[0];
