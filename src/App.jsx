@@ -77,12 +77,7 @@ export default function App() {
           <ScrollParallaxCanvas />
 
           {/* Top Navbar */}
-          <Navbar
-            onOpenContact={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
+          <Navbar />
 
           <main>
             {/* Hero Section */}

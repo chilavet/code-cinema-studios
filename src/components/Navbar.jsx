@@ -5,7 +5,7 @@ import CountrySelector from './CountrySelector';
 import ThemeToggle from './ThemeToggle';
 import useScrollPhysics from '../hooks/useScrollPhysics';
 
-export default function Navbar({ onOpenContact }) {
+export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY, scrollDirection } = useScrollPhysics();
@@ -69,26 +69,8 @@ export default function Navbar({ onOpenContact }) {
             </a>
           </nav>
 
-          {/* Live Studio Availability Pill */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] text-[11px] font-semibold text-stone-700 dark:text-stone-300 shadow-xs animate-float-subtle">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52B788] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#52B788]" />
-            </span>
-            <span>Available for Retainers</span>
-          </div>
-
           {/* Right Action Cluster */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* Quick Inquire Button with sheen */}
-            <button
-              type="button"
-              onClick={onOpenContact}
-              className="relative overflow-hidden px-3.5 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-950 text-xs font-bold transition-all shadow-sm hover:shadow hover:scale-103 cursor-pointer group"
-            >
-              <span className="relative z-10">Inquire</span>
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 dark:via-stone-900/15 to-transparent -translate-x-full group-hover:animate-btn-shimmer pointer-events-none" />
-            </button>
             {/* Theme Sun/Moon Switcher */}
             <ThemeToggle />
             {/* Country Flag & Language Selector */}
