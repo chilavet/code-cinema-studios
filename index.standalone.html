@@ -527,7 +527,7 @@
             <div>
               <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">3. Target Delivery Window</label>
               <div class="flex items-center gap-4">
-                <input type="range" id="timelineSlider" min="2" max="12" value="4" step="1" oninput="calculateEstimate()" class="w-full accent-cyan-400 cursor-pointer">
+                <input type="range" id="timelineSlider" min="3" max="14" value="4" step="1" oninput="calculateEstimate()" class="w-full accent-cyan-400 cursor-pointer">
                 <span id="timelineValue" class="font-display font-bold text-cyber text-lg whitespace-nowrap min-w-[70px]">4 Weeks</span>
               </div>
             </div>
@@ -1007,8 +1007,8 @@
 
       if (blueprintBadge) blueprintBadge.innerText = `${currentTrackName} Track`;
 
-      let calculatedWeeksMin = Math.round(weeks * currentMultiplier * 0.85);
-      let calculatedWeeksMax = Math.round(weeks * currentMultiplier * 1.25);
+      let calculatedWeeksMin = Math.max(3, Math.round(weeks * currentMultiplier * 0.85));
+      let calculatedWeeksMax = Math.max(calculatedWeeksMin + 1, Math.round(weeks * currentMultiplier * 1.25));
       if (estTimeline) estTimeline.innerText = `${calculatedWeeksMin} - ${calculatedWeeksMax} Weeks`;
 
       if (phaseList) {

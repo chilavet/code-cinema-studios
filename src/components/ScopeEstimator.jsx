@@ -48,7 +48,7 @@ export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
   const calculatedEstimate = useMemo(() => {
     const tierMult = tierMultipliers[scopeTier] || 1.0;
     const effectiveWeeks = weeks * selectedTrack.multiplier * tierMult;
-    const minWeeks = Math.max(2, Math.round(effectiveWeeks * 0.85));
+    const minWeeks = Math.max(3, Math.round(effectiveWeeks * 0.85));
     const maxWeeks = Math.max(minWeeks + 1, Math.round(effectiveWeeks * 1.25));
     return { minWeeks, maxWeeks };
   }, [weeks, selectedTrack, scopeTier]);
@@ -172,8 +172,8 @@ export default function ScopeEstimator({ onApplyEstimate, preselectedTrack }) {
                 </div>
                 <input
                   type="range"
-                  min="2"
-                  max="12"
+                  min="3"
+                  max="14"
                   step="1"
                   value={weeks}
                   onChange={(e) => setWeeks(parseInt(e.target.value, 10))}
