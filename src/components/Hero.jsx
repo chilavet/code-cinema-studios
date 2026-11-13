@@ -61,9 +61,9 @@ const CORE_IMAGES = {
     caption: 'Distributed Microservices & Real-Time Event Pipelines'
   },
   mobile: {
-    src: '/images/core/mobile.jpg?v=3',
-    alt: 'Mobile Game Development Unity Engine 120 FPS Gaming',
-    caption: 'Touch-Optimized Mobile Arcade & 3D Unity Engine'
+    src: '/images/core/mobile.jpg?v=4',
+    alt: 'Modern Mobile Application UI & iOS Android Engineering',
+    caption: 'Native iOS & Android Mobile Application Architecture'
   },
   devops: {
     src: '/images/core/devops.jpg?v=4',
