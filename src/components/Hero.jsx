@@ -45,34 +45,34 @@ const DEFAULT_HEADLINES = {
 
 const CORE_IMAGES = {
   fullstack: {
-    src: '/images/core/fullstack.jpg',
-    alt: 'Modern Full-Stack Development Workspace & Web Platform Architecture',
-    caption: 'Production Web Platform Architecture & Turnkey Engineering Workspace'
+    src: '/images/core/fullstack.jpg?v=3',
+    alt: 'Turnkey Full-Stack Web Platform SaaS Dashboard & Cloud Architecture',
+    caption: 'Production Web Application Interface & Cloud Dashboard'
   },
   frontend: {
-    src: '/images/core/frontend.jpg',
-    alt: 'Clean Responsive Web Design System & Multi-Device Workspace',
-    caption: 'Responsive Web Design System & Fluid Micro-Interactions'
+    src: '/images/core/frontend.jpg?v=3',
+    alt: 'Pixel-Perfect Reactive Frontend UI Component System',
+    caption: 'Responsive High-Performance UI Design System'
   },
   backend: {
-    src: '/images/core/backend.jpg',
-    alt: 'High-Concurrency Development Station & Cloud API Infrastructure',
-    caption: 'Resilient Cloud APIs & High-Throughput Microservice Architecture'
+    src: '/images/core/backend.jpg?v=3',
+    alt: 'High-Concurrency Cloud Server Network & API Microservices',
+    caption: 'Distributed Microservices & Real-Time Event Pipelines'
   },
   mobile: {
-    src: '/images/core/mobile.jpg',
-    alt: 'Interactive Mobile Game Engineering & Dynamic Gaming Station',
-    caption: 'Dynamic 3D Mobile Game Engineering & High-Performance Mechanics'
+    src: '/images/core/mobile.jpg?v=3',
+    alt: 'Mobile Game Development Unity Engine 120 FPS Gaming',
+    caption: 'Touch-Optimized Mobile Arcade & 3D Unity Engine'
   },
   devops: {
-    src: '/images/core/devops.jpg',
-    alt: 'Global Cloud Network Topology & Zero-Downtime Infrastructure',
-    caption: 'Global Cloud Infrastructure & Automated CI/CD Pipelines'
+    src: '/images/core/devops.jpg?v=3',
+    alt: 'DevOps Automated CI/CD Server Mesh & Cloud Infrastructure',
+    caption: 'Linux Multi-Region Mesh & Zero-Downtime Deployments'
   },
   care: {
-    src: '/images/core/care.jpg',
-    alt: 'Proactive Website Care & Continuous Uptime Monitoring Station',
-    caption: 'Proactive 24/7 SLA Support, Security Patching & Rapid Triage'
+    src: '/images/core/care.jpg?v=3',
+    alt: '24/7 Cybersecurity Shield & Website Health Monitoring',
+    caption: 'Proactive SLA Shield & Continuous Uptime Telemetry'
   }
 };
 

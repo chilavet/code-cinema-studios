@@ -15,45 +15,6 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
-const SERVICE_IMAGES = {
-  fullstack: {
-    src: '/images/core/fullstack.jpg',
-    alt: 'Modern Full-Stack Development Workspace & Web Platform Architecture'
-  },
-  frontend: {
-    src: '/images/core/frontend.jpg',
-    alt: 'Clean Responsive Web Design System & Multi-Device Workspace'
-  },
-  backend: {
-    src: '/images/core/backend.jpg',
-    alt: 'High-Concurrency Development Station & Cloud API Infrastructure'
-  },
-  'mobile-games': {
-    src: '/images/core/mobile.jpg',
-    alt: 'Interactive Mobile Game Engineering & Dynamic Gaming Station'
-  },
-  devops: {
-    src: '/images/core/devops.jpg',
-    alt: 'Global Cloud Network Topology & Zero-Downtime Infrastructure'
-  },
-  maintenance: {
-    src: '/images/core/care.jpg',
-    alt: 'Proactive Website Care & Continuous Uptime Monitoring Station'
-  },
-  admin: {
-    src: '/images/core/admin.jpg',
-    alt: 'Modern Studio Operations & Digital Content Management Workspace'
-  },
-  cinematics: {
-    src: '/images/core/cinematics.jpg',
-    alt: 'Cinematic Production Gear & Studio Clapperboard'
-  },
-  consulting: {
-    src: '/images/core/consulting.jpg',
-    alt: 'Modern Architectural Boardroom for Strategic Technology Consulting'
-  }
-};
-
 export default function Services() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState('all');
@@ -178,60 +139,45 @@ export default function Services() {
             return (
               <div
                 key={s.id}
-                className="card-minimal rounded-3xl overflow-hidden group shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900/90 flex flex-col justify-between"
+                className="card-minimal rounded-2xl p-7 group shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
               >
-                <div>
-                  {/* Lively Relatable Natural Photo Banner */}
-                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800 border-b border-slate-200/80 dark:border-slate-800">
-                    <img
-                      src={SERVICE_IMAGES[s.id]?.src || '/images/core/fullstack.jpg'}
-                      alt={SERVICE_IMAGES[s.id]?.alt || loc.title}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
-                      loading="lazy"
-                      width="600"
-                      height="340"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-                    
-                    {/* Floating Icon Pill */}
-                    <div className="absolute bottom-3 left-4 w-10 h-10 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-700 flex items-center justify-center shadow-md">
-                      {getIcon(s.icon)}
-                    </div>
+                {/* Header: Icon */}
+                <div className="mb-6">
+                  <div className="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-100 dark:group-hover:bg-slate-700 group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-sm">
+                    {getIcon(s.icon)}
                   </div>
+                </div>
 
-                  <div className="p-6 sm:p-7">
-                    {/* Title & Description */}
-                    <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
-                      {loc.title}
-                    </h2>
-                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                      {loc.description}
-                    </p>
+                {/* Title & Description */}
+                <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sky-900 dark:group-hover:text-amber-400 transition-colors">
+                  {loc.title}
+                </h2>
+                <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
+                  {loc.description}
+                </p>
 
-                    {/* Highlights List */}
-                    {loc.highlights && loc.highlights.length > 0 && (
-                      <div className="mb-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
-                        {loc.highlights.map((item, hIdx) => (
-                          <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
-                            <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
+                {/* Highlights List */}
+                {loc.highlights && loc.highlights.length > 0 && (
+                  <div className="mb-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                    {loc.highlights.map((item, hIdx) => (
+                      <div key={hIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                        <span>{item}</span>
                       </div>
-                    )}
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {(loc.tags || s.tags).map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    ))}
                   </div>
+                )}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5">
+                  {(loc.tags || s.tags).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             );
