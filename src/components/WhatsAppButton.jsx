@@ -16,17 +16,17 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Codes Cinema on WhatsApp"
-        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-stone-900 dark:bg-[#1C1A18] hover:bg-stone-800 dark:hover:bg-[#252220] text-white border border-[#E7E2DB]/30 dark:border-[#2C2825] shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
+        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white border border-slate-700 dark:border-slate-700 shadow-xl hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* Soft Ambient Radar Ping Ring */}
-        <span className="absolute -inset-1 rounded-full bg-[#52B788]/25 animate-ping -z-10" />
+        <span className="absolute -inset-1 rounded-full bg-emerald-500/25 animate-ping -z-10" />
 
         {/* Subtle Live Dot */}
-        <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#52B788] border border-stone-900 animate-pulse" />
+        <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-emerald-400 border border-slate-900 animate-pulse" />
 
         {/* Minimal WhatsApp Icon */}
         <svg
-          className="w-5 h-5 fill-white group-hover:fill-[#52B788] transition-colors"
+          className="w-5 h-5 fill-white group-hover:fill-emerald-400 transition-colors"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           role="img"

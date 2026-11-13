@@ -29,16 +29,16 @@ html.dark {
 
 body {
   font-family: var(--font-sans);
-  background-color: #FBF9F5;
-  color: #141210;
+  background-color: #F8FAFC;
+  color: #0F172A;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html.dark body {
-  background-color: #141210;
-  color: #F2EFE9;
+  background-color: #070B14;
+  color: #F1F5F9;
 }
 
 /* Custom Minimal Scrollbar */
@@ -46,7 +46,7 @@ html.dark body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FBF9F5;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
@@ -57,7 +57,7 @@ html.dark body {
 }
 
 html.dark ::-webkit-scrollbar-track {
-  background: #141210;
+  background: #070B14;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #1E293B;
@@ -354,17 +354,17 @@ html.dark .text-gradient {
 /* Architectural Studio Blueprint Matrix Pattern */
 .bg-drafting-matrix {
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(194, 97, 58, 0.16) 1.2px, transparent 0),
-    linear-gradient(to right, rgba(194, 97, 58, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(194, 97, 58, 0.05) 1px, transparent 1px);
+    radial-gradient(circle at 1px 1px, rgba(2, 132, 199, 0.14) 1.2px, transparent 0),
+    linear-gradient(to right, rgba(2, 132, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.04) 1px, transparent 1px);
   background-size: 32px 32px, 160px 160px, 160px 160px;
 }
 
 html.dark .bg-drafting-matrix {
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(224, 122, 95, 0.18) 1.2px, transparent 0),
-    linear-gradient(to right, rgba(224, 122, 95, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(224, 122, 95, 0.06) 1px, transparent 1px);
+    radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.16) 1.2px, transparent 0),
+    linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
   background-size: 32px 32px, 160px 160px, 160px 160px;
 }
 

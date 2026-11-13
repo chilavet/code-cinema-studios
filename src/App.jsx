@@ -69,7 +69,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <div className="bg-[#FBF9F5] dark:bg-[#141210] text-[#141210] dark:text-[#F2EFE9] font-sans selection:bg-[#C2613A] selection:text-white overflow-x-hidden antialiased min-h-screen transition-colors duration-300 relative">
+        <div className="bg-[#F8FAFC] dark:bg-[#070B14] text-slate-900 dark:text-slate-100 font-sans selection:bg-slate-900 dark:selection:bg-amber-400 selection:text-white dark:selection:text-slate-950 overflow-x-hidden antialiased min-h-screen transition-colors duration-300 relative">
           {/* Top Live Scroll Progress Reading Bar */}
           <ScrollProgressBar />
 
