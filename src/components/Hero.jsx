@@ -278,9 +278,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 6 Disciplines Interactive Switcher Deck (Reduced by 25%) */}
-        <div className="w-full max-w-5xl mx-auto mb-6 p-1.5 sm:p-2 rounded-2xl bg-[#FAF8F5]/85 dark:bg-[#181614]/85 backdrop-blur-md border border-[#E7E2DB] dark:border-[#2C2825] shadow-md">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2 w-full">
+        {/* 6 Disciplines Interactive Switcher Deck (Compact Proportional Dock) */}
+        <div className="w-full max-w-3xl mx-auto mb-5 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl bg-[#FAF8F5]/85 dark:bg-[#181614]/85 backdrop-blur-md border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1 sm:gap-1.5 w-full">
             {tabConfigs.map((tab) => {
               const Icon = tab.icon;
               const isSelected = activeTab === tab.id;
@@ -294,14 +294,14 @@ export default function Hero() {
                     setIsPaused(true);
                   }}
                   onMouseLeave={() => setIsPaused(false)}
-                  className={`relative py-2.5 sm:py-3 px-2.5 sm:px-3.5 rounded-xl min-h-[44px] sm:min-h-[48px] font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 border overflow-hidden ${
+                  className={`relative py-1.5 sm:py-2 px-2 sm:px-2.5 rounded-lg sm:rounded-xl min-h-[36px] sm:min-h-[38px] font-semibold transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 border overflow-hidden ${
                     isSelected
-                      ? 'bg-stone-900 text-stone-50 dark:bg-[#FAF8F5] dark:text-stone-950 border-stone-900 dark:border-stone-100 shadow-sm scale-[1.01]'
-                      : 'bg-white/60 dark:bg-[#1F1C1A]/60 text-stone-700 dark:text-stone-300 border-[#E7E2DB]/80 dark:border-[#2C2825]/80 hover:bg-[#F2EFE9] dark:hover:bg-[#252220] hover:border-stone-400/40 dark:hover:border-stone-600/40'
+                      ? 'bg-stone-900 text-stone-50 dark:bg-[#FAF8F5] dark:text-stone-950 border-stone-900 dark:border-stone-100 shadow-xs'
+                      : 'bg-white/60 dark:bg-[#1F1C1A]/60 text-stone-700 dark:text-stone-300 border-[#E7E2DB]/80 dark:border-[#2C2825]/80 hover:bg-[#F2EFE9] dark:hover:bg-[#252220]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0 ${isSelected ? (tab.color.includes('text-[#C2613A]') ? 'text-[#E07A5F]' : tab.color) : tab.color}`} />
-                  <span className="text-xs sm:text-sm tracking-tight font-semibold truncate">
+                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isSelected ? (tab.color.includes('text-[#C2613A]') ? 'text-[#E07A5F]' : tab.color) : tab.color}`} />
+                  <span className="text-[11px] sm:text-xs tracking-tight font-semibold truncate">
                     {tab.label}
                   </span>
                   {isSelected && (
