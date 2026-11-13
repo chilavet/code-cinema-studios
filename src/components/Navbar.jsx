@@ -20,15 +20,16 @@ export default function Navbar({ onOpenContact }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full px-3 sm:px-6 md:px-10 lg:px-14 xl:px-16 pt-3 sm:pt-4">
       <div
-        className={`w-full mx-auto rounded-2xl transition-all duration-300 ${scrolled
-            ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-md py-2.5 px-5 sm:px-8'
-            : 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-sm border border-slate-200/80 dark:border-slate-800/80 shadow-sm py-3.5 px-5 sm:px-8'
-          }`}
+        className={`w-full mx-auto rounded-2xl transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#FBF9F5]/90 dark:bg-[#141210]/90 backdrop-blur-md border border-[#E7E2DB] dark:border-[#2C2825] shadow-md py-2.5 px-5 sm:px-8'
+            : 'bg-[#FBF9F5]/75 dark:bg-[#141210]/75 backdrop-blur-sm border border-[#E7E2DB]/80 dark:border-[#2C2825]/80 shadow-xs py-3.5 px-5 sm:px-8'
+        }`}
       >
         <div className="flex items-center justify-between">
           {/* Brand Identity */}
           <a href="#" className="flex items-center space-x-3 group">
-            <div className="relative w-9 h-9 rounded-full bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm transition-transform group-hover:scale-105">
+            <div className="relative w-9 h-9 rounded-full bg-stone-950 border border-stone-800 overflow-hidden flex items-center justify-center p-0.5 shadow-sm transition-transform duration-300 group-hover:scale-108 group-hover:rotate-3">
               <img
                 src="/logo.jpg"
                 alt="Codes Cinema Studios - Full-Stack Web & Mobile Game Development"
@@ -38,33 +39,56 @@ export default function Navbar({ onOpenContact }) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
-                CODES <span className="text-amber-600 dark:text-amber-500">CINEMA</span>
+              <span className="text-base sm:text-lg font-extrabold tracking-tight text-stone-900 dark:text-stone-100 transition-colors">
+                CODES <span className="text-[#C2613A] dark:text-[#E07A5F]">CINEMA</span>
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-7 text-xs font-semibold text-slate-600 dark:text-slate-300">
-            <a href="#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              {t.nav.capabilities}
+          <nav className="hidden md:flex items-center space-x-7 text-xs font-semibold text-stone-600 dark:text-stone-300">
+            <a href="#services" className="relative group/link py-1 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+              <span>{t.nav.capabilities}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C2613A] transition-all duration-300 group-hover/link:w-full" />
             </a>
-            <a href="#estimator" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              {t.nav.scoping}
+            <a href="#estimator" className="relative group/link py-1 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+              <span>{t.nav.scoping}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C2613A] transition-all duration-300 group-hover/link:w-full" />
             </a>
-            <a href="#about" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              {t.nav.studio}
+            <a href="#about" className="relative group/link py-1 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+              <span>{t.nav.studio}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C2613A] transition-all duration-300 group-hover/link:w-full" />
             </a>
-            <a href="#testimonials" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              {t.nav.testimonies}
+            <a href="#testimonials" className="relative group/link py-1 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+              <span>{t.nav.testimonies}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C2613A] transition-all duration-300 group-hover/link:w-full" />
             </a>
-            <a href="#contact" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-              {t.nav.contact}
+            <a href="#contact" className="relative group/link py-1 hover:text-stone-900 dark:hover:text-stone-100 transition-colors">
+              <span>{t.nav.contact}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C2613A] transition-all duration-300 group-hover/link:w-full" />
             </a>
           </nav>
 
+          {/* Live Studio Availability Pill */}
+          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] text-[11px] font-semibold text-stone-700 dark:text-stone-300 shadow-xs animate-float-subtle">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52B788] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#52B788]" />
+            </span>
+            <span>Available for Retainers</span>
+          </div>
+
           {/* Right Action Cluster */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          <div className="hidden sm:flex items-center gap-3">
+            {/* Quick Inquire Button with sheen */}
+            <button
+              type="button"
+              onClick={onOpenContact}
+              className="relative overflow-hidden px-3.5 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-950 text-xs font-bold transition-all shadow-sm hover:shadow hover:scale-103 cursor-pointer group"
+            >
+              <span className="relative z-10">Inquire</span>
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 dark:via-stone-900/15 to-transparent -translate-x-full group-hover:animate-btn-shimmer pointer-events-none" />
+            </button>
             {/* Theme Sun/Moon Switcher */}
             <ThemeToggle />
             {/* Country Flag & Language Selector */}

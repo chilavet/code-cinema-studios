@@ -253,6 +253,10 @@ export default function Hero() {
       {/* Luminous Ambient Canvas Background */}
       <HeroCanvas />
 
+      {/* Ambient Moving Glow Spheres */}
+      <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full bg-gradient-to-tr from-[#C2613A]/10 via-[#D97706]/8 to-transparent blur-3xl pointer-events-none animate-orb-1 -z-10" />
+      <div className="absolute top-1/3 -right-48 w-96 h-96 rounded-full bg-gradient-to-bl from-[#2A6F62]/10 via-[#52B788]/8 to-transparent blur-3xl pointer-events-none animate-orb-2 -z-10" />
+
       {/* Gentle Vignette Fade */}
       <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#FBF9F5]/40 to-[#FBF9F5] dark:via-[#141210]/40 dark:to-[#141210] pointer-events-none" />
 
@@ -261,7 +265,7 @@ export default function Hero() {
         <div className="text-center max-w-4xl mx-auto mb-8">
           {/* Active Discipline Pill */}
           <div className="flex justify-center mb-4 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] text-stone-800 dark:text-stone-200 text-xs font-semibold shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] text-stone-800 dark:text-stone-200 text-xs font-semibold shadow-sm animate-float-subtle">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2A6F62] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2A6F62]" />
@@ -301,7 +305,7 @@ export default function Hero() {
                   setIsPaused(true);
                 }}
                 onMouseLeave={() => setIsPaused(false)}
-                className={`relative px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 border overflow-hidden ${
+                className={`relative px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 border overflow-hidden hover:scale-105 active:scale-95 ${
                   isSelected
                     ? 'bg-stone-900 text-stone-50 dark:bg-[#FAF8F5] dark:text-stone-950 border-stone-900 dark:border-stone-100 shadow-sm scale-102'
                     : 'bg-[#FAF8F5] dark:bg-[#1C1A18] text-stone-700 dark:text-stone-300 border-[#E7E2DB] dark:border-[#2C2825] hover:bg-[#F2EFE9] dark:hover:bg-[#252220]'
@@ -388,14 +392,14 @@ export default function Hero() {
         {/* Deliverables & Stack Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 text-left">
           {/* Deliverables (8 cols) */}
-          <div className="lg:col-span-8 p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm">
+          <div className="lg:col-span-8 p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md transition-all duration-300">
             <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 mb-4">
               {serviceDetail?.title || activeTabConfig.fullTitle} — Key Deliverables
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {deliverablesList.map((hl, i) => (
-                <div key={i} className="flex items-start gap-2.5 text-xs text-stone-600 dark:text-stone-300 font-normal">
-                  <CheckCircle2 className="w-4 h-4 text-[#2A6F62] dark:text-[#52B788] shrink-0 mt-0.5" />
+                <div key={i} className="flex items-start gap-2.5 text-xs text-stone-600 dark:text-stone-300 font-normal group/item hover:translate-x-1 transition-transform duration-200">
+                  <CheckCircle2 className="w-4 h-4 text-[#2A6F62] dark:text-[#52B788] shrink-0 mt-0.5 transition-transform duration-200 group-hover/item:scale-120" />
                   <span className="leading-relaxed">{hl}</span>
                 </div>
               ))}
@@ -403,7 +407,7 @@ export default function Hero() {
           </div>
 
           {/* Stack & Assurance (4 cols) */}
-          <div className="lg:col-span-4 p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm flex flex-col justify-between gap-5">
+          <div className="lg:col-span-4 p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between gap-5">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100 mb-3">
                 Core Architecture Stack
@@ -412,7 +416,7 @@ export default function Hero() {
                 {stackTagsList.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#F2EFE9] dark:bg-[#252220] text-stone-700 dark:text-stone-300 border border-[#E7E2DB] dark:border-[#2E2A27]"
+                    className="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#F2EFE9] dark:bg-[#252220] text-stone-700 dark:text-stone-300 border border-[#E7E2DB] dark:border-[#2E2A27] transition-all duration-200 hover:scale-108 hover:border-[#C2613A]/50"
                   >
                     {tag}
                   </span>
@@ -422,7 +426,7 @@ export default function Hero() {
 
             <div className="pt-4 border-t border-[#E7E2DB] dark:border-[#2C2825] flex items-center justify-between text-xs text-stone-600 dark:text-stone-400">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#2A6F62] shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-[#2A6F62] shrink-0 animate-pulse" />
                 <span className="font-semibold text-stone-900 dark:text-stone-100">Senior Human Craft</span>
               </div>
               <span className="text-[11px] font-medium">100% IP Ownership</span>
@@ -434,16 +438,16 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">
           <a
             href="#services"
-            className="group relative overflow-hidden px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-stone-50 bg-stone-900 hover:bg-stone-800 dark:bg-[#C2613A] dark:hover:bg-[#A84F2E] dark:text-white transition-all flex items-center gap-2 shadow-sm hover:shadow-md cursor-pointer"
+            className="group relative overflow-hidden px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-stone-50 bg-stone-900 hover:bg-stone-800 dark:bg-[#C2613A] dark:hover:bg-[#A84F2E] dark:text-white transition-all flex items-center gap-2 shadow-sm hover:shadow-lg hover:scale-103 cursor-pointer"
           >
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
-            <span>{t.hero.exploreCta || 'Explore Capabilities'}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-btn-shimmer pointer-events-none" />
+            <span className="relative z-10">{t.hero.exploreCta || 'Explore Capabilities'}</span>
+            <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
 
           <a
             href="#estimator"
-            className="px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-stone-800 dark:text-stone-200 bg-[#FAF8F5] dark:bg-[#1C1A18] hover:bg-[#F2EFE9] dark:hover:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] shadow-sm hover:border-stone-400 dark:hover:border-stone-600 transition-all cursor-pointer"
+            className="px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-stone-800 dark:text-stone-200 bg-[#FAF8F5] dark:bg-[#1C1A18] hover:bg-[#F2EFE9] dark:hover:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:scale-103 cursor-pointer"
           >
             {t.hero.estimatorCta || 'Estimate Timeline'}
           </a>
@@ -455,7 +459,7 @@ export default function Hero() {
           className="pt-8 border-t border-[#E7E2DB] dark:border-[#2C2825] grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center animate-tab-enter"
         >
           {current.metrics?.map((m, idx) => (
-            <div key={idx} className="group cursor-default">
+            <div key={idx} className="group cursor-default transition-transform duration-200 hover:-translate-y-1">
               <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-stone-900 dark:text-stone-100 block group-hover:text-[#C2613A] dark:group-hover:text-[#E07A5F] transition-colors truncate">
                 {m.value}
               </span>

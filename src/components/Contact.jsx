@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, RefreshCw, ShieldCheck, Clock, Copy, Check, Mail, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const SUPPORT_EMAIL = 'contact@codescinema.com';
 const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${SUPPORT_EMAIL}`;
@@ -18,6 +19,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [revealRef] = useScrollReveal({ threshold: 0.08 });
 
   const [prevProps, setPrevProps] = useState({ initialBrief, initialService });
   if (prevProps.initialBrief !== initialBrief || prevProps.initialService !== initialService) {
@@ -109,18 +111,22 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
   };
 
   return (
-    <section id="contact" className="py-24 relative z-10 border-t border-slate-200 dark:border-slate-800">
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <section id="contact" ref={revealRef} className="py-24 relative z-10 border-t border-[#E7E2DB] dark:border-[#2C2825] overflow-hidden">
+      {/* Ambient Moving Orbs */}
+      <div className="absolute top-1/3 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#C2613A]/10 via-[#D97706]/5 to-transparent blur-3xl pointer-events-none animate-orb-1 -z-10" />
+      <div className="absolute bottom-10 -right-40 w-96 h-96 rounded-full bg-gradient-to-bl from-[#2A6F62]/10 via-[#52B788]/5 to-transparent blur-3xl pointer-events-none animate-orb-2 -z-10" />
+
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
+        <div className="max-w-3xl mb-16 reveal-init">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-3 animate-float-subtle">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C2613A]" />
             <span>{t.contact.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-100">
             {t.contact.heading}
           </h2>
-          <p className="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+          <p className="mt-3 text-stone-600 dark:text-stone-300 text-sm leading-relaxed">
             {t.contact.subtitle ||
               'Submit your project brief below to initiate a technical consultation. Our engineering team reviews specifications and responds within 24 business hours.'}
           </p>
@@ -129,34 +135,34 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
         {/* Dual Layout: Form (8 cols) + Credentials (4 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Main Form */}
-          <div className="lg:col-span-8 card-minimal rounded-3xl p-7 sm:p-10 shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90">
+          <div className="lg:col-span-8 card-minimal rounded-3xl p-7 sm:p-10 shadow-sm border border-[#E7E2DB] dark:border-[#2C2825] bg-[#FAF8F5] dark:bg-[#1C1A18] reveal-left">
             {submitted ? (
-              <div className="text-center py-12 animate-in fade-in duration-300">
-                <div className="w-14 h-14 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center mb-5 shadow-sm">
+              <div className="text-center py-12 animate-tab-enter">
+                <div className="w-14 h-14 rounded-full bg-[#2A6F62]/10 border border-[#2A6F62]/30 text-[#2A6F62] dark:text-[#52B788] mx-auto flex items-center justify-center mb-5 shadow-xs animate-float-subtle">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="text-2xl font-bold text-stone-900 dark:text-stone-100">
                   {t.contact.successTitle}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto mt-2 leading-relaxed">
-                  {t.contact.successBody1} <span className="text-slate-900 dark:text-white font-semibold">{formData.name}</span>. {t.contact.successBody2}{' '}
-                  <span className="text-slate-900 dark:text-white font-semibold">{formData.service}</span> {t.contact.successBody3}{' '}
-                  <span className="font-semibold text-slate-900 dark:text-white">{SUPPORT_EMAIL}</span>. {t.contact.successBody4}{' '}
-                  <span className="text-slate-900 dark:text-white font-medium">{formData.email}</span> {t.contact.successBody5}
+                <p className="text-stone-600 dark:text-stone-300 text-sm max-w-md mx-auto mt-2 leading-relaxed">
+                  {t.contact.successBody1} <span className="text-stone-900 dark:text-stone-100 font-semibold">{formData.name}</span>. {t.contact.successBody2}{' '}
+                  <span className="text-stone-900 dark:text-stone-100 font-semibold">{formData.service}</span> {t.contact.successBody3}{' '}
+                  <span className="font-semibold text-stone-900 dark:text-stone-100">{SUPPORT_EMAIL}</span>. {t.contact.successBody4}{' '}
+                  <span className="text-stone-900 dark:text-stone-100 font-medium">{formData.email}</span> {t.contact.successBody5}
                 </p>
 
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:border-slate-500 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all inline-flex items-center gap-2 shadow-sm cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl text-xs font-semibold text-stone-700 dark:text-stone-300 border border-[#E7E2DB] dark:border-[#2C2825] hover:border-stone-400 bg-white dark:bg-[#252220] hover:bg-[#F2EFE9] transition-all inline-flex items-center gap-2 shadow-xs cursor-pointer hover:scale-103"
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>{t.contact.submitAnother}</span>
                   </button>
                   <a
                     href={buildMailtoHref()}
-                    className="px-5 py-2.5 rounded-xl text-xs font-semibold text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800 hover:border-sky-300 bg-sky-50 dark:bg-sky-950/50 hover:bg-sky-100/70 dark:hover:bg-sky-900/50 transition-all inline-flex items-center gap-2"
+                    className="px-5 py-2.5 rounded-xl text-xs font-semibold text-[#C2613A] dark:text-[#E07A5F] border border-[#C2613A]/30 bg-[#C2613A]/10 hover:bg-[#C2613A]/15 transition-all inline-flex items-center gap-2 hover:scale-103"
                   >
                     <Mail className="w-3.5 h-3.5" />
                     <span>{t.contact.openEmailCopy}</span>
@@ -167,7 +173,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
                       {t.contact.fullName}
                     </label>
                     <input
@@ -177,11 +183,11 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                       value={formData.name}
                       onChange={handleChange}
                       placeholder={t.contact.namePlaceholder}
-                      className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-slate-800 transition-colors"
+                      className="w-full bg-white dark:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#C2613A] focus:ring-2 focus:ring-[#C2613A]/20 transition-all duration-200"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
                       {t.contact.businessEmail}
                     </label>
                     <input
@@ -191,20 +197,20 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                       value={formData.email}
                       onChange={handleChange}
                       placeholder={t.contact.emailPlaceholder}
-                      className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-slate-800 transition-colors"
+                      className="w-full bg-white dark:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#C2613A] focus:ring-2 focus:ring-[#C2613A]/20 transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
                     {t.contact.discipline}
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-slate-800 transition-colors"
+                    className="w-full bg-white dark:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#C2613A] focus:ring-2 focus:ring-[#C2613A]/20 transition-all duration-200"
                   >
                     <option value="Full-Stack Web Development">
                       {t.contact.options?.fullstack || 'Full-Stack Web Development (End-to-End Platform)'}
@@ -225,7 +231,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">
                     {t.contact.briefLabel}
                   </label>
                   <textarea
@@ -235,7 +241,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                     value={formData.brief}
                     onChange={handleChange}
                     placeholder={t.contact.briefPlaceholder}
-                    className="w-full bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-slate-900 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-slate-800 transition-colors"
+                    className="w-full bg-white dark:bg-[#252220] border border-[#E7E2DB] dark:border-[#2C2825] rounded-xl px-4 py-3 text-sm text-stone-900 dark:text-stone-100 focus:outline-none focus:border-[#C2613A] focus:ring-2 focus:ring-[#C2613A]/20 transition-all duration-200"
                   />
                 </div>
 
@@ -259,10 +265,11 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 font-bold transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-sm"
+                    className="relative overflow-hidden w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm text-stone-50 bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white dark:text-stone-950 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-sm hover:shadow hover:scale-102 group"
                   >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>{isSubmitting ? t.contact.submittingBtn : t.contact.submitBtn}</span>
+                    <Send className="w-3.5 h-3.5 relative z-10 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                    <span className="relative z-10">{isSubmitting ? t.contact.submittingBtn : t.contact.submitBtn}</span>
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 dark:via-stone-900/15 to-transparent -translate-x-full group-hover:animate-btn-shimmer pointer-events-none" />
                   </button>
                 </div>
               </form>
@@ -270,67 +277,67 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
           </div>
 
           {/* Right Credentials: 4 cols */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
-                <Clock className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+          <div className="lg:col-span-4 space-y-4 reveal-right">
+            <div className="p-6 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+              <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                <Clock className="w-4 h-4 text-[#C2613A] transition-transform group-hover:rotate-45" />
                 <span>{t.contact.responseTitle}</span>
               </div>
-              <h4 className="text-slate-900 dark:text-white font-bold text-sm mb-1">{t.contact.responseHeading}</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h4 className="text-stone-900 dark:text-stone-100 font-bold text-sm mb-1">{t.contact.responseHeading}</h4>
+              <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
                 {t.contact.responseDesc}
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <div className="p-6 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+              <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                <ShieldCheck className="w-4 h-4 text-[#2A6F62] dark:text-[#52B788] transition-transform group-hover:scale-120" />
                 <span>{t.contact.ndaTitle}</span>
               </div>
-              <h4 className="text-slate-900 dark:text-white font-bold text-sm mb-1">{t.contact.ndaHeading}</h4>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h4 className="text-stone-900 dark:text-stone-100 font-bold text-sm mb-1">{t.contact.ndaHeading}</h4>
+              <p className="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
                 {t.contact.ndaDesc}
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2.5">{t.contact.deskTitle}</h4>
-              <ul className="space-y-3 text-xs font-medium text-slate-700 dark:text-slate-300">
+            <div className="p-6 rounded-2xl bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-stone-400 mb-2.5">{t.contact.deskTitle}</h4>
+              <ul className="space-y-3 text-xs font-medium text-stone-700 dark:text-stone-300">
                 <li>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">{t.contact.supportEmailLabel}</span>
+                  <span className="text-stone-500 dark:text-stone-400 block text-[10px]">{t.contact.supportEmailLabel}</span>
                   <div className="flex items-center gap-2 mt-0.5">
                     <a
                       href={`mailto:${SUPPORT_EMAIL}`}
-                      className="text-sky-700 dark:text-sky-400 hover:text-sky-900 dark:hover:text-sky-300 font-bold inline-flex items-center gap-1.5"
+                      className="text-[#C2613A] dark:text-[#E07A5F] hover:underline font-bold inline-flex items-center gap-1.5 transition-colors"
                     >
                       <Mail className="w-3.5 h-3.5 shrink-0" />
                       <span>{SUPPORT_EMAIL}</span>
                     </a>
                     <button
                       onClick={handleCopyEmail}
-                      className="p-1 rounded-md text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                      className="p-1 rounded-md text-stone-400 hover:text-stone-900 dark:hover:text-white transition-all cursor-pointer hover:scale-120"
                       title="Copy Support Email"
                       type="button"
                     >
-                      {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#2A6F62] dark:text-[#52B788] animate-ping-radar" /> : <Copy className="w-3.5 h-3.5" />}
                     </button>
                   </div>
                 </li>
                 <li>
-                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">{t.contact.whatsappDirectLabel}</span>
+                  <span className="text-stone-500 dark:text-stone-400 block text-[10px]">{t.contact.whatsappDirectLabel}</span>
                   <a
                     href="https://wa.me/2348160498340"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-bold"
+                    className="text-[#2A6F62] dark:text-[#52B788] hover:underline font-bold inline-flex items-center gap-1 hover:translate-x-0.5 transition-transform"
                     dir="ltr"
                   >
                     +234 816 049 8340 ↗
                   </a>
                 </li>
                 <li className="pt-1">
-                  <span className="text-slate-500 dark:text-slate-400 block text-[10px]">{t.contact.globalClienteleLabel}</span>
-                  <span className="text-slate-800 dark:text-slate-200 font-medium">{t.contact.globalClienteleValue}</span>
+                  <span className="text-stone-500 dark:text-stone-400 block text-[10px]">{t.contact.globalClienteleLabel}</span>
+                  <span className="text-stone-800 dark:text-stone-200 font-medium">{t.contact.globalClienteleValue}</span>
                 </li>
               </ul>
             </div>
