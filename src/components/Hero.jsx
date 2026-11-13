@@ -165,10 +165,6 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
-  const handleSelectTab = (tabId) => {
-    setActiveTab(tabId);
-  };
-
   const handleDisplayMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -178,10 +174,12 @@ export default function Hero() {
 
   const handleDisplayMouseEnter = () => {
     setIsHoveringDisplay(true);
+    setIsPaused(true);
   };
 
   const handleDisplayMouseLeave = () => {
     setIsHoveringDisplay(false);
+    setIsPaused(false);
     setMouseTilt({ x: 0, y: 0 });
   };
 
@@ -259,20 +257,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#FBF9F5]/40 to-[#FBF9F5] dark:via-[#141210]/40 dark:to-[#141210] pointer-events-none" />
 
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 max-w-7xl mx-auto">
-        {/* Top Header: Active Discipline Badge & Dynamic Main Headline */}
-        <div className="text-center max-w-4xl mx-auto mb-8">
-          {/* Active Discipline Pill */}
-          <div className="flex justify-center mb-4 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F5] dark:bg-[#1C1A18] border border-[#E7E2DB] dark:border-[#2C2825] text-stone-800 dark:text-stone-200 text-xs font-semibold shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2A6F62] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2A6F62]" />
-              </span>
-              <ActiveIcon className={`w-3.5 h-3.5 ${activeTabConfig.color}`} />
-              <span className="uppercase tracking-wide text-[11px] font-semibold">{current.tag || activeTabConfig.label}</span>
-            </div>
-          </div>
-
+        {/* Top Header: Dynamic Main Headline */}
+        <div className="text-center max-w-4xl mx-auto mb-10">
           {/* Dynamic Headline */}
           <div key={`headline-${activeTab}`} className="space-y-3 animate-tab-enter">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-stone-900 dark:text-stone-100 leading-tight">
@@ -286,34 +272,6 @@ export default function Hero() {
               {serviceDetail?.description || current.desc}
             </p>
           </div>
-        </div>
-
-        {/* 6 Disciplines Interactive Switcher Deck (Horizontal Tabs Bar) */}
-        <div className="mb-6 flex flex-wrap justify-center gap-2 max-w-5xl mx-auto">
-          {tabConfigs.map((tab) => {
-            const Icon = tab.icon;
-            const isSelected = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => handleSelectTab(tab.id)}
-                onMouseEnter={() => {
-                  handleSelectTab(tab.id);
-                  setIsPaused(true);
-                }}
-                onMouseLeave={() => setIsPaused(false)}
-                className={`relative px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 border overflow-hidden ${
-                  isSelected
-                    ? 'bg-stone-900 text-stone-50 dark:bg-[#FAF8F5] dark:text-stone-950 border-stone-900 dark:border-stone-100 shadow-sm scale-102'
-                    : 'bg-[#FAF8F5] dark:bg-[#1C1A18] text-stone-700 dark:text-stone-300 border-[#E7E2DB] dark:border-[#2C2825] hover:bg-[#F2EFE9] dark:hover:bg-[#252220]'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{tab.label}</span>
-              </button>
-            );
-          })}
         </div>
 
         {/* Full-Screen Majestic Living Display Area */}
