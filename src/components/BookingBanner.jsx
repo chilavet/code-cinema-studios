@@ -37,7 +37,7 @@ export default function BookingBanner({ onBookService }) {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Pitch & Catchy Line: 7 cols */}
             <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-mono font-semibold tracking-wide">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-semibold tracking-wide">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
                 <span>HIGH-CONVERSION PRODUCTION DESK</span>
               </div>
@@ -80,7 +80,7 @@ export default function BookingBanner({ onBookService }) {
                   href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-3.5 rounded-xl font-mono text-xs text-emerald-400 hover:text-emerald-300 bg-emerald-950/60 border border-emerald-800/80 transition-all flex items-center gap-2"
+                  className="px-4 py-3.5 rounded-xl font-semibold text-xs text-emerald-400 hover:text-emerald-300 bg-emerald-950/60 border border-emerald-800/80 transition-all flex items-center gap-2"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
                   <span>WhatsApp: +234 816 049 8340</span>
@@ -122,7 +122,7 @@ export default function BookingBanner({ onBookService }) {
                     </div>
 
                     <span
-                      className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold shrink-0 ${
+                      className={`text-[10px] px-2 py-0.5 rounded font-semibold shrink-0 ${
                         svc.highlight
                           ? 'bg-amber-400/20 text-amber-300 border border-amber-400/40'
                           : 'bg-slate-800 text-slate-400'

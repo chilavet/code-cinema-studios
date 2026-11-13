@@ -12,9 +12,9 @@
   --color-text-muted: #64748B;
   --color-accent-cyan: #0284C7;
   --color-accent-amber: #D97706;
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
-  --font-display: 'Orbitron', 'Plus Jakarta Sans', sans-serif;
-  --font-mono: 'Space Grotesk', ui-monospace, monospace;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 /* Base Body Styles */

@@ -67,7 +67,7 @@ export default function Services({ onSelectService }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
               <span>{t.services.badge}</span>
             </div>
@@ -181,7 +181,7 @@ export default function Services({ onSelectService }) {
                     {(loc.tags || s.tags).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                        className="text-xs font-medium px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
                       >
                         {tag}
                       </span>
@@ -206,7 +206,7 @@ export default function Services({ onSelectService }) {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-mono font-semibold text-[11px] transition-colors"
+                    className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 font-semibold text-xs transition-colors"
                   >
                     WhatsApp ↗
                   </a>

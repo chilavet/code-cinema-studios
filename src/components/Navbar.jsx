@@ -38,7 +38,7 @@ export default function Navbar({ onOpenContact }) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-['Orbitron',sans-serif] text-sm sm:text-base font-bold tracking-tight text-slate-900 dark:text-white">
+              <span className="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
                 CODES <span className="text-amber-600 dark:text-amber-500">CINEMA</span>
               </span>
             </div>

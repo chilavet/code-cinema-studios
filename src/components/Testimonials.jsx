@@ -12,7 +12,7 @@ export default function Testimonials() {
         {/* Section Header + Aggregate Trust Badge */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>{t.testimonials.badge}</span>
             </div>
@@ -34,7 +34,7 @@ export default function Testimonials() {
             <div className="h-6 w-px bg-slate-200 dark:bg-slate-700" />
             <div>
               <span className="text-sm font-bold text-slate-900 dark:text-white block leading-none">5.0 / 5.0</span>
-              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">{t.testimonials.ratingSla}</span>
+              <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">{t.testimonials.ratingSla}</span>
             </div>
           </div>
         </div>
@@ -63,11 +63,11 @@ export default function Testimonials() {
 
                   {/* Service & Metric Badges */}
                   <div className="flex flex-wrap items-center gap-1.5 mb-4">
-                    <span className="text-[10px] font-mono font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                    <span className="text-[10px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                       {loc.service}
                     </span>
                     {loc.metric && (
-                      <span className="text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800">
+                      <span className="text-[10px] font-semibold px-2.5 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800">
                         {loc.metric}
                       </span>
                     )}
@@ -83,7 +83,7 @@ export default function Testimonials() {
                 <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
-                      className={`w-10 h-10 rounded-full border flex items-center justify-center text-xs font-mono font-bold shrink-0 ${item.avatarBg}`}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center text-xs font-bold shrink-0 ${item.avatarBg}`}
                     >
                       {item.initials}
                     </div>

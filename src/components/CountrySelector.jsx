@@ -37,7 +37,7 @@ export default function CountrySelector({ align = 'right' }) {
         <span className="text-base leading-none" aria-hidden="true">
           {country.flag}
         </span>
-        <span className="font-mono text-[11px] font-semibold uppercase tracking-wide">
+        <span className="text-xs font-semibold uppercase tracking-wide">
           {country.label}
         </span>
         <ChevronDown

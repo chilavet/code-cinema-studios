@@ -113,7 +113,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
             <span>{t.contact.badge}</span>
           </div>
@@ -141,7 +141,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                 <p className="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto mt-2 leading-relaxed">
                   {t.contact.successBody1} <span className="text-slate-900 dark:text-white font-semibold">{formData.name}</span>. {t.contact.successBody2}{' '}
                   <span className="text-slate-900 dark:text-white font-semibold">{formData.service}</span> {t.contact.successBody3}{' '}
-                  <span className="font-mono font-semibold text-slate-900 dark:text-white">{SUPPORT_EMAIL}</span>. {t.contact.successBody4}{' '}
+                  <span className="font-semibold text-slate-900 dark:text-white">{SUPPORT_EMAIL}</span>. {t.contact.successBody4}{' '}
                   <span className="text-slate-900 dark:text-white font-medium">{formData.email}</span> {t.contact.successBody5}
                 </p>
 
@@ -167,7 +167,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                       {t.contact.fullName}
                     </label>
                     <input
@@ -181,7 +181,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                       {t.contact.businessEmail}
                     </label>
                     <input
@@ -197,7 +197,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                     {t.contact.discipline}
                   </label>
                   <select
@@ -225,7 +225,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                     {t.contact.briefLabel}
                   </label>
                   <textarea
@@ -247,7 +247,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
                     </div>
                     <a
                       href={buildMailtoHref()}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800 text-rose-800 dark:text-rose-300 hover:bg-rose-100/60 font-mono font-semibold transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800 text-rose-800 dark:text-rose-300 hover:bg-rose-100/60 font-semibold transition-colors"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>{t.contact.sendViaEmail} ({SUPPORT_EMAIL})</span>
@@ -272,7 +272,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
           {/* Right Credentials: 4 cols */}
           <div className="lg:col-span-4 space-y-4">
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
                 <Clock className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                 <span>{t.contact.responseTitle}</span>
               </div>
@@ -283,7 +283,7 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
             </div>
 
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>{t.contact.ndaTitle}</span>
               </div>
@@ -294,8 +294,8 @@ export default function Contact({ initialBrief = '', initialService = 'Full-Stac
             </div>
 
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-              <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">{t.contact.deskTitle}</h4>
-              <ul className="space-y-3 text-xs font-mono text-slate-700 dark:text-slate-300">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-2.5">{t.contact.deskTitle}</h4>
+              <ul className="space-y-3 text-xs font-medium text-slate-700 dark:text-slate-300">
                 <li>
                   <span className="text-slate-500 dark:text-slate-400 block text-[10px]">{t.contact.supportEmailLabel}</span>
                   <div className="flex items-center gap-2 mt-0.5">

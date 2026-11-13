@@ -12,7 +12,7 @@ export default function Philosophy() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Text & 4 Minimal Pillars: 7 cols */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
               <span>{t.philosophy.badge}</span>
             </div>
@@ -77,7 +77,7 @@ export default function Philosophy() {
           <div className="lg:col-span-5">
             <div className="card-minimal rounded-3xl p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-center relative overflow-hidden shadow-md">
               {/* Top System Header */}
-              <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 pb-6 border-b border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pb-6 border-b border-slate-100 dark:border-slate-800 font-medium">
                 <span>{t.philosophy.cardHeaderLeft}</span>
                 <span>{t.philosophy.cardHeaderRight}</span>
               </div>
@@ -93,27 +93,27 @@ export default function Philosophy() {
                     height="144"
                   />
                 </div>
-                <h3 className="text-base font-bold font-['Orbitron',sans-serif] text-slate-900 dark:text-white tracking-wide mt-4">
+                <h3 className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white mt-4">
                   CODES CINEMA
                 </h3>
-                <p className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
                   {t.philosophy.tagline}
                 </p>
               </div>
 
               {/* Stats Footer */}
-              <div className="grid grid-cols-3 gap-2 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs font-mono">
+              <div className="grid grid-cols-3 gap-2 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-xs">
                 <div>
-                  <span className="text-slate-900 dark:text-white font-bold block">100%</span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400">{t.philosophy.stat1}</span>
+                  <span className="text-slate-900 dark:text-white font-extrabold block text-base sm:text-lg">100%</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t.philosophy.stat1}</span>
                 </div>
                 <div>
-                  <span className="text-slate-900 dark:text-white font-bold block">120 FPS</span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400">{t.philosophy.stat2}</span>
+                  <span className="text-slate-900 dark:text-white font-extrabold block text-base sm:text-lg">120 FPS</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t.philosophy.stat2}</span>
                 </div>
                 <div>
-                  <span className="text-slate-900 dark:text-white font-bold block">99.98%</span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400">{t.philosophy.stat3}</span>
+                  <span className="text-slate-900 dark:text-white font-extrabold block text-base sm:text-lg">99.98%</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{t.philosophy.stat3}</span>
                 </div>
               </div>
             </div>

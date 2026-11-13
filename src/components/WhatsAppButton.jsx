@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
       >
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
         <span className="font-semibold text-slate-700 dark:text-slate-300">WhatsApp:</span>
-        <span className="font-mono text-slate-600 dark:text-slate-400">{displayPhone}</span>
+        <span className="font-semibold text-slate-600 dark:text-slate-400">{displayPhone}</span>
       </a>
 
       {/* Floating Action Button */}

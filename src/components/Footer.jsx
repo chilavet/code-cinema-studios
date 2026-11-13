@@ -22,7 +22,7 @@ export default function Footer() {
                   height="36"
                 />
               </div>
-              <span className="font-['Orbitron',sans-serif] font-bold text-lg text-slate-900 dark:text-white tracking-tight">
+              <span className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white tracking-tight">
                 CODES <span className="text-amber-600 dark:text-amber-500">CINEMA</span>
               </span>
             </div>
@@ -37,14 +37,14 @@ export default function Footer() {
                 href="https://wa.me/2348160498340?text=Hello%20Codes%20Cinema%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-400 hover:text-emerald-950 dark:hover:text-emerald-300 transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:text-emerald-950 dark:hover:text-emerald-300 transition-colors"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 <span dir="ltr">WhatsApp: +234 816 049 8340 ↗</span>
               </a>
               <a
                 href="mailto:contact@codescinema.com"
-                className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-sky-800 dark:text-sky-400 hover:text-sky-950 dark:hover:text-sky-300 transition-colors"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-sky-800 dark:text-sky-400 hover:text-sky-950 dark:hover:text-sky-300 transition-colors"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-sky-500" />
                 <span dir="ltr">Email: contact@codescinema.com ↗</span>
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Column 2: Engineering */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
               {t.footer.coreEngineering}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Column 3: Care & Operations */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
               {t.footer.operations}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
@@ -132,7 +132,7 @@ export default function Footer() {
 
           {/* Column 4: Channels */}
           <div>
-            <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
               {t.footer.connect}
             </h4>
             <ul className="space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-400">
@@ -177,7 +177,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4 font-medium">
           <p>© {currentYear} Codes Cinema. {t.footer.rights}</p>
 
-          <div className="flex items-center space-x-2 text-[11px] font-mono text-slate-600 dark:text-slate-400">
+          <div className="flex items-center space-x-2 text-[11px] font-medium text-slate-600 dark:text-slate-400">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             <span>{t.footer.slaStatus}</span>
           </div>

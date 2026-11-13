@@ -24,9 +24,9 @@ export default function TechTicker() {
 
       <div className="flex w-max animate-marquee space-x-12 items-center">
         {[...TECH_ITEMS, ...TECH_ITEMS].map((item, idx) => (
-          <div key={idx} className="flex items-center space-x-4 text-xs font-mono font-medium text-slate-600 dark:text-slate-400 whitespace-nowrap">
+          <div key={idx} className="flex items-center space-x-4 text-xs font-medium text-slate-600 dark:text-slate-400 whitespace-nowrap">
             <span className="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600" />
-            <span className="hover:text-slate-950 dark:hover:text-white transition-colors cursor-default tracking-wide">
+            <span className="hover:text-slate-950 dark:hover:text-white transition-colors cursor-default tracking-normal">
               {item}
             </span>
           </div>

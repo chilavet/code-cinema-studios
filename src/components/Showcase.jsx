@@ -16,7 +16,7 @@ export default function Showcase({ onSelectProject }) {
         {/* Section Header & Minimal Filters */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold text-slate-500 uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
               <span>Selected Deployments</span>
             </div>
@@ -65,13 +65,13 @@ export default function Showcase({ onSelectProject }) {
                   </div>
 
                   {/* Category Chip */}
-                  <span className="absolute top-3 right-3 text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 shadow-sm">
+                  <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-white text-slate-700 border border-slate-200 shadow-sm">
                     {project.categoryLabel}
                   </span>
 
                   {/* Metric Chip */}
                   {project.metrics && (
-                    <span className="absolute bottom-3 left-3 text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-white text-slate-900 border border-slate-200 shadow-sm">
+                    <span className="absolute bottom-3 left-3 text-[10px] font-semibold px-2 py-0.5 rounded bg-white text-slate-900 border border-slate-200 shadow-sm">
                       {project.metrics}
                     </span>
                   )}
@@ -79,7 +79,7 @@ export default function Showcase({ onSelectProject }) {
 
                 {/* Body Content */}
                 <div className="p-6">
-                  <span className="text-[10px] font-mono font-medium text-slate-500 uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider block mb-1">
                     {project.subtitle}
                   </span>
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-900 transition-colors">
@@ -90,8 +90,8 @@ export default function Showcase({ onSelectProject }) {
                   </p>
 
                   <div className="mt-4 pt-3 border-t border-slate-100">
-                    <span className="text-[10px] font-mono text-slate-500 block mb-0.5">Stack</span>
-                    <p className="text-xs font-mono font-medium text-slate-800 truncate">
+                    <span className="text-[10px] font-medium text-slate-500 block mb-0.5">Stack</span>
+                    <p className="text-xs font-medium text-slate-800 truncate">
                       {project.stack}
                     </p>
                   </div>

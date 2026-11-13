@@ -9,7 +9,7 @@ import {
   Layout,
   Database,
   CheckCircle2,
-  Sparkles
+  X
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
 
@@ -40,6 +40,39 @@ const DEFAULT_HEADLINES = {
   care: {
     top: 'Website Maintenance & Care.',
     accent: 'Proactive Shield & < 15 Min SLA.'
+  }
+};
+
+const CORE_IMAGES = {
+  fullstack: {
+    src: '/images/core/fullstack.jpg',
+    alt: 'Turnkey Full-Stack Web Platform SaaS Dashboard & Cloud Architecture',
+    caption: 'Production Web Application Interface & Cloud Dashboard'
+  },
+  frontend: {
+    src: '/images/core/frontend.jpg',
+    alt: 'Pixel-Perfect Reactive Frontend UI Component System',
+    caption: 'Responsive High-Performance UI Design System'
+  },
+  backend: {
+    src: '/images/core/backend.jpg',
+    alt: 'High-Concurrency Cloud Server Network & API Microservices',
+    caption: 'Distributed Microservices & Real-Time Event Pipelines'
+  },
+  mobile: {
+    src: '/images/core/mobile.jpg',
+    alt: 'Mobile Game Development Unity Engine 120 FPS Gaming',
+    caption: 'Touch-Optimized Mobile Arcade & 3D Unity Engine'
+  },
+  devops: {
+    src: '/images/core/devops.jpg',
+    alt: 'DevOps Automated CI/CD Server Mesh & Cloud Infrastructure',
+    caption: 'Linux Multi-Region Mesh & Zero-Downtime Deployments'
+  },
+  care: {
+    src: '/images/core/care.jpg',
+    alt: '24/7 Cybersecurity Shield & Website Health Monitoring',
+    caption: 'Proactive SLA Shield & Continuous Uptime Telemetry'
   }
 };
 
@@ -91,20 +124,29 @@ const DEFAULT_STACK_TAGS = {
   care: ['24/7 SLA', 'Security Shield', 'Daily Backups', 'Uptime Telemetry', '< 15 Min SLA']
 };
 
-const TERMINAL_COMMANDS = {
-  fullstack: 'npx create-next-app@latest --ts --tailwind --app',
-  frontend: 'npm run build -- --react-19 --core-web-vitals=100',
-  backend: 'docker compose up -d postgres redis api-gateway',
-  mobile: 'unity-cli --target=mobile --fps=120 --profile=zero-leak',
-  devops: 'ansible-playbook server-mesh.yml --check --ssl=active',
-  care: 'systemctl status uptime-shield --live --sla=24-7'
-};
-
 export default function Hero() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('fullstack');
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Lock body scroll and listen for Escape when viewing full-screen modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsFullscreen(false);
+    };
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isFullscreen]);
 
   // Live continuous auto-switching across Codes Cinema Core services
   useEffect(() => {
@@ -215,18 +257,18 @@ export default function Hero() {
             {/* Top Bar: Live Status & Active Discipline Pill */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 animate-fade-in-up">
               {/* Live Core Indicator Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/70 border border-sky-200/90 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-mono font-semibold shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/70 border border-sky-200/90 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                <span className="tracking-wider uppercase text-[11px]">
-                  CODES CINEMA CORE • LIVE ROTATION
+                <span className="tracking-wide uppercase text-[11px]">
+                  CODES CINEMA CORE
                 </span>
               </div>
 
               {/* Specific Discipline Tag */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-[11px] font-mono font-medium shadow-sm">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs font-medium shadow-sm">
                 <ActiveIcon className={`w-3.5 h-3.5 ${activeTabConfig.color}`} />
                 <span className="uppercase font-semibold">{current.tag || activeTabConfig.label}</span>
               </div>
@@ -250,26 +292,49 @@ export default function Hero() {
             {/* Rich Detailed Capabilities / Deliverables Box */}
             <div
               key={`details-${activeTab}`}
-              className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 max-w-2xl text-left shadow-sm hover:shadow-md transition-all duration-300 animate-tab-enter"
+              className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 w-full max-w-3xl lg:max-w-none text-left shadow-md hover:shadow-xl transition-all duration-300 animate-tab-enter"
             >
-              <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100 dark:border-slate-800">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-slate-800 border border-sky-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
                     <ActiveIcon className={`w-4 h-4 ${activeTabConfig.color}`} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
                       {serviceDetail?.title || activeTabConfig.fullTitle}
                     </h4>
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                       Production Deliverables & Architecture
                     </span>
                   </div>
                 </div>
+              </div>
 
-                <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Live Core Specification</span>
+              {/* Core Visual Preview Image Frame (Large & Unobscured) */}
+              <div
+                onClick={() => setIsFullscreen(true)}
+                className="relative w-full h-64 sm:h-80 md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden mb-5 border border-slate-200/90 dark:border-slate-800 shadow-md group cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-sky-300 dark:hover:border-amber-500/50"
+              >
+                <img
+                  src={CORE_IMAGES[activeTab]?.src}
+                  alt={CORE_IMAGES[activeTab]?.alt}
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="eager"
+                  width="1920"
+                  height="1080"
+                />
+                
+                {/* Ambient subtle vignette gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent pointer-events-none" />
+
+                {/* Bottom Overlay Caption */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white pointer-events-none">
+                  <div className="flex items-center gap-2 max-w-full">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
+                    <span className="text-xs sm:text-sm font-semibold drop-shadow-md text-white truncate">
+                      {CORE_IMAGES[activeTab]?.caption}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -285,13 +350,13 @@ export default function Hero() {
 
               {/* Tech Stack Pills */}
               <div className="mt-4 pt-3.5 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center gap-1.5">
-                <span className="text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500 mr-1 font-semibold">
+                <span className="text-xs uppercase text-slate-400 dark:text-slate-500 mr-1 font-semibold">
                   Core Stack:
                 </span>
                 {stackTagsList.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700 font-medium"
+                    className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700"
                   >
                     {tag}
                   </span>
@@ -325,10 +390,10 @@ export default function Hero() {
             >
               {current.metrics?.map((m, idx) => (
                 <div key={idx} className="group cursor-default">
-                  <span className="text-lg sm:text-xl font-bold font-['Orbitron',sans-serif] text-slate-900 dark:text-white block group-hover:text-sky-600 dark:group-hover:text-amber-400 transition-colors truncate">
+                  <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white block group-hover:text-sky-600 dark:group-hover:text-amber-400 transition-colors truncate">
                     {m.value}
                   </span>
-                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-medium truncate block">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-medium truncate block">
                     {m.label}
                   </span>
                 </div>
@@ -355,15 +420,15 @@ export default function Hero() {
                     <span className="text-xs font-bold text-slate-900 dark:text-white block">
                       {t.hero.cardTitle || 'Codes Cinema Core'}
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                      {t.hero.cardCore || 'Live Architecture'}
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                      {t.hero.cardCore || 'Creative Disciplines'}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 font-mono text-[10px] font-semibold">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>LIVE</span>
+                  <span>ACTIVE</span>
                 </div>
               </div>
 
@@ -413,10 +478,10 @@ export default function Hero() {
                             {tab.fullTitle || tab.label}
                           </h4>
                           <span
-                            className={`text-[10px] font-mono block truncate mt-0.5 ${
+                            className={`text-xs block truncate mt-0.5 ${
                               isSelected
-                                ? 'text-sky-700 dark:text-amber-300/90 font-semibold'
-                                : 'text-slate-500 dark:text-slate-400'
+                                ? 'text-sky-700 dark:text-amber-300 font-semibold'
+                                : 'text-slate-500 dark:text-slate-400 font-normal'
                             }`}
                           >
                             {itemPreview.tag || tab.label}
@@ -453,20 +518,111 @@ export default function Hero() {
                 })}
               </div>
 
-              {/* Active Discipline CLI Console Bar */}
+              {/* Studio Craft Promise */}
               <div className="p-3.5 pt-0">
-                <div className="flex items-center gap-2 font-mono text-[11px] bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-200 py-2.5 px-3 rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-800">
-                  <span className="text-sky-600 dark:text-emerald-400 font-bold">$</span>
-                  <span className="truncate text-slate-700 dark:text-slate-300 font-medium">
-                    {TERMINAL_COMMANDS[activeTab]}
+                <div className="flex items-center justify-between gap-2 text-xs bg-slate-50/90 dark:bg-slate-950/70 text-slate-700 dark:text-slate-300 py-2.5 px-3.5 rounded-xl border border-slate-200/90 dark:border-slate-800 shadow-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                    <span className="font-semibold text-slate-900 dark:text-white">
+                      Senior Human Craft
+                    </span>
+                  </div>
+                  <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                    100% IP • Direct Architect Access
                   </span>
-                  <span className="w-1.5 h-3.5 bg-sky-600 dark:bg-emerald-400 animate-pulse shrink-0 ml-auto" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Full-Screen Immersive Lightbox Modal */}
+      {isFullscreen && (
+        <div
+          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-6 md:p-8 animate-fade-in"
+          onClick={() => setIsFullscreen(false)}
+        >
+          {/* Top Control Bar */}
+          <div
+            className="w-full flex items-center justify-between pb-4 border-b border-slate-800 text-white max-w-7xl mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shadow-inner">
+                <ActiveIcon className={`w-5 h-5 ${activeTabConfig.color}`} />
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-bold tracking-tight text-white">
+                  {serviceDetail?.title || activeTabConfig.fullTitle}
+                </h3>
+                <span className="text-xs text-slate-400 font-medium">
+                  {CORE_IMAGES[activeTab]?.caption} • High-Resolution View
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => setIsFullscreen(false)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white text-xs font-semibold transition-all hover:scale-105 cursor-pointer shadow-xl"
+                aria-label="Close Full Screen"
+              >
+                <X className="w-4 h-4 text-amber-400" />
+                <span className="hidden sm:inline">Close</span>
+                <span className="text-[10px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">ESC</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Center High-Res Image View (Uncropped Full Screen) */}
+          <div
+            className="flex-1 flex items-center justify-center py-4 relative max-w-7xl mx-auto w-full overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={CORE_IMAGES[activeTab]?.src}
+              alt={CORE_IMAGES[activeTab]?.alt}
+              className="max-w-full max-h-[72vh] md:max-h-[76vh] object-contain rounded-2xl shadow-2xl border border-slate-800/90"
+            />
+          </div>
+
+          {/* Bottom Navigation & Discipline Switcher */}
+          <div
+            className="w-full max-w-7xl mx-auto pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="text-slate-400 text-xs text-center sm:text-left font-medium">
+              Click a discipline to inspect its high-resolution view:
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-1.5">
+              {SERVICE_TABS.map((tab) => {
+                const config = TAB_CONFIG[tab];
+                const isSel = tab === activeTab;
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => {
+                      setActiveTab(tab);
+                      setProgress(0);
+                    }}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                      isSel
+                        ? 'bg-amber-400 text-slate-950 shadow-md scale-105'
+                        : 'bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800'
+                    }`}
+                  >
+                    {config.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
