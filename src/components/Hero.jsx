@@ -148,7 +148,7 @@ export default function Hero() {
     };
   }, [isFullscreen]);
 
-  // Live continuous auto-switching across Codes Cinema Core services
+  // Live continuous auto-switching across studio disciplines
   useEffect(() => {
     if (isPaused) return;
 
@@ -249,110 +249,126 @@ export default function Hero() {
       {/* Gentle Vignette Fade */}
       <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#F8FAFC]/40 to-[#F8FAFC] dark:via-[#070B14]/40 dark:to-[#070B14] pointer-events-none" />
 
-      <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
-          
-          {/* Left Column: Highlighted Core Discipline Detailed Presentation (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Top Bar: Live Status & Active Discipline Pill */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 animate-fade-in-up">
-              {/* Live Core Indicator Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/70 border border-sky-200/90 dark:border-sky-800 text-sky-700 dark:text-sky-300 text-xs font-semibold shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                <span className="tracking-wide uppercase text-[11px]">
-                  CODES CINEMA CORE
-                </span>
-              </div>
-
-              {/* Specific Discipline Tag */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs font-medium shadow-sm">
-                <ActiveIcon className={`w-3.5 h-3.5 ${activeTabConfig.color}`} />
-                <span className="uppercase font-semibold">{current.tag || activeTabConfig.label}</span>
-              </div>
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 max-w-7xl mx-auto">
+        {/* Top Header: Active Discipline Badge & Dynamic Main Headline */}
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          {/* Active Discipline Pill */}
+          <div className="flex justify-center mb-4 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs font-semibold shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <ActiveIcon className={`w-3.5 h-3.5 ${activeTabConfig.color}`} />
+              <span className="uppercase tracking-wide text-[11px] font-semibold">{current.tag || activeTabConfig.label}</span>
             </div>
+          </div>
 
-            {/* Dynamic Main Headline */}
-            <div key={`headline-${activeTab}`} className="space-y-3 animate-tab-enter">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-slate-900 dark:text-white leading-snug">
-                {headline.top}{' '}
-                <span className="text-slate-500 dark:text-slate-400 font-normal block text-lg sm:text-2xl lg:text-3xl mt-1">
-                  {headline.accent}
-                </span>
-              </h1>
+          {/* Dynamic Headline */}
+          <div key={`headline-${activeTab}`} className="space-y-3 animate-tab-enter">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+              {headline.top}{' '}
+              <span className="text-slate-500 dark:text-slate-400 font-medium block text-xl sm:text-2xl md:text-3xl mt-1.5">
+                {headline.accent}
+              </span>
+            </h1>
 
-              {/* Detailed Discipline Explanation */}
-              <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                {serviceDetail?.description || current.desc}
-              </p>
-            </div>
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-normal leading-relaxed max-w-2xl mx-auto">
+              {serviceDetail?.description || current.desc}
+            </p>
+          </div>
+        </div>
 
-            {/* Rich Detailed Capabilities / Deliverables Box */}
-            <div
-              key={`details-${activeTab}`}
-              className="p-5 sm:p-7 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 w-full max-w-3xl lg:max-w-none text-left shadow-md hover:shadow-xl transition-all duration-300 animate-tab-enter"
-            >
-              <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-slate-100 dark:border-slate-800">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-slate-800 border border-sky-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
-                    <ActiveIcon className={`w-4 h-4 ${activeTabConfig.color}`} />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                      {serviceDetail?.title || activeTabConfig.fullTitle}
-                    </h4>
-                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      Production Deliverables & Architecture
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Core Visual Preview Image Frame (Large & Unobscured) */}
-              <div
-                onClick={() => setIsFullscreen(true)}
-                className="relative w-full h-64 sm:h-80 md:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden mb-5 border border-slate-200/90 dark:border-slate-800 shadow-md group cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-sky-300 dark:hover:border-amber-500/50"
+        {/* 6 Disciplines Interactive Switcher Deck (Horizontal Tabs Bar) */}
+        <div className="mb-6 flex flex-wrap justify-center gap-2 max-w-5xl mx-auto">
+          {tabConfigs.map((tab) => {
+            const Icon = tab.icon;
+            const isSelected = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => handleSelectTab(tab.id)}
+                onMouseEnter={() => {
+                  handleSelectTab(tab.id);
+                  setIsPaused(true);
+                }}
+                onMouseLeave={() => setIsPaused(false)}
+                className={`relative px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 border overflow-hidden ${
+                  isSelected
+                    ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950 border-slate-900 dark:border-white shadow-md scale-105'
+                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
+                }`}
               >
-                <img
-                  src={CORE_IMAGES[activeTab]?.src}
-                  alt={CORE_IMAGES[activeTab]?.alt}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="eager"
-                  width="1920"
-                  height="1080"
-                />
-                
-                {/* Ambient subtle vignette gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent pointer-events-none" />
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                <span className="truncate">{tab.label}</span>
+                {isSelected && !isPaused && (
+                  <div
+                    className="absolute bottom-0 left-0 h-0.5 bg-amber-400 dark:bg-amber-500 transition-all duration-75"
+                    style={{ width: `${progress}%` }}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
 
-                {/* Bottom Overlay Caption */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white pointer-events-none">
-                  <div className="flex items-center gap-2 max-w-full">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
-                    <span className="text-xs sm:text-sm font-semibold drop-shadow-md text-white truncate">
-                      {CORE_IMAGES[activeTab]?.caption}
-                    </span>
-                  </div>
+        {/* Full-Screen Majestic Display Area */}
+        <div
+          onClick={() => setIsFullscreen(true)}
+          className="relative w-full h-[52vh] sm:h-[62vh] md:h-[70vh] lg:h-[76vh] min-h-[380px] max-h-[820px] rounded-3xl overflow-hidden mb-8 border border-slate-200/90 dark:border-slate-800 shadow-2xl group cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-sky-300 dark:hover:border-amber-500/50 bg-slate-950"
+        >
+          <img
+            src={CORE_IMAGES[activeTab]?.src}
+            alt={CORE_IMAGES[activeTab]?.alt}
+            className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
+            loading="eager"
+            width="1920"
+            height="1080"
+          />
+
+          {/* Ambient subtle vignette gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+
+          {/* Bottom Overlay Caption & Discipline Tag */}
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white pointer-events-none">
+            <div className="flex items-center gap-2.5 bg-slate-950/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0 animate-pulse" />
+              <span className="text-xs sm:text-sm font-semibold drop-shadow text-white">
+                {CORE_IMAGES[activeTab]?.caption}
+              </span>
+            </div>
+
+            <div className="hidden sm:flex items-center gap-2 bg-slate-950/70 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 text-xs font-medium text-slate-300">
+              <span>{serviceDetail?.title || activeTabConfig.fullTitle}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Deliverables & Stack Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 text-left">
+          {/* Deliverables (8 cols) */}
+          <div className="lg:col-span-8 p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              {serviceDetail?.title || activeTabConfig.fullTitle} — Key Deliverables
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {deliverablesList.map((hl, i) => (
+                <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300 font-normal">
+                  <CheckCircle2 className="w-4 h-4 text-sky-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">{hl}</span>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
 
-              {/* Deliverable Highlights Checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {deliverablesList.map((hl, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300 font-normal">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 dark:text-amber-400 shrink-0 mt-0.5" />
-                    <span className="leading-snug">{hl}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Tech Stack Pills */}
-              <div className="mt-4 pt-3.5 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center gap-1.5">
-                <span className="text-xs uppercase text-slate-400 dark:text-slate-500 mr-1 font-semibold">
-                  Core Stack:
-                </span>
+          {/* Stack & Assurance (4 cols) */}
+          <div className="lg:col-span-4 p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col justify-between gap-5">
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
+                Core Architecture Stack
+              </h4>
+              <div className="flex flex-wrap gap-1.5">
                 {stackTagsList.map((tag, idx) => (
                   <span
                     key={idx}
@@ -364,176 +380,50 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* CTAs Cluster */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 animate-fade-in-up">
-              <a
-                href="#services"
-                className="group relative overflow-hidden px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 font-bold transition-all flex items-center gap-2 shadow-sm hover:shadow-md cursor-pointer"
-              >
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
-                <span>{t.hero.exploreCta || 'Explore Capabilities'}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-
-              <a
-                href="#estimator"
-                className="px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-slate-300 transition-all cursor-pointer"
-              >
-                {t.hero.estimatorCta || 'Estimate Timeline'}
-              </a>
-            </div>
-
-            {/* Dynamic Discipline KPI Row */}
-            <div
-              key={`kpi-${activeTab}`}
-              className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 max-w-xl mx-auto lg:mx-0 text-left animate-tab-enter"
-            >
-              {current.metrics?.map((m, idx) => (
-                <div key={idx} className="group cursor-default">
-                  <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white block group-hover:text-sky-600 dark:group-hover:text-amber-400 transition-colors truncate">
-                    {m.value}
-                  </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-medium truncate block">
-                    {m.label}
-                  </span>
-                </div>
-              ))}
+            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                <span className="font-semibold text-slate-900 dark:text-white">Senior Human Craft</span>
+              </div>
+              <span className="text-[11px] font-medium">100% IP Ownership</span>
             </div>
           </div>
+        </div>
 
-          {/* Right Column: Codes Cinema Core Interactive Deck (5 cols) */}
-          <div className="lg:col-span-5 animate-float">
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-slate-950/80 overflow-hidden hover:shadow-2xl transition-all duration-300">
-              {/* Window Header */}
-              <div className="px-5 py-3.5 bg-slate-50/90 dark:bg-slate-950/80 border-b border-slate-200/90 dark:border-slate-800 flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 rounded-full p-0.5 bg-slate-950 border border-slate-800 overflow-hidden flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
-                    <img
-                      src="/logo.jpg"
-                      alt="Codes Cinema Core - Live Engineering Architecture Deck"
-                      className="w-full h-full object-cover rounded-full"
-                      width="32"
-                      height="32"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-slate-900 dark:text-white block">
-                      {t.hero.cardTitle || 'Codes Cinema Core'}
-                    </span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      {t.hero.cardCore || 'Creative Disciplines'}
-                    </span>
-                  </div>
-                </div>
+        {/* CTAs Cluster */}
+        <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">
+          <a
+            href="#services"
+            className="group relative overflow-hidden px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-white bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 dark:text-slate-950 font-bold transition-all flex items-center gap-2 shadow-sm hover:shadow-md cursor-pointer"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform" />
+            <span>{t.hero.exploreCta || 'Explore Capabilities'}</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </a>
 
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>ACTIVE</span>
-                </div>
-              </div>
+          <a
+            href="#estimator"
+            className="px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-slate-300 transition-all cursor-pointer"
+          >
+            {t.hero.estimatorCta || 'Estimate Timeline'}
+          </a>
+        </div>
 
-              {/* The 6 Core Services Deck */}
-              <div className="p-3 space-y-2">
-                {tabConfigs.map((tab) => {
-                  const Icon = tab.icon;
-                  const isSelected = activeTab === tab.id;
-                  const itemPreview = t.hero.previews?.[tab.id] || {};
-                  return (
-                    <button
-                      key={tab.id}
-                      type="button"
-                      onClick={() => handleSelectTab(tab.id)}
-                      onMouseEnter={() => {
-                        handleSelectTab(tab.id);
-                        setIsPaused(true);
-                      }}
-                      onMouseLeave={() => {
-                        setIsPaused(false);
-                      }}
-                      className={`relative w-full text-left p-3.5 rounded-xl transition-all duration-300 cursor-pointer overflow-hidden border flex items-center justify-between gap-3 ${
-                        isSelected
-                          ? 'bg-sky-50/90 dark:bg-slate-800 text-slate-900 dark:text-white border-sky-300/90 dark:border-amber-500/80 shadow-sm ring-1 ring-sky-200/60 dark:ring-0 scale-[1.01]'
-                          : 'bg-white/80 dark:bg-slate-950/40 text-slate-700 dark:text-slate-300 border-slate-200/80 dark:border-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-800/60 hover:border-slate-300 dark:hover:border-slate-700'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        {/* Icon */}
-                        <div
-                          className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                            isSelected
-                              ? 'bg-white text-sky-600 dark:bg-slate-700 dark:text-amber-400 shadow-sm border border-sky-200/80 dark:border-slate-600'
-                              : 'bg-slate-50 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 ' + tab.color
-                          }`}
-                        >
-                          <Icon className="w-4 h-4" />
-                        </div>
-
-                        {/* Title & Tag */}
-                        <div className="min-w-0">
-                          <h4
-                            className={`text-xs font-bold truncate leading-tight ${
-                              isSelected ? 'text-slate-950 dark:text-white' : 'text-slate-800 dark:text-slate-200'
-                            }`}
-                          >
-                            {tab.fullTitle || tab.label}
-                          </h4>
-                          <span
-                            className={`text-xs block truncate mt-0.5 ${
-                              isSelected
-                                ? 'text-sky-700 dark:text-amber-300 font-semibold'
-                                : 'text-slate-500 dark:text-slate-400 font-normal'
-                            }`}
-                          >
-                            {itemPreview.tag || tab.label}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Right Indicator: Active Arrow or Pulse Dot */}
-                      <div className="shrink-0 flex items-center gap-2">
-                        {isSelected && (
-                          <span className="flex h-2 w-2 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-500 dark:bg-emerald-400 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-600 dark:bg-emerald-400" />
-                          </span>
-                        )}
-                        <ArrowRight
-                          className={`w-3.5 h-3.5 transition-transform ${
-                            isSelected
-                              ? 'text-sky-600 dark:text-amber-400 translate-x-0.5'
-                              : 'text-slate-300 dark:text-slate-600 opacity-60'
-                          }`}
-                        />
-                      </div>
-
-                      {/* Active Live Progress Bar on the Selected Card */}
-                      {isSelected && !isPaused && (
-                        <div
-                          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-600 dark:from-amber-400 dark:to-amber-500 transition-all duration-75"
-                          style={{ width: `${progress}%` }}
-                        />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Studio Craft Promise */}
-              <div className="p-3.5 pt-0">
-                <div className="flex items-center justify-between gap-2 text-xs bg-slate-50/90 dark:bg-slate-950/70 text-slate-700 dark:text-slate-300 py-2.5 px-3.5 rounded-xl border border-slate-200/90 dark:border-slate-800 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                    <span className="font-semibold text-slate-900 dark:text-white">
-                      Senior Human Craft
-                    </span>
-                  </div>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-                    100% IP • Direct Architect Access
-                  </span>
-                </div>
-              </div>
+        {/* Dynamic Discipline KPI Row */}
+        <div
+          key={`kpi-${activeTab}`}
+          className="pt-8 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center animate-tab-enter"
+        >
+          {current.metrics?.map((m, idx) => (
+            <div key={idx} className="group cursor-default">
+              <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white block group-hover:text-sky-600 dark:group-hover:text-amber-400 transition-colors truncate">
+                {m.value}
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-medium block mt-1">
+                {m.label}
+              </span>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
