@@ -46,33 +46,33 @@ const DEFAULT_HEADLINES = {
 const CORE_IMAGES = {
   fullstack: {
     src: '/images/core/fullstack.jpg',
-    alt: 'Turnkey Full-Stack Web Platform SaaS Dashboard & Cloud Architecture',
-    caption: 'Production Web Application Interface & Cloud Dashboard'
+    alt: 'Collaborative Engineering Team Building Full-Stack Web Platforms',
+    caption: 'Collaborative Studio Team Delivering Turnkey Web Platforms'
   },
   frontend: {
     src: '/images/core/frontend.jpg',
-    alt: 'Pixel-Perfect Reactive Frontend UI Component System',
-    caption: 'Responsive High-Performance UI Design System'
+    alt: 'Creative Designers & Front-End Developers Crafting Fluid Reactive UI',
+    caption: 'Creative Designers & Developers Crafting Intuitive User Experiences'
   },
   backend: {
     src: '/images/core/backend.jpg',
-    alt: 'High-Concurrency Cloud Server Network & API Microservices',
-    caption: 'Distributed Microservices & Real-Time Event Pipelines'
+    alt: 'Software Architects In Active Discussion Designing Resilient Cloud APIs',
+    caption: 'Engineers Designing Resilient Cloud APIs & High-Throughput Services'
   },
   mobile: {
     src: '/images/core/mobile.jpg',
-    alt: 'Mobile Game Development Unity Engine 120 FPS Gaming',
-    caption: 'Touch-Optimized Mobile Arcade & 3D Unity Engine'
+    alt: 'Passionate Gaming Team Creating & Testing Interactive Mobile Games',
+    caption: 'Immersive Mobile Game Creation & Responsive Touch Play'
   },
   devops: {
     src: '/images/core/devops.jpg',
-    alt: 'DevOps Automated CI/CD Server Mesh & Cloud Infrastructure',
-    caption: 'Linux Multi-Region Mesh & Zero-Downtime Deployments'
+    alt: 'Cloud Engineers Planning Reliable Continuous Deployment Pipelines',
+    caption: 'Human-Led Cloud Architecture & Zero-Downtime Reliability'
   },
   care: {
     src: '/images/core/care.jpg',
-    alt: '24/7 Cybersecurity Shield & Website Health Monitoring',
-    caption: 'Proactive SLA Shield & Continuous Uptime Telemetry'
+    alt: 'Dedicated Customer Support & Technical Care Team Providing Peace of Mind',
+    caption: 'Dedicated 24/7 Human Care, Technical Monitoring & Rapid Triage'
   }
 };
 
