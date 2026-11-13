@@ -66,9 +66,9 @@ const CORE_IMAGES = {
     caption: 'Touch-Optimized Mobile Arcade & 3D Unity Engine'
   },
   devops: {
-    src: '/images/core/devops.jpg?v=3',
-    alt: 'DevOps Automated CI/CD Server Mesh & Cloud Infrastructure',
-    caption: 'Linux Multi-Region Mesh & Zero-Downtime Deployments'
+    src: '/images/core/devops.jpg?v=4',
+    alt: 'Modern Cloud Datacenter & DevOps Automated CI/CD Infrastructure',
+    caption: 'Linux Multi-Region Datacenter & Zero-Downtime Deployments'
   },
   care: {
     src: '/images/core/care.jpg?v=3',
